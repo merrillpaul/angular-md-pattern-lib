@@ -24,11 +24,12 @@
     nav-manage-list,
     nav-drawer,
     nav-layout {
+        font-family: $mat-font-family !important;
         md-toolbar {
         @include mat-elevation(1);
         z-index: 1;
         }
-    }
+    }    
     .nav-footer {
         font-size: smaller;
         @include mat-elevation(2);
@@ -51,6 +52,13 @@
             color: mat-color($foreground, base);
         }
         
+    }
+
+    nav-drawer {
+        .mat-toolbar {
+            font-size: $font-size + 4;
+            color: mat-color($background, card);
+        }
     }
 
     md-sidenav {
