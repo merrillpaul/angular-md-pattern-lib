@@ -1,3 +1,20 @@
+@mixin pearson-button-group-theme($theme) {
+   $background: map-get($theme, background);
+  .mat-button-toggle-group {
+    .mat-button-toggle {
+        &:nth-child(n+1) {
+          border-left: 1px solid map-get($background, status-bar) !important;    
+        }
+
+        &:nth-child(1) {
+            border-left: 0 solid;
+        }   
+    }
+  }
+}
+
+
+
 @mixin psn-button-theme-color($name, $color, $property, $colorSwtich: 'default') {
   &.mat-#{$name} {
     #{$property}: mat-color($color, $colorSwtich);
@@ -143,4 +160,5 @@
     }   
     @include mat-pearson-button-theme($theme);
 
+    @include pearson-button-group-theme($theme);
 }
