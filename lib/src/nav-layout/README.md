@@ -65,8 +65,8 @@
     </nav-drawer-menu>
   </nav-drawer>
 
-
-  <nav-content [root]="true|false" color="not_mandatory | any theme color" >
+ <!-- root attr should be true only for the main app component and color can be any theme color -->
+  <nav-content [root]="true" color="primary" >
 
     <nav-toolbar-content>
       <span>Create Assessment</span>
@@ -97,7 +97,7 @@
         <button md-icon-button >         
             <md-icon>edit</md-icon>          
         </button>
-      <nav-toolbar-content>
+      </nav-toolbar-content>
       ....
     </nav-manage-list>
   </nav-content>

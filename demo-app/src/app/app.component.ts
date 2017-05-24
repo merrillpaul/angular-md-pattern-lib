@@ -32,6 +32,10 @@ export class AppComponent implements AfterViewInit {
     route: '/kitchensink',
     icon: 'local_library',
   }, {
+    title: 'Example Logs',
+    route: '/logs',
+    icon: 'receipt',
+  },{
     title: 'Dashboard',
     route: '/dashboard',
     icon: 'dashboard',
@@ -40,15 +44,6 @@ export class AppComponent implements AfterViewInit {
     route: '/product',
     icon: 'view_quilt',
   }, {
-    title: 'P1 Logs',
-    route: '/logs',
-    icon: 'receipt',
-  }, {
-    title: 'Step Form',
-    route: '/step-form',
-    icon: 'payment',
-  }
-    , {
     title: 'Manage Users',
     route: '/users',
     icon: 'people',
