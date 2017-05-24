@@ -81,6 +81,29 @@
           </md-card>
 
           <md-card>
+            <md-card-title>
+              Other styles
+            </md-card-title>
+            <psn-message inverted label="Hey" sublabel="inverted color goes here" icon="info" color="warn" [opened]="true">
+            </psn-message>
+            <p></p>
+            <psn-message inverted label="Hey" sublabel="inverted color goes here" icon="info" color="success" [opened]="true">
+              <button md-icon-button (click)="message.close()" message-actions>
+            <md-icon>close</md-icon>
+          </button>
+            </psn-message>
+            <p></p>
+            <psn-message inverted label="Hey" sublabel="inverted color goes here" icon="info" color="accent" [opened]="true">
+            </psn-message>
+            <p></p>
+            <psn-message inverted label="Hey" sublabel="inverted color goes here" icon="info" color="primary" [opened]="true">
+              <button md-icon-button (click)="message.close()" message-actions>
+            <md-icon>close</md-icon>
+          </button>
+            </psn-message>
+          </md-card>
+
+          <md-card>
             <md-card-title>Section</md-card-title>
             <md-divider></md-divider>
             <psn-message label="Hmm" sublabel="THere is a problem here" color="warn" icon="error"></psn-message>

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { LabelComponent } from './label.component';
-import { LabelInvertedDirective } from './label.inverted.directive';
 export { LabelComponent } from './label.component';
 
 @NgModule({
@@ -12,8 +11,8 @@ export { LabelComponent } from './label.component';
         FlexLayoutModule,
         CommonModule
     ],
-    exports: [LabelComponent, LabelInvertedDirective],
-    declarations: [LabelComponent, LabelInvertedDirective],
+    exports: [LabelComponent],
+    declarations: [LabelComponent],
     providers: [],
 })
 export class PearsonLabelModule { }

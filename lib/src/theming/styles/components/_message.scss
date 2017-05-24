@@ -18,7 +18,12 @@
             &.mat-#{$name} {
                 color: mat-color($background, card);
                 background-color: mat-color($color, 1);
-            }  
+                &.inverted {
+                    color: mat-color($color);
+                    background-color: mat-color($color, $opacity: 0.15);
+                }
+            }
+
     }  
   }
 }
