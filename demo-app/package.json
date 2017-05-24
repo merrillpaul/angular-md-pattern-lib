@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ghpages": "ng build --base-href /pearson-angular-md-pattern-lib/  --sourcemap=false && gulp publish"   
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,11 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "~2.2.0"
+    "typescript": "~2.2.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cli": "^1.2.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-load-plugins": "^1.1.0"
   }
 }
