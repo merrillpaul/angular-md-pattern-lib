@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'mixins';
+@import 'palette';
+@import './utilities/utilities';
+@import './components/font';
+@import './components/font_awesome';
+
+
+@import './components/card';
+@import './components/chips';
+@import './components/nav_list';
+@import './components/content';
+@import './components/divider';
+@import './components/list';
+@import './components/buttons';
+@import './components/typography';
+@import './components/ripple_theme';
+@import './components/ngx_charts';
+@import './components/input';
+@import './components/nav';
+@import './components/footer';
+@import './components/progress';
+@import './components/toast';
+@import './components/toolbar';
+@import './components/dialog';
+@import './components/message';
+@import './components/badge';
+@import './components/expanding-panel';
+@import './components/spinner';
+@import './components/paginate';
+@import './components/select';
+@import './components/file';
+@import './components/label';
+
+@import './pages/login';
+
+@mixin pearson_core_style($theme) {
+
+    // took out from the angular-theme mixin
+   /* @include mat-core-theme($theme);
+    @include mat-autocomplete-theme($theme);
+    @include mat-button-theme($theme);
+    @include mat-button-toggle-theme($theme);
+    @include mat-card-theme($theme);
+    @include mat-checkbox-theme($theme);
+    @include mat-chips-theme($theme);
+    @include mat-datepicker-theme($theme);
+    @include mat-dialog-theme($theme);
+    @include mat-grid-list-theme($theme);
+    @include mat-icon-theme($theme);
+    @include mat-input-theme($theme);
+    @include mat-list-theme($theme);
+    @include mat-menu-theme($theme);
+    @include mat-progress-bar-theme($theme);
+    @include mat-progress-spinner-theme($theme);
+    @include mat-radio-theme($theme);
+    @include mat-select-theme($theme);
+    @include mat-sidenav-theme($theme);
+    @include mat-slide-toggle-theme($theme);
+    @include mat-slider-theme($theme);
+    @include mat-tabs-theme($theme);
+    @include mat-toolbar-theme($theme);
+    @include mat-tooltip-theme($theme);*/
+    @include angular-material-theme($theme); 
+
+    @include pearson-mat-font;
+    @include psn-card-theme($theme);
+    @include psn-chips-theme($theme);
+    @include psn-list-theme($theme);
+    @include psn-nav-list-theme($theme);
+    @include psn-buttons-theme($theme);
+    @include psn-ripple-theme($theme);
+    @include psn-ngx-charts-theme($theme);
+    @include psn-content-theme($theme);
+    @include psn-divider-theme($theme);
+    @include psn-input-theme($theme);
+    @include psn-nav-theme($theme);
+    @include psn-footer-theme($theme);
+    @include psn-progress-theme($theme);
+    @include psn-toast-theme($theme);
+    @include psn-toolbar-theme($theme);
+    @include psn-message-theme($theme);
+    @include psn-badge-theme($theme);
+    @include psn-expansion-panel-theme($theme);
+    @include psn-spinner-theme($theme);
+    @include psn-paginate-theme($theme);
+    @include psn-select-theme($theme);
+    @include psn-file-theme($theme);
+    @include psn_login_theme($theme);
+    @include psn-dialog-theme($theme);
+    @include psn-label-theme($theme);    
+}
+
+ 

@@ -1,0 +1,22 @@
+<div>
+  <button md-raised-button
+          class="psn-file-input"
+          type="button"
+          [color]="color" 
+          [multiple]="multiple" 
+          [disabled]="disabled"
+          (keyup.enter)="fileInput.click()"
+          (click)="fileInput.click()"
+          (fileDrop)="handleSelect($event)"
+          psnFileDrop>
+    <ng-content></ng-content>
+  </button>
+  <input #fileInput 
+          class="psn-file-input-hidden" 
+          type="file"
+          [attr.accept]="accept"                
+          (fileSelect)="handleSelect($event)"
+          [multiple]="multiple" 
+          [disabled]="disabled"
+          psnFileSelect>
+</div>

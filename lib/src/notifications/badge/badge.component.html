@@ -1,0 +1,14 @@
+<div #content class="psn-badge-content">
+  <ng-content></ng-content>
+</div>
+<div *ngIf="show"
+     class="psn-badge-ctr mat-{{color}}"
+     [class.badge-top]="y === 'top'"
+     [class.badge-bottom]="y === 'bottom'"
+     [class.badge-before]="x === 'before'"
+     [class.badge-after]="x === 'after'"
+     [class.badge-center-y]="y === 'center'"
+     [class.badge-center-x]="x === 'center'"
+     >
+  {{notificationsDisplay}}
+</div>

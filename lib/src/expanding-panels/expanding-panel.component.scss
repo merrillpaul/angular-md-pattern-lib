@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  .psn-expanding-panel {
+    transition: 400ms all ease;
+    .psn-expanding-panel-header {
+      position: relative;
+      outline: none;
+      &:focus,
+      &:hover {
+        cursor: pointer;
+      }
+      &.mat-disabled {
+        background: none;
+        cursor: auto;
+      }
+      .psn-expanding-panel-header-content {
+        height: 48px;
+        padding: 0 16px;
+      }
+    }
+  }
+}
+
+.psn-expanding-panel-header-content1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 5px;
+  /deep/ [dir='rtl'] & { 
+    margin-left: 5px;
+    margin-right: inherit;
+  }
+}

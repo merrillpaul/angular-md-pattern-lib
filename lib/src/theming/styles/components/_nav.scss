@@ -1,0 +1,79 @@
+@mixin psn-nav-theme($theme) {
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $extraColors: map-get($theme, extraColors);
+   
+    $colors: (
+        primary: $primary,
+        accent: $accent,
+        warn: $warn,
+        success: map-get($extraColors, success),
+        secondary: map-get($extraColors, secondary)
+    );
+
+    .mat-sidenav-container {
+        background-color: mat-color($background, status-bar);
+    }
+
+    nav-content,
+    nav-list,
+    nav-manage-list,
+    nav-drawer,
+    nav-layout {
+        md-toolbar {
+        @include mat-elevation(1);
+        z-index: 1;
+        }
+    }
+    .nav-footer {
+        font-size: smaller;
+        @include mat-elevation(2);
+        padding: 6px 12px;
+        @each $name, $color in $colors {
+            &.mat-#{$name} {
+                background-color: mat-color($color);
+                color: mat-color($color, default-contrast);
+            }  
+        }
+    }
+    .psn-main-nav {
+        .nav-footer {
+             background: mat-color($background, app-bar);
+             color: mat-color($background, card);
+             
+        }
+        &.mat-toolbar {
+            background: mat-color($background, card);
+            color: mat-color($foreground, base);
+        }
+        
+    }
+
+    md-sidenav {
+        width: $navigation-drawer-width;
+        .mat-list-item-content {
+            md-icon {            
+                @include rtl(margin-left, 0px,$margin);
+                @include rtl(margin-right, $margin, 0px);
+                color: map_get($mat-pearson-grey, 300);
+                fill: map_get($mat-pearson-grey, 300);
+            }
+        }
+        [md-list-item] {
+            &,&:active,&:focus {
+            outline: none;
+            }
+        }
+    }   
+
+    .psn-main-nav {
+        .mat-toolbar {
+            //background: mat-color($background, app-bar);
+            //color: mat-color($background, card);
+        }
+    }
+}

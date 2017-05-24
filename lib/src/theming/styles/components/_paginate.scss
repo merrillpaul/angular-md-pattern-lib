@@ -1,0 +1,32 @@
+@mixin psn-paginate-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $extraColors: map-get($theme, extraColors);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $colors: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      success: map-get($extraColors, success),
+      secondary: map-get($extraColors, secondary)
+  );
+
+  psn-paginate {
+    font-size: 12px;
+    .mat-select-trigger {
+        font-size: 12px;
+    }
+    .mat-raised-button {
+        min-width: 30px !important;
+    }   
+    .mat-selected {
+      // background-color: mat-color($primary);
+      // color: map-get($background, card);
+    }
+    &, & md-select .mat-select-value { 
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+}

@@ -1,0 +1,73 @@
+[
+     {
+          "description": "an overview slash show case",
+          "icon": "local_library",
+          "color": "red-700",
+          "route": ".",
+          "skip": true,
+          "title": "Pattern Library"
+     },
+     {
+          "description": "core sandbox",
+          "icon": "change_history",
+          "color": "deep-purple-700",
+          "route": "library",
+          "title": "Components"
+     },
+     {
+          "description": "Sand box",
+          "icon": "view_list",
+          "color": "blue-700",
+          "route": "playground",
+          "title": "Playground"
+     },
+     {
+          "description": "Quick way to use alert, confirm and prompt dialogs",
+          "icon": "open_in_browser",
+          "color": "teal-700",
+          "route": "dialogs",
+          "title": "Dialogs & Toasts"
+     },     
+     {
+          "description": "Paging for lists and tables",
+          "icon": "swap_horiz",
+          "route": "paging",
+          "color": "red-700",
+          "title": "Paging"
+     },
+     {
+          "description": "Expand & collapse containers",
+          "icon": "open_with",
+          "color": "light-blue-700",
+          "route": "expansion-panel",
+          "title": "Expanding panels"
+     },
+     {
+          "description": "File uploads",
+          "icon": "attach_file",
+          "color": "cyan-700",
+          "route": "files",
+          "title": "File Input & Upload"
+     },        
+     {
+          "description": "Circular or linear progress loader",
+          "icon": "hourglass_empty",
+          "color": "green-700",
+          "route": "loading",
+          "title": "Loading"
+     },      
+     {
+          "description": "Notification count & menu",
+          "icon": "notifications",
+          "color": "light-blue-700",
+          "route": "notifications",
+          "title": "Notifications/Messages"
+     },     
+     {
+          "description": "Declarative D3 framework for ng2",
+          "icon": "insert_chart",
+          "route": "charts",
+          "title": "Charts",
+          "color": "blue-600"
+     }
+]

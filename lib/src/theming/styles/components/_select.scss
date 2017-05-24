@@ -1,0 +1,35 @@
+@mixin psn-select-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $extraColors: map-get($theme, extraColors);
+  //$foreground: map-get($theme, foreground);
+  //$background: map-get($theme, background);
+  $colors: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      success: map-get($extraColors, success),
+      secondary: map-get($extraColors, secondary)
+  );
+
+  .mat-option {
+    font-size: 12px;
+    line-height: 36px;
+    height: 36px;
+    .mat-option-ripple {
+        display: none;
+    }
+  }
+ 
+  .mat-select-panel {
+       @each $name, $color in $colors {
+            &.mat-#{$name} {
+                .mat-selected {
+                    background-color: mat-color($color);
+                    color: mat-color($color, default-contrast);
+                }
+            }  
+        }
+  }
+}

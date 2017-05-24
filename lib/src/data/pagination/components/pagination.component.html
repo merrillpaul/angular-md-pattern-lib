@@ -1,0 +1,34 @@
+<div fxLayout="row" fxLayoutAlign="end center" class="md-caption psn-paginate">  
+  <ng-content *ngIf="showQuickPage" select="[paginate-label]"></ng-content>
+  <md-select *ngIf="showQuickPage" [(ngModel)]="pageSize" [color]="_color" >    
+    <ng-template let-size ngFor [ngForOf]="pageSizes">
+      <md-option [value]="size">
+        {{size}}
+      </md-option>
+    </ng-template>
+    <md-option *ngIf="showAllOption" [value]="total">{{allOptionLabel}}</md-option>
+  </md-select>
+  <div>
+    <ng-content></ng-content>
+  </div>
+  <div class="psn-paginate-nav">
+    <button [id]="'psn-paginate-nav-' + id + '-first-page'" md-icon-button type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">     
+      <i [ngClass]="{'fa-step-forward': isRTL, 'fa-step-backward': !isRTL}" class="fa " aria-hidden="true"></i>      
+    </button>
+    <button md-icon-button type="button" [disabled]="isMinPage()" (click)="prevPage()">      
+      <i *ngIf="arrows" [ngClass]="{'fa-long-arrow-right': isRTL, 'fa-long-arrow-left': !isRTL}" class="fa " aria-hidden="true"></i>
+      <span *ngIf="!arrows">{{prevLabel}}</span>
+    </button>
+    <ng-template *ngIf="pageLinkCount > 0" let-link let-index="index" ngFor [ngForOf]="pageLinks">
+      <button *ngIf="page === link" [id]="'psn-paginate-nav-' + id + '-page-link-' + index"  md-raised-button type="button" [color]="_color" (click)="navigateToPage(link)">{{link}}</button>
+      <button *ngIf="page !== link" [id]="'psn-paginate-nav-' + id + '-page-link-' + index" md-icon-button type="button" [color]="" (click)="navigateToPage(link)">{{link}}</button>
+    </ng-template>
+    <button md-icon-button type="button" [disabled]="isMaxPage()" (click)="nextPage()">      
+      <i *ngIf="arrows" [ngClass]="{'fa-long-arrow-left': isRTL, 'fa-long-arrow-right': !isRTL}" class="fa " aria-hidden="true"></i>
+      <span *ngIf="!arrows">{{nextLabel}}</span>
+    </button>
+    <button [id]="'psn-paginate-nav-' + id + '-last-page'" md-icon-button type="button" *ngIf="firstLast" [disabled]="isMaxPage()" (click)="lastPage()">      
+       <i [ngClass]="{'fa-step-backward': isRTL, 'fa-step-forward': !isRTL}" class="fa " aria-hidden="true"></i>  
+    </button>
+  </div>
+</div>

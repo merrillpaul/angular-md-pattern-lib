@@ -1,0 +1,12 @@
+<div messageContainer></div>
+<ng-template>
+  <div class="pad-left pad-right message-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <md-icon class="push-right">{{icon}}</md-icon>
+    <div>
+      <div *ngIf="label" class="message-label md-body-2">{{label}}</div>
+      <div *ngIf="sublabel" class="message-sublabel md-body-1">{{sublabel}}</div>
+    </div>
+    <span fxFlex></span>
+    <ng-content select="[message-actions]"></ng-content>
+  </div>
+</ng-template>

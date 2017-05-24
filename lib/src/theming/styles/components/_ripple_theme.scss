@@ -1,0 +1,16 @@
+@mixin psn-ripple-theme($theme) {
+    // this is just to disable the ripple effect that Valdas was concerned about
+    button {
+        .mat-ripple {
+            visibility: hidden;
+        }
+    }
+
+    .mat-tab-label {
+        &.mat-ripple {
+            .mat-ripple-element {
+                visibility: hidden;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+:host {
+  .psn-file-input {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  input.psn-file-input-hidden {
+    display: none;
+  }
+ 
+  .drop-zone {
+    // Animation.
+    border-radius: 3px;
+    * {
+      pointer-events: none; //added to fix bug that re-throws dragleave/dragenter by child elements
+    }
+  }
+}

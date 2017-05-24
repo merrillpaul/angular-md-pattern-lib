@@ -1,0 +1,8 @@
+@mixin psn-footer-theme($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    .psn-layout-footer {
+            background: mat-color($background, app-bar);
+            color: mat-color($background, card);
+    }
+}

@@ -1,0 +1,75 @@
+@mixin psn-dlg-icon($theme, $color, $content) {
+    .mat-toolbar-layout { 
+        .titleText {
+                &:before {
+                    content: $content;
+                    color: $color
+                }
+        }
+    }
+}
+
+@mixin psn-dialog-theme($theme) {
+    $background: map-get($theme, background);
+    
+   .psn-dialog {
+        min-width: 300px;
+        position: relative;
+        &.mat-dialog-container {
+           // padding: 0;
+        }
+        .mat-toolbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-height: 48px;
+            min-height: 48px;
+        }
+        .mat-dialog-content {
+            margin-top: 24px;
+        }
+        .mat-toolbar-layout { 
+            .mat-toolbar-row {
+                height: 48px !important;
+            }   
+            .titleText {
+                font-weight: normal;                
+            }        
+            span.close {
+                cursor: pointer;
+            }
+        }
+        .mat-dialog-actions {
+            button {
+                margin-left: 10px;
+            }
+        }
+
+        .psn-dialog-content {
+             .mat-toolbar {
+                 background: mat-color($background, status-bar);
+             }
+             .mat-toolbar-layout { 
+                 .titleText {
+                    &:before {
+                        @include fa-icon();
+                        margin-right: 5px;
+                    }
+                 }
+             }
+             &.dlg-type-info {
+                    @include psn-dlg-icon($theme, $color:mat-color(map-get($theme, primary), default), $content: '\f05a');
+             }  
+             &.dlg-type-success {
+                    $success: map-get(map-get($theme, extraColors), success);
+                    @include psn-dlg-icon($theme, $color:mat-color($success, default), $content: '\f00c');
+             } 
+             &.dlg-type-warning {
+                    @include psn-dlg-icon($theme, $color:mat-color(map-get($theme, accent), default), $content: '\f071');
+             } 
+             &.dlg-type-error {
+                    @include psn-dlg-icon($theme, $color:mat-color(map-get($theme, warn), default), $content: '\f071');
+             }             
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@mixin psn-toast-theme($theme) {
+    $info: mat-color(map-get($theme, primary), default);
+    $warning: mat-color(map-get($theme, accent), default);
+    $error: mat-color(map-get($theme, warn), default);
+    $success: mat-color(map-get(map-get($theme, extraColors), success), default);
+
+    $toast-colors: (
+        info: $info,
+        warning: $warning,
+        error: $error,
+        success: $success
+    );
+    #toast-container {
+        .toast {
+            @each $name, $color in $toast-colors {      
+               &.toast-#{$name} {
+                    background-color: $color;
+               }  
+            } 
+        }
+    }
+}

@@ -1,0 +1,15 @@
+// Active icon color in list nav
+
+@mixin psn-nav-list-theme($theme) {
+    md-nav-list {
+        [md-list-item].active {
+            md-icon[md-list-avatar] {
+                background-color: mat-color(map-get($theme, primary ));
+                color: mat-color(map-get($theme, primary ), default-contrast)
+            }
+            md-icon[md-list-icon] {
+                color: mat-color(map-get($theme, primary ));
+            }
+        }
+    }
+}

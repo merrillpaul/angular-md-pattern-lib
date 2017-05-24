@@ -1,0 +1,39 @@
+<div class="psn-expanding-panel"
+     [class.psn-expanded]="expand">
+
+  <div class="psn-expanding-panel-header {{appliedColor}}"
+        [class.mat-disabled]="disabled"
+        md-ripple
+        [mdRippleDisabled]="true"
+        [tabIndex]="disabled? -1 : 0"
+        (keydown.enter)="clickEvent()"
+        (click)="clickEvent()">
+  
+    <div class="psn-expanding-panel-header-content"
+          [class.mat-disabled]="disabled"          
+          fxLayout="row" 
+          fxLayoutAlign="start center" 
+          fxFlex>
+      <md-icon class="expand-icon" 
+          *ngIf="!expand && !disabled">keyboard_arrow_right</md-icon>
+      <md-icon class="expand-icon"  
+        *ngIf="expand">keyboard_arrow_down</md-icon>
+      <div fxLayoutAlign="start center" fxFlex fxLayout="row" class="psn-expanding-panel-header-content">
+          <ng-content></ng-content>
+      </div>
+      <md-icon class="expand-icon"  (keydown.enter)="closeEvent($event)"
+        (click)="closeEvent($event)" *ngIf="closeable">close</md-icon>      
+    </div>
+  </div>
+
+  <div class="psn-expanding-content"
+        [@collapse]="!expand">
+    <ng-content select="expanding-panel-content"></ng-content>
+  </div>
+
+  <div class="psn-expanding-summary"
+        *ngIf="keepSummary">
+    <ng-content select="expanding-panel-summary"></ng-content>
+  </div>
+
+</div>

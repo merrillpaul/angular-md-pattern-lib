@@ -1,0 +1,18 @@
+<div class="psn-dialog-content dlg-type-{{dialogTypeClass}}">
+    <md-toolbar>
+        <h4 class="titleText">{{dialogData.title}}</h4>
+        <span flex></span>
+        <span (click)="cancel()" class="close" aria-hidden="true">x</span>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <h5 *ngIf="dialogData.subtitle">{{dialogData.subtitle}}</h5>
+        <p>{{dialogData.message}}</p>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" layout-align="end center">
+        <span flex></span>
+        <button *ngIf="!dialogData.hideCancel" md-button (click)="cancel()">{{dialogData.cancelButtonLabel}}</button>
+        <button md-raised-button color="{{primaryClass}}" (click)="ok()">{{dialogData.okButtonLabel}}</button>
+    </md-dialog-actions>
+</div>

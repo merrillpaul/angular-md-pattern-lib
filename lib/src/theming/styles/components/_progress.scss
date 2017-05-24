@@ -1,0 +1,11 @@
+@mixin psn-progress-theme($theme) {
+    $extraColors: map-get($theme, extraColors);
+ 
+   .mat-progress-spinner, .mat-progress-circle, .mat-spinner {
+        @each $name, $color in $extraColors {      
+            &.mat-#{$name} path {
+                stroke: mat-color($color, 600);
+            }  
+        }             
+    }  
+}

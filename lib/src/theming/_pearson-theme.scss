@@ -1,0 +1,33 @@
+
+// Creates a container object for a light theme to be given to individual component theme mixins.
+@function mat-pearson-light-theme($primary, $accent, $warn: mat-palette($mat-pearson-strawberry-red), $success: mat-palette($mat-pearson-fresh-green), $secondary: mat-palette($mat-pearson-graphite-grey)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    extraColors: (
+      success: $success,
+      secondary: $secondary
+    ),   
+    is-dark: false,
+    foreground: $mat-pearson-light-theme-foreground,
+    background: $mat-pearson-light-theme-background
+  );
+}
+
+
+// Creates a container object for a dark theme to be given to individual component theme mixins.
+@function mat-pearson-dark-theme($primary, $accent, $warn: mat-palette($mat-pearson-strawberry-red), $success: mat-palette($mat-pearson-fresh-green), $secondary: mat-palette($mat-pearson-graphite-grey)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    extraColors: (
+      success: $success,
+      secondary: $secondary
+    ),    
+    is-dark: true,
+    foreground: $mat-pearson-dark-theme-foreground,
+    background: $mat-pearson-dark-theme-background
+  );
+}

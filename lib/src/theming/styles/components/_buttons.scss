@@ -1,0 +1,146 @@
+@mixin psn-button-theme-color($name, $color, $property, $colorSwtich: 'default') {
+  &.mat-#{$name} {
+    #{$property}: mat-color($color, $colorSwtich);
+    &:hover {
+      &:not([disabled]) {   
+        //background-color: mat-color($color, 0.8);
+      }
+    }    
+  }   
+}
+
+@mixin button-theme-disable-raised-effect($theme, $background, $extraColors) {
+   // disabling the raised look of raised buttons as per Valdas' concern
+
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $hoverFactor: 0.85;
+
+    &.mat-warn .mat-button-focus-overlay {
+      background-color: mat-color($warn, 0.12) !important;
+    }
+   .mat-raised-button, .mat-fab, .mat-mini-fab, .mat-button-toggle-group {
+      box-shadow: none !important;
+    } 
+    .mat-button-toggle-group   {
+      border: 1px solid map-get($background, status-bar) !important;
+    } 
+
+    .mat-raised-button {
+      border: 1px solid map-get($background, status-bar) !important;
+      &.mat-primary  {
+        border: none !important;
+        &:hover {
+          background-color: mat-color($primary, $hoverFactor) !important;
+        }
+      }
+
+      &.mat-accent  {
+        border: none !important;
+        &:hover {
+          background-color: mat-color($accent, $hoverFactor) !important;
+        }
+      }
+
+      &.mat-warn  {
+       border: none !important;
+        &:hover {
+          background-color: mat-color($warn, $hoverFactor) !important;
+        }
+      }
+
+      @each $name, $color in $extraColors {      
+          &.#{$name} {
+            border: none !important;
+            &:hover {
+              background-color: mat-color($color, $hoverFactor) !important;
+            }
+          }
+      }     
+
+      &:hover {
+        @include _mat-button-focus-color($theme);
+      }
+    } 
+}
+
+@mixin mat-pearson-button-theme($theme) {
+     $background: map-get($theme, background);
+     $extraColors: map-get($theme, extraColors);
+     .mat-button, .mat-icon-button {
+        @each $name, $color in $extraColors {      
+            @include psn-button-theme-color($name, $color, 'color');    
+        } 
+     }
+
+    .mat-raised-button, .mat-fab, .mat-mini-fab {
+        @each $name, $color in $extraColors {      
+            @include psn-button-theme-color($name, $color, 'color', default-contrast);
+            @include psn-button-theme-color($name, $color, 'background-color'); 
+        }        
+    }
+
+    @include button-theme-disable-raised-effect($theme, $background, $extraColors);   
+  
+}
+
+
+@mixin psn_buttons_theme($theme) {
+    // Standard button sizing.
+    $md-button-padding: 0 rem(0.600) !default;
+    $md-button-min-width: rem(8.800) !default;
+    $md-button-margin: rem(0.600) rem(0.800) !default;
+    $md-button-line-height: rem(3.60) !default;
+    $md-button-border-radius: 3px !default;
+
+    // FAB sizing.
+    $md-fab-border-radius: 50%;
+    $md-fab-size: rem(5.600) !default;
+    $md-fab-line-height: rem(5.600) !default;
+    $md-fab-padding: rem(1.60) !default;
+    $md-fab-mini-size: rem(4.00) !default;
+    $md-fab-mini-line-height: rem(4.00) !default;
+
+    // Icon button sizing.
+    $md-icon-button-height: rem(4.000) !default;
+    $md-icon-button-width: rem(4.000) !default;
+    $md-icon-button-margin: rem(0.600) !default;
+    $md-icon-border-radius: $md-fab-border-radius;
+
+    /** Mixin to create distinct classes for fab positions, e.g. ".md-fab-position-bottom-right". */
+    @mixin md-fab-position($spot, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    [md-fab].md-fab-position-#{$spot},
+    .mat-fab.mat-fab-position-#{$spot},
+    [md-fab].md-fab-#{$spot},
+    .mat-fab.mat-fab-#{$spot} {
+        top: $top;
+        @include rtl(right, $right,$left);
+        @include rtl(left, $left,$right);
+        bottom: $bottom;
+        position: absolute;
+        &.fixed {
+        position: fixed;
+        }
+    }
+    }
+
+
+    $md-fab-pos-offset: ($md-fab-size - $md-fab-padding) / 2;
+    @include md-fab-position(bottom-right, auto, $md-fab-pos-offset, $md-fab-pos-offset, auto);
+    @include md-fab-position(bottom-left, auto, auto, $md-fab-pos-offset, $md-fab-pos-offset);
+    @include md-fab-position(top-right, $md-fab-pos-offset, $md-fab-pos-offset, auto, auto);
+    @include md-fab-position(top-left, $md-fab-pos-offset, auto, auto, $md-fab-pos-offset);
+
+    button {
+        &[md-icon-button] {
+            &.md-icon-button-mini {
+            height: 24px;
+            line-height: 24px;
+            width: 24px;
+            }
+        }
+    }   
+    @include mat-pearson-button-theme($theme);
+
+}

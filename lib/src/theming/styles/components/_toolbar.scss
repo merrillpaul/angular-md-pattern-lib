@@ -1,0 +1,49 @@
+@mixin psn-toolbar-theme($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $extraColors: map-get($theme, extraColors);
+    .mat-toolbar {
+        //background: mat-color($background, status-bar);
+        //color: mat-color($foreground, base);
+        /*&.mat-primary {
+            background: mat-color($background, card);
+            color: mat-color($foreground, base);
+        }*/
+
+        @each $name, $color in $extraColors {      
+            &.mat-#{$name} {
+                background-color: mat-color($color, default);
+            }
+        }    
+
+    }
+
+    md-toolbar {
+        [md-button] {
+            &:first-of-type:not(:last-child) {                
+                margin-left: -6px;
+                [dir='rtl'] & {
+                    margin-right: -6px;
+                    margin-left: 0;
+                }
+            }
+            &:last-of-type:not(:first-child) {
+                margin-right: -6px;
+                [dir='rtl'] & {
+                    margin-left: -6px;
+                    margin-right: 0;
+                }
+            }
+        }
+        .md-icon-logo {
+            margin-right: 10px;
+            [dir='rtl'] & {
+                margin-left: 10px;
+                margin-right: 0;
+            }
+        }
+        [md-icon-button] {
+            margin: 0 6px;
+        }
+    }
+}

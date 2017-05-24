@@ -1,0 +1,73 @@
+[
+  {
+    "item_id": "1",
+    "name": "WIAT-III",
+    "description": "product description",
+    "icon": "account_balance",
+    "color": "pink-A200",
+    "category" : "analytics"
+  },{
+    "item_id": "2",
+    "name": "KTEA Form-B",
+    "description": "product description",
+    "icon": "android",
+    "color": "green-700",
+    "category" : "analytics"
+  },{
+    "item_id": "3",
+    "name": "NEPSY",
+    "description": "product description",
+    "icon": "watch",
+    "color": "purple-600",
+    "category" : "analytics"
+  },{
+    "item_id": "4",
+    "name": "BASC3",
+    "description": "product description",
+    "icon": "face",
+    "color": "light-blue-600",
+    "category" : "customers"
+  },{
+    "item_id": "5",
+    "name": "PPVT-IV",
+    "description": "product description",
+    "icon": "card_membership",
+    "color": "orange-700",
+    "category" : "customers"
+  },{
+    "item_id": "6",
+    "name": "GFTA-2",
+    "description": "product description",
+    "icon": "card_giftcard",
+    "color": "indigo-600",
+    "category" : "customers"
+  },{
+    "item_id": "7",
+    "name": "WISC-V",
+    "description": "product description",
+    "icon": "watch",
+    "color": "purple-600",
+    "category" : "analytics"
+  },{
+    "item_id": "8",
+    "name": "CVLT-II",
+    "description": "product description",
+    "icon": "face",
+    "color": "light-blue-600",
+    "category" : "customers"
+  },{
+    "item_id": "9",
+    "name": "WMS-IV",
+    "description": "product description",
+    "icon": "card_membership",
+    "color": "orange-700",
+    "category" : "customers"
+  },{
+    "item_id": "10",
+    "name": "WMS-V",
+    "description": "product description",
+    "icon": "card_giftcard",
+    "color": "indigo-600",
+    "category" : "customers"
+  }
+]

@@ -1,0 +1,93 @@
+@mixin psn-chips-theme($theme) {
+    $extraColors: map-get($theme, extraColors);
+    $mat-chip-vertical-padding: 8px;
+    $mat-chip-horizontal-padding: 12px;
+    $mat-chips-chip-margin: $mat-chip-horizontal-padding / 4;
+
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $success: map-get($extraColors, success);
+    $secondary: map-get($extraColors, secondary);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    // Fix from material
+    md-chip-list {
+        &:not(.mat-chip-list-stacked) {
+                .md-chip-list-wrapper {
+                    .mat-chip:not(.mat-basic-chip) {
+                        margin: 0 $mat-chips-chip-margin 0 $mat-chips-chip-margin;
+
+                        // Remove the margin from the first element (in both LTR and RTL)
+                        &:first-child {
+                            margin: {
+                            left: 0;
+                            right: $mat-chips-chip-margin;
+                            }
+
+                            [dir='rtl'] & {
+                                margin: {
+                                    left: $mat-chips-chip-margin;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+        &.mat-chip-list-stacked {
+            .md-chip-list-wrapper {
+                display: block;
+
+                .mat-chip:not(.mat-basic-chip) {
+                    display: block;
+                    margin: 0;
+                    margin-bottom: $mat-chip-vertical-padding;
+
+                    [dir='rtl'] & {
+                    margin: 0;
+                    margin-bottom: $mat-chip-vertical-padding;
+                    }
+
+                    &:last-child, [dir='rtl'] &:last-child {
+                    margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // adding our extra colors for chips
+    .mat-chip.mat-chip-selected:not(.mat-basic-chip) {
+        @each $name, $color in $extraColors {      
+            &.mat-#{$name} {
+                background-color: mat-color($color, default);
+            }  
+        } 
+     }
+
+     // chips
+    psn-chips {
+        // chip
+        .mat-basic-chip {
+        background: mat-color($background, status-bar);
+        color: mat-color($foreground, text);
+        &:focus:not(.td-chip-disabled) {
+            background: mat-color($primary);
+            &, md-icon {
+            color: mat-color($primary, default-contrast);
+            md-icon:hover {
+                color: mat-color($foreground, icon);
+            }
+            }
+        }
+        md-icon {
+            color: mat-color($foreground, hint-text);
+            &:hover {
+            color: mat-color($foreground, icon);
+            }
+        }
+        }
+    }  
+}

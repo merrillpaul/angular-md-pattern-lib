@@ -1,0 +1,331 @@
+/** trying to recrreate MD palettes for psn **/
+/** generated from the awesome site from http://mcg.mbitson.com/#!?mcgpalette0=%23007fa3 */
+
+$mat-pearson-blue: (
+    50 : #e0f0f4,
+    100 : #b3d9e3,
+    200 : #80bfd1,
+    300 : #4da5bf,
+    400 : #2692b1,
+    500 : #007fa3,
+    600 : #00779b,
+    700 : #006c91,
+    800 : #006288,
+    900 : #004f77,
+    A100 : #a5dbff,
+    A200 : #72c7ff,
+    A400 : #3fb3ff,
+    A700 : #25a9ff,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $white-87-opacity,
+        500: $white-87-opacity,
+        600: $white-87-opacity,
+        700: $white-87-opacity,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $white-87-opacity,
+        A700: $white-87-opacity,
+    )
+);
+
+$mat-pearson-midnite-blue: (
+    50 : #e0e6eb,
+    100 : #b3c1cd,
+    200 : #8098ab,
+    300 : #4d6e89,
+    400 : #264f70,
+    500 : #003057,
+    600 : #002b4f,
+    700 : #002446,
+    800 : #001e3c,
+    900 : #00132c,
+    A100 : #6595ff,
+    A200 : #3272ff,
+    A400 : #004ffe,
+    A700 : #0047e5,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $white-87-opacity,
+        500: $white-87-opacity,
+        600: $white-87-opacity,
+        700: $white-87-opacity,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $white-87-opacity,
+        A700: $white-87-opacity
+    )
+);
+
+$mat-pearson-sunshine-yellow: (
+    50 : #fff6e4,
+    100 : #ffeabb,
+    200 : #ffdc8e,
+    300 : #ffcd60,
+    400 : #ffc33e,
+    500 : #ffb81c,
+    600 : #ffb119,
+    700 : #ffa814,
+    800 : #ffa011,
+    900 : #ff9109,
+    A100 : $white-87-opacity,
+    A200 : #fffaf5,
+    A400 : #ffe1c2,
+    A700 : #ffd5a8,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: $black-87-opacity,
+        600: $black-87-opacity,
+        700: $black-87-opacity,
+        800: $black-87-opacity,
+        900: $black-87-opacity,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: $black-87-opacity
+    )
+);
+
+$mat-pearson-juicy-orange: (
+    50 : #fcefe0,
+    100 : #f9d6b3,
+    200 : #f5bb80,
+    300 : #f09f4d,
+    400 : #ed8b26,
+    500 : #ea7600,
+    600 : #e76e00,
+    700 : #e46300,
+    800 : #e15900,
+    900 : #db4600,
+    A100 : $white-87-opacity,
+    A200 : #ffdbcf,
+    A400 : #ffb59c,
+    A700 : #ffa283,
+     contrast: (
+        50 : $black-87-opacity,
+        100 : $black-87-opacity,
+        200 : $black-87-opacity,
+        300 : $black-87-opacity,
+        400 : $black-87-opacity,
+        500 : $white-87-opacity,
+        600 : $white-87-opacity,
+        700 : $white-87-opacity,
+        800 : $white-87-opacity,
+        900 : $white-87-opacity,
+        A100 : $black-87-opacity,
+        A200 : $black-87-opacity,
+        A400 : $black-87-opacity,
+        A700 : $black-87-opacity
+    ) 
+);
+
+$mat-pearson-fresh-green: (
+    50 : #f0f7e0,
+    100 : #daebb3,
+    200 : #c2de80,
+    300 : #a9d14d,
+    400 : #96c726,
+    500 : #84bd00,
+    600 : #7cb700,
+    700 : #71ae00,
+    800 : #67a600,
+    900 : #549800,
+    A100 : #e0ffc3,
+    A200 : #c6ff90,
+    A400 : #acff5d,
+    A700 : #9fff44,
+    contrast: (
+        50 : $black-87-opacity,
+        100 : $black-87-opacity,
+        200 : $black-87-opacity,
+        300 : $black-87-opacity,
+        400 : $black-87-opacity,
+        500 : $white-87-opacity,
+        600 : $white-87-opacity,
+        700 : $black-87-opacity,
+        800 : $white-87-opacity,
+        900 : $white-87-opacity,
+        A100 : $black-87-opacity,
+        A200 : $black-87-opacity,
+        A400 : $black-87-opacity,
+        A700 : $black-87-opacity,
+    )
+);
+
+$mat-pearson-strawberry-red: (
+    50 : #fbe0e4,
+    100 : #f4b3bc,
+    200 : #ed8090,
+    300 : #e64d63,
+    400 : #e02641,
+    500 : #db0020,
+    600 : #d7001c,
+    700 : #d20018,
+    800 : #cd0013,
+    900 : #c4000b,
+    A100 : #ffeced,
+    A200 : #ffb9bb,
+    A400 : #ff8689,
+    A700 : #ff6d70,
+    contrast: (
+        50 : $black-87-opacity,
+        100 : $black-87-opacity,
+        200 : $black-87-opacity,
+        300 : $white-87-opacity,
+        400 : $white-87-opacity,
+        500 : $white-87-opacity,
+        600 : $white-87-opacity,
+        700 : $white-87-opacity,
+        800 : $white-87-opacity,
+        900 : $white-87-opacity,
+        A100 : $black-87-opacity,
+        A200 : $black-87-opacity,
+        A400 : $black-87-opacity,
+        A700 : $black-87-opacity,
+    )
+);
+
+$mat-pearson-grey: (
+    50 : #f3f3f3,
+    100 : #e0e0e0,
+    200 : #cccccc,
+    300 : #b8b8b8,
+    400 : #a8a8a8,
+    500 : #999999,
+    600 : #919191,
+    700 : #868686,
+    800 : #7c7c7c,
+    900 : #6b6b6b,
+    A100 : #fdeaea,
+    A200 : #f8bcbc,
+    A400 : #ff8181,
+    A700 : #ff6868,
+    contrast: (
+        50 : $black-87-opacity,
+        100 : $black-87-opacity,
+        200 : $black-87-opacity,
+        300 : $black-87-opacity,
+        400 : $black-87-opacity,
+        500 : $black-87-opacity,
+        600 : $black-87-opacity,
+        700 : $black-87-opacity,
+        800 : $white-87-opacity,
+        900 : $white-87-opacity,
+        A100 : $black-87-opacity,
+        A200 : $black-87-opacity,
+        A400 : $black-87-opacity,
+        A700 : $black-87-opacity,
+    )
+);
+
+$mat-pearson-graphite-grey: (
+    50 : #eaebeb,
+    100 : #cbcdcd,
+    200 : #a8abac,
+    300 : #85898b,
+    400 : #6a7072,
+    500 : #505759,
+    600 : #494f51,
+    700 : #404648,
+    800 : #373c3e,
+    900 : #272c2e,
+    A100 : #82d1f9,
+    A200 : #52c0f7,
+    A400 : #16b1ff,
+    A700 : #00a8fc,
+    contrast: (
+        50 : $black-87-opacity,
+        100 : $black-87-opacity,
+        200 : $black-87-opacity,
+        300 : $white-87-opacity,
+        400 : $white-87-opacity,
+        500 : $white-87-opacity,
+        600 : $white-87-opacity,
+        700 : $white-87-opacity,
+        800 : $white-87-opacity,
+        900 : $white-87-opacity,
+        A100 : $black-87-opacity,
+        A200 : $black-87-opacity,
+        A400 : $black-87-opacity,
+        A700 : $white-87-opacity,
+    )
+);
+
+// Background palette for light themes.
+$mat-pearson-light-theme-background: (
+  status-bar: map_get($mat-pearson-grey, 50),
+  app-bar:    map_get($mat-pearson-midnite-blue, 500),
+  background: map_get($mat-pearson-grey, 50),
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       white,
+  dialog:     white,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: $black-6-opacity,
+  selected-button: map_get($mat-pearson-grey, 300),
+  selected-disabled-button: map_get($mat-pearson-grey, 400),
+  disabled-button-toggle: map_get($mat-pearson-grey, 200),
+);
+
+// Background palette for dark themes.
+$mat-pearson-dark-theme-background: (
+  status-bar: map_get($mat-pearson-midnite-blue, 500),
+  app-bar:    map_get($mat-pearson-graphite-grey, 100),
+  background: map_get($mat-pearson-blue, 500),
+  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card:       map_get($mat-pearson-blue, 500),
+  dialog:     map_get($mat-pearson-blue, 500),
+  disabled-button: rgba(white, 0.12),
+  raised-button: map-get($mat-pearson-graphite-grey, 700),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-pearson-grey, 700),
+  selected-disabled-button: map_get($mat-pearson-grey, 900),
+  disabled-button-toggle: map_get($mat-pearson-grey, 900),
+);
+
+
+
+// Foreground palette for light themes.
+$mat-pearson-light-theme-foreground: (
+  base:            black,
+  divider:         rgba(black, 0.12),
+  dividers:        rgba(black, 0.12),
+  disabled:        rgba(black, 0.38),
+  disabled-button: rgba(black, 0.38),
+  disabled-text:   rgba(black, 0.38),
+  hint-text:       rgba(black, 0.38),
+  secondary-text:  rgba(black, 0.54),
+  icon:            rgba(black, 0.54),
+  icons:           rgba(black, 0.54),
+  text:            rgba(black, 0.87)
+);
+
+// Foreground palette for dark themes.
+$mat-pearson-dark-theme-foreground: (
+  base:            white,
+  divider:         rgba(white, 0.12),
+  dividers:        rgba(white, 0.12),
+  disabled:        rgba(white, 0.3),
+  disabled-button: rgba(white, 0.3),
+  disabled-text:   rgba(white, 0.3),
+  hint-text:       rgba(white, 0.3),
+  secondary-text:  rgba(white, 0.7),
+  icon:            white,
+  icons:           white,
+  text:            white
+);
+

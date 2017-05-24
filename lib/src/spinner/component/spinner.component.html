@@ -1,0 +1,24 @@
+<div class="psn-spinning-ctr" [style.min-height]="getHeight()" 
+[class.overlay]="isOverlay() || isFullScreen()" [class.fullscreen]="isFullScreen()">
+  <div [@fadeInOut]="animation"
+     (@fadeInOut.done)="animationComplete($event)"
+     [style.min-height]="getHeight()"
+     class="spinning"
+     layout="row"
+     layout-align="center center"
+     flex>
+    <md-progress-spinner *ngIf="isCircular()" 
+                        [mode]="mode"
+                        [value]="value" 
+                        [color]="color" 
+                        [style.height]="getCircleDiameter()"
+                        [style.width]="getCircleDiameter()">
+    </md-progress-spinner>
+    <md-progress-bar *ngIf="isLinear()" 
+                     [mode]="mode"
+                     [value]="value"
+                     [color]="color">
+    </md-progress-bar>
+  </div>
+  <ng-template [cdkPortalHost]="content"></ng-template>
+</div>

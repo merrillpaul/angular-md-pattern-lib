@@ -1,0 +1,50 @@
+@mixin psn-list-theme($theme) {
+
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+    md-list md-list-item [md-list-avatar],
+    md-list a[md-list-item] [md-list-avatar],
+    md-nav-list md-list-item [md-list-avatar],
+    md-nav-list a[md-list-item] [md-list-avatar] {
+        min-width: 40px;
+    }  
+
+    md-list-item,
+    .mat-list-item-content {
+            md-icon {
+            color: mat-color($foreground, icon);
+            &[md-list-avatar] {
+                background-color: mat-color($background, hover);
+            }
+        }
+    }
+    .mat-list-text {
+        p {
+            color:  mat-color($foreground, disabled);
+        }
+    }
+
+    md-list-item,
+    .mat-list-item-content {
+        md-icon {
+            &[md-list-avatar] {
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-align-content: center;
+                -ms-flex-line-pack: center;
+                align-content: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
+    .mat-icon.md-icon-logo {
+        height: auto;
+        width: 100px;
+    }
+}

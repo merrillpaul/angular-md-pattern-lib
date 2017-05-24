@@ -1,0 +1,50 @@
+[
+  {
+    "displayName" : "Jane Doe",
+    "id" : "jane.doe",
+    "email" : "jane@pe.com",
+    "created" : "10/01/2015 11:05 AM",
+    "lastAccess" : "12/23/2015 11:05 AM",
+    "siteAdmin": true
+  },
+  {
+    "displayName" : "John Doe",
+    "id" : "bobbyD",
+    "email" : "johny@outlook.com",
+    "created" : "10/01/2015 11:05 AM",
+    "lastAccess" : "12/23/2015 11:05 AM",
+    "siteAdmin": false
+  },
+  {
+    "displayName" : "Axl Rose",
+    "id" : "johnnyWalker",
+    "email" : "johnnyWalker@blue.com",
+    "created" : "10/01/2015 11:05 AM",
+    "lastAccess" : "12/23/2015 11:05 AM",
+    "siteAdmin": false
+  },
+  {
+     "displayName" : "Ozzie Osbourne",
+     "id" : "eStevens",
+     "email" : "eStevens@yahoo.com",
+     "created" : "10/01/2015 11:05 AM",
+     "lastAccess" : "12/23/2015 11:05 AM",
+     "siteAdmin": false
+  },
+  {
+     "displayName" : "Robert Page",
+     "id" : "jDubz",
+     "email" : "jDubz@msn.com",
+     "created" : "10/01/2015 11:05 AM",
+     "lastAccess" : "12/23/2015 11:05 AM",
+     "siteAdmin": false
+  },
+  {
+     "displayName" : "Adele",
+     "id" : "jDubz1",
+     "email" : "jDubz@msn.com",
+     "created" : "10/01/2015 11:05 AM",
+     "lastAccess" : "12/23/2015 11:05 AM",
+     "siteAdmin": false
+  }
+]

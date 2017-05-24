@@ -1,0 +1,33 @@
+@mixin psn_login_theme($theme) {
+
+    psn-login {
+        .mat-card {
+                background: rgba(0, 0, 0, 0.51);
+                color: #fff;
+                .mat-card-subtitle {
+                    color: #fff;
+                }
+                button[disabled] {
+                        background-color: rgba(0, 0, 0, 0.31);
+                        color: #85898b;
+                } 
+                .mat-input-placeholder {
+                    color: transparent;
+                    &.mat-focused {
+                        color: #fff;
+                    }
+                    &.mat-empty {
+                        color: mat-color(map-get($theme, warn), default);
+                    }
+                }
+                .mat-input-underline {
+                    .mat-input-ripple {
+                        &.mat-focused {
+                            background-color: mat-color(map-get($theme, accent), 200);
+                        }
+                    }
+                }
+        }
+    }
+
+}
