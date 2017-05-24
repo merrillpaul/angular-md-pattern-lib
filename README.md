@@ -1,2 +1,2 @@
-# angular-material-ui
-Angular material based theme and components
+# pearson-angular-md-pattern-lib
+Project One pattern libray
