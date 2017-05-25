@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NavLayoutComponent, NavSideMenuDirective } from './nav.component';
 import { NavContentComponent } from './nav-content/nav-content.component';
+import { NavBodyComponent } from './nav-body/nav-body.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { NavManageListComponent } from './nav-manage-list/nav-manage-list.component';
 import { NavFooterComponent } from './footer/nav-footer.component';
@@ -23,12 +24,13 @@ const NAV_COMPS: Type<any>[] = [
   NavToolbarContentComponent,
   NavDrawerComponent,
   NavDrawerMenuDirective,
-  NavSideMenuDirective
+  NavSideMenuDirective,
+  NavBodyComponent
 ];
 
 export { NavLayoutComponent, NavContentComponent, NavListComponent, NavToolbarContentComponent,
           NavManageListComponent,
-          NavFooterComponent, NavDrawerComponent, NavDrawerMenuDirective, NavSideMenuDirective };
+          NavFooterComponent, NavDrawerComponent, NavDrawerMenuDirective, NavSideMenuDirective, NavBodyComponent };
 
 @NgModule({
   imports: [

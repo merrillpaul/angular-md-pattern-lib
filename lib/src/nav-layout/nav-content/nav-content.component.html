@@ -14,9 +14,7 @@
     </span>
     <ng-content select="nav-toolbar-content"></ng-content> 
   </md-toolbar>
-  <div flex layout="column" class="content md-content">
-    <ng-content></ng-content>
-  </div>
+  <ng-content select="nav-body"></ng-content> 
   <div [ngClass]="{'psn-main-nav': root}">
     <ng-content select="nav-footer"></ng-content>
   </div>  

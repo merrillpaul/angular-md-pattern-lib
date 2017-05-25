@@ -1,31 +1,62 @@
 ## nav-manage-list
 
 
- Manage List Layout / Nav Layout combo:
+ Manage List Layout:
 
 ```html
-<nav-content sidenavTitle="title" logo="logo" icon="icon" color="color">
-  <nav-toolbar-content>
-    .. main toolbar content
-  </nav-toolbar-content>
+ <nav-manage-list #kitchenSideNav [opened]="media.query('gt-sm')" [mode]="(media.query('gt-sm')) ? 'side' : 'push'" [sidenavWidth]="(media.query('gt-xs')) ? '250px' : '100%'">
+       <md-nav-list sidenav-content>
+        <ng-template spin="kitchen.side.load">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="items">
+            <a md-list-item [routerLink]="[item.route]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" (click)="!media.query('gt-sm') && kitchenSideNav.close()">
+              <md-icon md-list-avatar>{{item.icon}}</md-icon>
+              <h3 md-line> {{item.title}} </h3>
+              <p md-line> {{item.description}} </p>
+            </a>
+            <md-divider *ngIf="!last" md-inset></md-divider>
+          </ng-template>
+        </ng-template>
+      </md-nav-list>
 
-  <nav-manage-list opened="true" mode="side" sidenavWidth="257px">
-    <md-toolbar sidenav-content>
-      ... toolbar in sidenav
-    </md-toolbar>
-    <md-nav-list sidenav-content>
-      ... sidenav content
-    </md-nav-list>
-    <div toolbar-content>
-      ... sub toolbar content
-    </div>
-    ... main content
-    <nav-footer-inner>
-      ... sub footer content
-    </nav-footer-inner>
-  </nav-manage-list>
-  <nav-footer>
-    ... main footer content
-  </nav-footer>
-</nav-content>
+      <nav-body>
+       <router-outlet></router-outlet>
+      </nav-body>       
+
+</nav-manage-list>
+```
+
+With Side toolbar
+```html
+<nav-manage-list #kitchenSideNav [opened]="media.query('gt-sm')" [mode]="(media.query('gt-sm')) ? 'side' : 'push'" [sidenavWidth]="(media.query('gt-xs')) ? '250px' : '100%'">
+      <nav-toolbar-content>
+          <button (click)="kitchenSideNav.toggle()" md-icon-button><md-icon class="md-24">menu</md-icon></button>
+          <span fxFlex></span>
+          <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
+          <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
+          <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
+          <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+      </nav-toolbar-content>
+
+      <md-nav-list sidenav-content>
+        <ng-template spin="kitchen.side.load">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="items">
+            <a md-list-item [routerLink]="[item.route]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" (click)="!media.query('gt-sm') && kitchenSideNav.close()">
+              <md-icon md-list-avatar>{{item.icon}}</md-icon>
+              <h3 md-line> {{item.title}} </h3>
+              <p md-line> {{item.description}} </p>
+            </a>
+            <md-divider *ngIf="!last" md-inset></md-divider>
+          </ng-template>
+        </ng-template>
+      </md-nav-list>
+
+      <nav-body>
+        <router-outlet></router-outlet>
+      </nav-body>
+
+    </nav-manage-list>
+```
+
+With nav-layout combo
+```html
 ```
