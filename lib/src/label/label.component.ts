@@ -21,11 +21,11 @@ export class LabelComponent {
     private _color: string = 'primary';
 
     /**
-  * color?: primary | accent | warn
-  *
-  * Sets the color of the message.
-  * Can also use any material color: purple | light-blue, etc.
-  */
+     * color?: primary | accent | warn
+     *
+     * Sets the color of the message.
+     * Can also use any material color: purple | light-blue, etc.
+     */
     @Input('color')
     set color(color: string) {        
         this._color = color;

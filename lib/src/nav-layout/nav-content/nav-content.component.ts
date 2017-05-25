@@ -1,18 +1,18 @@
-import { Component, Input, forwardRef, Optional, Inject } from '@angular/core';
+import { Component, Input, forwardRef, Optional, Inject, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavLayoutComponent } from '../nav.component';
 
 @Component({
   selector: 'nav-content',
-  styleUrls: ['./nav-content.component.scss' ],
+  styleUrls: ['./nav-content.component.scss'],
   templateUrl: './nav-content.component.html',
 })
 export class NavContentComponent {
 
   @Input('hideMenu') hideMenu: boolean = false;
 
-  @Input() root: boolean = false;
-  
+  private _root: boolean = false;
+
   /**
    * toolbarTitle?: string
    *
@@ -75,8 +75,9 @@ export class NavContentComponent {
     return !!this._router && !!this.navigationRoute;
   }
 
-  constructor(@Optional() @Inject(forwardRef(() => NavLayoutComponent)) private _layout: NavLayoutComponent,
-              @Optional() private _router: Router) {}
+  constructor( @Optional() @Inject(forwardRef(() => NavLayoutComponent)) private _layout: NavLayoutComponent,
+    private _changeDetectorRef: ChangeDetectorRef,
+    @Optional() private _router: Router) { }
 
   handleNavigationClick(): void {
     if (this.routerEnabled) {
@@ -89,5 +90,18 @@ export class NavContentComponent {
    */
   openMainSidenav(): void {
     this._layout.open();
+  }
+
+  @Input('root')
+  set root(root: boolean) {
+    this._root = root;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  get root(): boolean {
+    if (this._layout) {
+      return this._layout.isRootLayout();
+    }
+    return this._root;
   }
 }

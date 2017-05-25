@@ -1,6 +1,7 @@
 ## Usage
 ```html
- <nav-layout #layout>
+<!-- only the main layout should have the root as true. Default is false -->
+ <nav-layout #layout [root]="true">
     <!-- drawer  not mandatory-->
     <nav-drawer *ngIf="currentUser?.loggedIn"  class="mainDrawer" logo="assets:logo-mark" sidenavTitle="Pattern Lib" name="{{ currentUser?.firstName }} {{ currentUser?.lastName }}" email="{{ currentUser?.email }}">
       <md-nav-list >
@@ -18,7 +19,7 @@
     <!-- here is where our layout with header and footer, nav bar is -->
     <!-- todo hide all this if not logged in -->
 
-    <nav-content [root]="true" [hideMenu]="!currentUser?.loggedIn">
+    <nav-content  [hideMenu]="!currentUser?.loggedIn">
 
       <!-- header toolbar -->
       <nav-toolbar-content>

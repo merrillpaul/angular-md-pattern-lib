@@ -13,25 +13,34 @@ export class NavSideMenuDirective {
 
 @Component({
   selector: 'nav-layout',
-  styleUrls: ['./nav.component.scss' ],
+  styleUrls: ['./nav.component.scss'],
   templateUrl: './nav.component.html',
 })
-export class NavLayoutComponent {
+export class NavLayoutComponent {   
 
   @ViewChild(MdSidenav) sidenav: MdSidenav;
 
-  
   public toggle(): Promise<MdSidenavToggleResult> {
     return this.sidenav.toggle();
   }
 
-  
+
   public open(): Promise<MdSidenavToggleResult> {
     return this.sidenav.open();
   }
-  
+
   public close(): Promise<MdSidenavToggleResult> {
     return this.sidenav.close();
-  } 
+  }
 
+  /**
+   * root?: true | false
+   *   
+   */
+  @Input('root') root: boolean;
+ 
+  public isRootLayout(): boolean {
+    return this.root;
+  }
+  
 }
