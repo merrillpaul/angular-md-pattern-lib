@@ -3,8 +3,9 @@
       <md-divider></md-divider>
       <md-card-content class="push-bottom-none">
         <form #userForm="ngForm">
-          <div layout="row">
-            <md-input-container flex> 
+          <div fxLayout="column">
+            <span> User Name: </span>
+            <md-input-container fxFlex> 
               <input mdInput
                       #displayNameElement
                       #displayNameControl="ngModel"
@@ -22,8 +23,10 @@
               <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
             </md-input-container>
           </div>
-          <div layout="row" class="push-top">
-            <md-input-container flex> 
+
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+            <span> Email: </span>
+            <md-input-container fxFlex> 
               <input mdInput
                       #emailElement
                       #emailControl="ngModel"
@@ -43,7 +46,7 @@
               <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
             </md-input-container>
           </div>
-          <div layout="row">
+          <div fxLayout="row">
             <md-slide-toggle [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
           </div>
         </form>
