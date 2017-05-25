@@ -31,6 +31,7 @@
 @import './components/select';
 @import './components/file';
 @import './components/label';
+@import './components/menu';
 
 @import './pages/login';
 
@@ -88,7 +89,8 @@
     @include psn-file-theme($theme);
     @include psn_login_theme($theme);
     @include psn-dialog-theme($theme);
-    @include psn-label-theme($theme);    
+    @include psn-label-theme($theme);   
+    @include psn-menu-theme($theme); 
 }
 
  

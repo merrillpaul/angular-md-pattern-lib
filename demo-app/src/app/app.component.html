@@ -1,7 +1,7 @@
 <div ngClass="{{theme}} {{currentPage}}">
   <nav-layout #layout [root]="true">
 
-    <nav-drawer *ngIf="currentUser?.loggedIn"  class="mainDrawer" logo="assets:logo-mark" sidenavTitle="Pattern Lib" name="{{ currentUser?.firstName }} {{ currentUser?.lastName }}" email="{{ currentUser?.email }}">
+    <nav-drawer logo="assets:logo-mark" sidenavTitle="Pattern Lib" name="{{ currentUser?.firstName }} {{ currentUser?.lastName }}" email="{{ currentUser?.email }}">
       <md-nav-list >
         <ng-template let-item let-last="last" ngFor [ngForOf]="routes">
           <a md-list-item [routerLink]="[item.route]" (click)="layout.close()">
@@ -17,7 +17,7 @@
     <!-- here is where our layout with header and footer, nav bar is -->
     <!-- todo hide all this if not logged in -->
 
-    <nav-content  [hideMenu]="!currentUser?.loggedIn">
+    <nav-content  [hideMenu]="false">
 
       <!-- header toolbar -->
       <nav-toolbar-content>

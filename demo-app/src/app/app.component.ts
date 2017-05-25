@@ -35,7 +35,7 @@ export class AppComponent implements AfterViewInit {
     title: 'Example Logs',
     route: '/logs',
     icon: 'receipt',
-  },{
+  },/*{
     title: 'Dashboard',
     route: '/dashboard',
     icon: 'dashboard',
@@ -43,7 +43,7 @@ export class AppComponent implements AfterViewInit {
     title: 'Global Library',
     route: '/product',
     icon: 'view_quilt',
-  }, {
+  }, */{
     title: 'Manage Users',
     route: '/users',
     icon: 'people',
