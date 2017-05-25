@@ -1,5 +1,36 @@
 @mixin psn-input-theme($theme) {
-    .mat-input-placeholder-wrapper {
-        font-size: 16px;
+    .mat-input-container {
+        font-family: $mat-font-family;
+    
+        .mat-input-infix {
+            .mat-input-element {
+                border: 1px solid rgba(0, 0, 0, 0.27);
+                border-radius: 2px;
+                height: 2rem;
+            }
+            .mat-input-placeholder-wrapper {
+                font-size: $list-font-size;
+                top: -0.4em;
+                left: 5px;
+            }
+            input {
+                padding-left: 5px;
+            }
+        }
+         .mat-input-placeholder {
+            &.mat-float:not(.mat-empty) {
+                display: none;
+            }
+         }
+        &.mat-focused {
+            .mat-input-placeholder-wrapper {
+                .mat-input-placeholder {
+                    transform: translate3d(0,-1.35em,0) scale(.001);                
+                }
+            }
+        }
+        .mat-input-underline {
+            display: none;
+        }
     }
 }
