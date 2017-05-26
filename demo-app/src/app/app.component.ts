@@ -4,7 +4,7 @@ import { MdIconRegistry } from '@angular/material';
 import { OverlayContainer } from '@angular/material';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { SpinnerService, ToastService } from '@pearson/angular-material';
+import { SpinnerService, ToastService, MediaQueryService } from '@pearson/angular-material';
 
 import { SecurityService, UserDetails } from './core/services';
 
@@ -55,6 +55,7 @@ export class AppComponent implements AfterViewInit {
     private _domSanitizer: DomSanitizer,
     private overlayContainer: OverlayContainer,
     private spinnerService: SpinnerService,
+    public media: MediaQueryService,
     private _vcr: ViewContainerRef,
     private _toastService: ToastService,
     public security: SecurityService,

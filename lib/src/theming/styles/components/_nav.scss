@@ -35,17 +35,14 @@
          flex: 1 1 100%;
         -webkit-box-flex: 1;
     }    
+
+    // default
     .nav-footer {
-        font-size: smaller;
-        @include mat-elevation(2);
-        padding: 6px 12px;
-        @each $name, $color in $colors {
-            &.mat-#{$name} {
-                background-color: mat-color($color);
-                color: mat-color($color, default-contrast);
-            }  
-        }
+            background-color: mat-color($primary);
+             color: mat-color($background, card);
+             
     }
+
     .psn-main-nav {
         .nav-footer {
              background: mat-color($background, app-bar);
@@ -58,6 +55,19 @@
         }
         
     }
+
+    .nav-footer {
+        font-size: smaller;
+        @include mat-elevation(2);
+        padding: 6px 12px;
+        @each $name, $color in $colors {
+            &.mat-#{$name} {
+                background-color: mat-color($color);
+                color: mat-color($color, default-contrast);
+            }  
+        }
+    }
+    
 
     nav-drawer {
         .mat-toolbar {
