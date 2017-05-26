@@ -1,4 +1,5 @@
-<div fxLayout="row" fxLayoutAlign="end center" class="md-caption psn-paginate">  
+<div fxLayout.xs="column" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px" class="md-caption psn-paginate">  
+
   <ng-content *ngIf="showQuickPage" select="[paginate-label]"></ng-content>
   <md-select *ngIf="showQuickPage" [(ngModel)]="pageSize" [color]="_color" >    
     <ng-template let-size ngFor [ngForOf]="pageSizes">
@@ -8,9 +9,11 @@
     </ng-template>
     <md-option *ngIf="showAllOption" [value]="total">{{allOptionLabel}}</md-option>
   </md-select>
+
   <div>
     <ng-content></ng-content>
   </div>
+
   <div class="psn-paginate-nav">
     <button [id]="'psn-paginate-nav-' + id + '-first-page'" md-icon-button type="button" *ngIf="firstLast" [disabled]="isMinPage()" (click)="firstPage()">     
       <i [ngClass]="{'fa-step-forward': isRTL, 'fa-step-backward': !isRTL}" class="fa " aria-hidden="true"></i>      
@@ -31,4 +34,5 @@
        <i [ngClass]="{'fa-step-backward': isRTL, 'fa-step-forward': !isRTL}" class="fa " aria-hidden="true"></i>  
     </button>
   </div>
+
 </div>

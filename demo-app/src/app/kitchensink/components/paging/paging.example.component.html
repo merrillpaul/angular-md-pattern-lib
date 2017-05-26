@@ -8,10 +8,10 @@
               Right Side
             </md-card-title>
             <md-card-content>
-              <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" style="min-height: 100px">
+              <div fxLayout.xs="column" fxLayout="row" fxLayoutAlign.xs="start" fxLayoutAlign="start center" fxLayoutGap="20px" style="min-height: 100px">
                   <span> test </span>
                   <span fxFlex>
-                      <psn-paginate   #paginator  [showQuickPage]="true" pageLinkCount="3"
+                      <psn-paginate   #paginator  [showQuickPage]="true" [pageLinkCount]="media.query('xs') ? 2: 3"
                         allOptionLabel="Alle" [arrows]="true" [prevLabel]="prev" [nextLabel]="next" [firstLast]="firstLast" [showAllOption]="true" [pageSizes]="[100,200,500,1000,2000]"
                        [initialPage]="1" [pageSize]="100" [total]="1345" (change)="paginate($event)">
                             <span paginate-label>Filter:</span> Showing {{paginator.range}} <span>of {{paginator.total}} entries</span>

@@ -4,7 +4,7 @@
     
         .mat-input-infix {
             .mat-input-element {
-                border: 1px solid rgba(0, 0, 0, 0.27);
+                border: 1px solid rgba(0, 0, 0, 0.22);
                 border-radius: 2px;
                 height: 2rem;
             }
@@ -27,6 +27,9 @@
                 .mat-input-placeholder {
                     transform: translate3d(0,-1.35em,0) scale(.001);                
                 }
+            }
+            input, textarea {
+                border-color: #3497ff !important;
             }
         }
         .mat-input-underline {

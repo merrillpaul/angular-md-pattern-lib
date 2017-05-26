@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { PageChangeEvent } from '@pearson/angular-material';
+import { PageChangeEvent, MediaQueryService } from '@pearson/angular-material';
 @Component({
     selector: 'paging-example',
     templateUrl: './paging.example.component.html'
@@ -10,6 +10,8 @@ export class PagingBarExampleComponent {
     ////// Paginates
   paginateEvent: PageChangeEvent;
   firstLast: boolean = false;
+
+  constructor(public media: MediaQueryService) {}
 
 
   paginate(event: PageChangeEvent): void {

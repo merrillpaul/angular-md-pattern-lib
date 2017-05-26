@@ -1,5 +1,6 @@
 # @pearson/angular-material
 - Heavily uses angular flex laout - (https://github.com/angular/flex-layout)
+
 ## Installation
 
 To install this library, run:

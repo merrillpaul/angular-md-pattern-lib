@@ -31,7 +31,9 @@
         }
     }
     .nav-content  > :last-child {
-     height: 100%; 
+        // this is the one that makes the nav-body content to span the en tire available height !important
+         flex: 1 1 100%;
+        -webkit-box-flex: 1;
     }    
     .nav-footer {
         font-size: smaller;
