@@ -17,7 +17,7 @@
     <!-- here is where our layout with header and footer, nav bar is -->
     <!-- todo hide all this if not logged in -->
 
-    <nav-content  [hideMenu]="false">
+    <nav-content  [hideMenu]="!currentUser?.loggedIn">
 
       <!-- header toolbar -->
       <nav-toolbar-content>
@@ -84,21 +84,20 @@
       </nav-toolbar-content>
       <!-- toolbar ends -->
      
-        <nav-body class="content">
-           <nav-footer fxFlexOrder="3" fxHide fxShow="false"  fxShow.xs color="accent"  >        
-            <span class="md-caption"> Footer only for XS</span>
+        <nav-body class="content">          
+           <router-outlet></router-outlet>    
+           <nav-footer color="accent"  fxHide fxShow.xs  >        
+            <span class="md-caption"> Footer  for XS</span>
             <span fxFlex></span>
             <md-icon>wifi</md-icon>         
-          </nav-footer>
-           <router-outlet></router-outlet>           
+          </nav-footer>               
         </nav-body>
 
       <!-- footer -->
-      <nav-footer fxShow="true" fxHide.xs="true" fxHide="false">        
+      <nav-footer fxShow fxHide.xs >        
           <span class="md-caption"> Footer unlocks for XS</span>
           <span fxFlex></span>
-          <md-icon>wifi</md-icon> 
-        
+          <md-icon>wifi</md-icon>         
       </nav-footer>
 
     </nav-content>
