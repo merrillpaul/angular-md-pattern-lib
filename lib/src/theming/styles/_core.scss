@@ -32,6 +32,7 @@
 @import './components/file';
 @import './components/label';
 @import './components/menu';
+@import './components/data-grid';
 
 @import './pages/login';
 
@@ -91,6 +92,7 @@
     @include psn-dialog-theme($theme);
     @include psn-label-theme($theme);   
     @include psn-menu-theme($theme); 
+    @include psn-data-grid-theme($theme);
 }
 
  

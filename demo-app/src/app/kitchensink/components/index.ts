@@ -7,3 +7,4 @@ export * from './loading/loading.example.component';
 export * from './paging/paging.example.component';
 export * from './notifications/notifications.component';
 export * from './charts/charts.component';
+export * from './datagrids/data-grids.example.component';

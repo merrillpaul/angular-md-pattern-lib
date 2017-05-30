@@ -11,7 +11,8 @@ import {
     LoadingExampleComponent,
     PagingBarExampleComponent,
     NotificationsExampleComponent,
-    ChartsExampleComponent
+    ChartsExampleComponent,
+    DataGridsExampleComponent
 } from './components';
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
       { path: 'loading', component: LoadingExampleComponent },
       { path: 'paging', component: PagingBarExampleComponent },
       { path: 'notifications', component: NotificationsExampleComponent },
-      { path: 'charts', component: ChartsExampleComponent }
+      { path: 'charts', component: ChartsExampleComponent },
+      { path: 'datagrids', component: DataGridsExampleComponent }
     ]    
   },
   {

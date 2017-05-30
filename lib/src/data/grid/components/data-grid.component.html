@@ -1,0 +1,65 @@
+<div class="mat-table-container" title>
+  <table psn-table-body
+         [class.mat-selectable]="isSelectable"
+         [class.mat-clickable]="isClickable">
+    <th psn-data-column class="mat-checkbox-column" *ngIf="isSelectable">
+      <md-checkbox
+        #checkBoxAll
+        color="primary"
+        *ngIf="isMultiple"
+        [disabled]="!hasData"
+        [indeterminate]="indeterminate && !allSelected && hasData"
+        [checked]="allSelected && hasData"
+        (click)="selectAll(!checkBoxAll.checked)"
+        (keyup.enter)="selectAll(!checkBoxAll.checked)"
+        (keyup.space)="selectAll(!checkBoxAll.checked)"
+        (keydown.space)="blockEvent($event)">
+      </md-checkbox>
+    </th>
+    <th psn-data-column
+        *ngFor="let column of columns"
+        [name]="column.name"
+        [columnInfo]="column"
+        [active]="(column.sortable || isSortable) && column === sortByColumn"
+        [sortable]="column.sortable ||  isSortable"
+        [sortOrder]="sortOrderEnum"
+        [hidden]="column.hidden"
+        (sortChange)="handleSort(column)">
+        <span [mdTooltip]="column.tooltip">{{column.label}}</span>
+    </th>
+    <tr psn-data-row
+        [tabIndex]="isSelectable ? 0 : -1"
+        [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
+        *ngFor="let row of data; let rowIndex = index"
+        (click)="handleRowClick(row, $event, rowIndex)"
+        (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
+        (keydown.space)="blockEvent($event)"
+        (keydown.shift.space)="blockEvent($event)"
+        (keydown.shift)="disableTextSelection()"
+        (keyup.shift)="enableTextSelection()">
+      <td psn-data-cell class="mat-checkbox-cell" *ngIf="isSelectable">
+        <md-pseudo-checkbox
+          color="primary"
+          [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
+          (mousedown)="disableTextSelection()"
+          (mouseup)="enableTextSelection()"
+          (click)="stopPropagation($event); select(row, $event, rowIndex);">
+        </md-pseudo-checkbox>
+      </td>
+      <td psn-data-cell
+          [hidden]="column.hidden"
+          *ngFor="let column of columns"
+          [columnInfo]="column"
+          [row]="row"
+          [rowIndex]="rowIndex"                    
+          >
+        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
+        <ng-template
+          *ngIf="getTemplateRef(column.name)"
+          [ngTemplateOutlet]="getTemplateRef(column.name)"
+          [ngOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
+        </ng-template>
+      </td>
+    </tr>
+  </table>
+</div>

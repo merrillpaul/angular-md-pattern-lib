@@ -1,0 +1,64 @@
+<md-card>
+  <md-card-title>Data Grids</md-card-title>  
+  <md-card-content>
+  
+   <psn-data-grid
+          #dataTable
+          [data]="data"
+          [columns]="columns"
+          [selectable]="true"
+          [clickable]="true"
+          [multiple]="true"   
+          [(ngModel)]="selectedRows" 
+          (sortChange)="sort($event)" 
+          (rowClick)="handleRowClick($event)"              
+          >
+        </psn-data-grid>
+    <div class="md-padding" *ngIf="!dataTable.hasData" fxLayout="row" fxLayoutAlign="center center">
+        <h3>No results to display.</h3>
+    </div>
+     <psn-paginate
+        #paginator  [showQuickPage]="true" [pageLinkCount]="3"
+                        allOptionLabel="Alle" [arrows]="true" [prevLabel]="prev" [nextLabel]="next" [firstLast]="firstLast" [showAllOption]="true" [pageSizes]="[100,200,500,1000,2000]"
+                       [initialPage]="1" [pageSize]="100" [total]="1345" (change)="paginate($event)">
+                            <span paginate-label>Filter:</span> Showing {{paginator.range}}  <span >of {{paginator.total}} entries</span>
+                  </psn-paginate>
+  </md-card-content>
+  <md-card-actions>
+    Selections:
+    <p>
+    <span *ngIf="selectedRows.length" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
+    </p>
+    <p> Row Click Event: </p>
+    <p>{{rowClickEvent}}</p>
+  </md-card-actions>
+  <md-divider></md-divider>
+  <md-card-content>
+   
+      <p>Sort Column: {{sortBy}}</p>
+      <p>Sort Direction: {{sortOrder}}</p>
+      <ul>
+                  <li>
+                      Page: {{paginateEvent?.page}}
+                  </li>
+                   <li>
+                      Max Page: {{paginateEvent?.maxPage}}
+                  </li>
+                   <li>
+                      PageSize: {{paginateEvent?.pageSize}}
+                  </li>
+                   <li>
+                      Total: {{paginateEvent?.total}}
+                  </li>
+                   <li>
+                      from: {{paginateEvent?.fromRow}}
+                  </li>
+                   <li>
+                      to: {{paginateEvent?.toRow}}
+                  </li>
+                </ul>
+  </md-card-content>
+
+
+
+</md-card>

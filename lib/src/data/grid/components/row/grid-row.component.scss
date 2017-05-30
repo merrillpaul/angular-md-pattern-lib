@@ -1,0 +1,14 @@
+:host {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+tbody > :host {
+  height: 48px;
+}
+
+thead > :host {
+  height: 56px;
+}

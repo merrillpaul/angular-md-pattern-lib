@@ -13,14 +13,7 @@
           "color": "deep-purple-700",
           "route": "library",
           "title": "Components"
-     },
-     {
-          "description": "Sand box",
-          "icon": "view_list",
-          "color": "blue-700",
-          "route": "playground",
-          "title": "Playground"
-     },
+     },    
      {
           "description": "Quick way to use alert, confirm and prompt dialogs",
           "icon": "open_in_browser",
@@ -34,6 +27,13 @@
           "route": "paging",
           "color": "red-700",
           "title": "Paging"
+     },
+      {
+          "description": "Data Grids",
+          "icon": "view_list",
+          "color": "blue-700",
+          "route": "datagrids",
+          "title": "Data Grids"
      },
      {
           "description": "Expand & collapse containers",

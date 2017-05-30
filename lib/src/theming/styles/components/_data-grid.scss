@@ -1,0 +1,86 @@
+@mixin psn-data-grid-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $extraColors: map-get($theme, extraColors);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $colors: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      success: map-get($extraColors, success),
+      secondary: map-get($extraColors, secondary)
+  );
+  
+  table[psn-table-body] {
+
+    
+
+    tbody {
+      .psn-data-row {      
+        //border-bottom-color: mat-color($foreground, divider);
+        &:nth-child(odd) {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
+
+    .mat-checkbox-cell,
+    .mat-checkbox-column {
+      color: mat-color($foreground, secondary-text);
+      md-pseudo-checkbox.mat-pseudo-checkbox-checked {
+        color: mat-color($primary, 500);
+      }
+    }
+    .psn-data-cell {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.010em;
+      line-height: 20px;
+      md-input-container {
+        .mat-input-underline {
+          display: none;
+        }
+      }
+    }
+    .psn-data-column {
+      font-size: 12px;
+      color: mat-color($foreground, base);
+      * {
+        vertical-align: middle;
+      }
+      md-icon {
+        &.psn-data-sort-icon {
+          color: mat-color($foreground, disabled);
+        }
+      }
+      &.mat-active,
+      &.mat-active md-icon {
+        color: mat-color($foreground, base);
+      }
+    }
+    &.mat-selectable tbody > tr.psn-data-row {
+      &:not([disabled]):not(.mat-selected):focus {
+        background-color: mat-color($background, 'hover');
+      }
+      &.mat-selected {
+        background-color: mat-color($primary, 0.12);
+      }
+    }
+    &.mat-clickable tbody > tr.psn-data-row {
+      &:not([disabled]){
+        &:hover {
+          //background-color: mat-color($background, 'hover');
+        }
+        &:active {
+          background-color: mat-color($primary, 0.12);
+        }
+      }
+    }
+  }
+  .mat-selected-title {
+    background-color: mat-color($primary, 0.12);
+    color: mat-color($primary);
+  }
+}
