@@ -550,7 +550,7 @@
     <form>
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <input mdInput placeholder="Company (disabled)" disabled value="Google">
+          <input mdInput placeholder="Company (disabled)" disabled value="Pearson">
         </md-input-container>
       </div>
       <div layout="row" layout-margin>
@@ -558,13 +558,13 @@
           <input mdInput placeholder="First name">
         </md-input-container>
         <md-input-container flex>
-          <input mdInput placeholder="Long Last Name That Will Be Truncated">
+          <input mdInput placeholder=" Will Be Truncated">
         </md-input-container>
       </div>
 
       <div layout="row" layout-margin>
         <md-input-container flex>
-          <textarea mdInput placeholder="Address" value="1600 Amphitheatre Pkway"></textarea>
+          <textarea mdInput placeholder="Address" value="1604 and Bulverde"></textarea>
         </md-input-container>
       </div>
       <div layout="row" layout-margin>
@@ -581,7 +581,7 @@
           <input mdInput placeholder="State">
         </md-input-container>
         <md-input-container flex>
-          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="78259">
           <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
         </md-input-container>
       </div>
@@ -589,6 +589,41 @@
   </md-card-content>
 
 </md-card>
+
+<md-card>
+  <md-card-title>Inputs with Icons</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+    <form>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <md-input-container fxFlex>
+          <input mdInput placeholder="Company (disabled)" disabled value="Pearson">
+          <md-icon class="input-icon" disabled>search</md-icon>
+        </md-input-container>
+      </div>
+      <div fxLayout="row" fxLayoutGap="1rem">
+        <md-input-container fxFlex>
+          <input mdInput placeholder="First name">
+          <md-icon class="input-icon">search</md-icon>
+        </md-input-container>
+        <md-input-container fxFlex>
+          <input mdInput placeholder="Will Be Truncated">
+          <md-icon class="input-icon">help</md-icon>
+        </md-input-container>
+      </div>     
+
+      <div fxLayout="row">
+        <md-input-container fxFlex="40">
+          <input mdInput placeholder="With FontAwesome">
+          <i class="input-icon fa fa-superpowers" aria-hidden="true"></i>
+        </md-input-container>       
+      </div>     
+    
+    </form>
+  </md-card-content>
+
+</md-card>
+
 <md-card>
   <md-card-title>Lists</md-card-title>
   <md-divider></md-divider>

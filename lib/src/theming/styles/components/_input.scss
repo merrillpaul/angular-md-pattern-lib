@@ -35,5 +35,20 @@
         .mat-input-underline {
             display: none;
         }
+
+         .mat-input-wrapper {
+            .mat-input-infix {
+                .input-icon {
+                    position: absolute;
+                    top: 5px;
+                    right: 0;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .input-icon[disabled] {
+                color: rgba(0, 0, 0, 0.38);
+        }
     }
 }
