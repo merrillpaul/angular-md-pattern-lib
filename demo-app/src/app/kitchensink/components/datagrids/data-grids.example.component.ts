@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { GridColumnMetadata, EditorType, GridColumnSortChangeEvent, SortOrder, PageChangeEvent, GridRowClickEvent } from '@pearson/angular-material';
+import { GridColumnMetadata, EditorType, GridColumnSortChangeEvent, SortOrder, PageChangeEvent, GridRowClickEvent, GridCellClickEvent } from '@pearson/angular-material';
 
 const DATE_FORMAT: (v: any) => any = (v: number) => {
     return new Date(v);
@@ -76,6 +76,62 @@ export class DataGridsExampleComponent implements OnInit {
             name: 'WISC-V',
             guid: "W2020202020",
             createdDate: Date.now(),
+            price: 22.55,
+            category: "WI"
+        },
+         {
+            id: '3',
+            name: 'WMS4',
+            guid: "eddd",
+            createdDate: Date.now(),
+            price: 11.589,
+            category: "WI"
+        },
+         {
+            id: '4',
+            name: 'PPVT4',
+            guid: "PP0000",
+            createdDate: Date.now(),
+            price: 0,
+            category: "WI"
+        },
+         {
+            id: '5',
+            name: 'PPVT-V',
+            guid: "PP55555",
+            createdDate: Date.now(),
+            price: 0,
+            category: "WI"
+        },
+         {
+            id: '6',
+            name: 'KTEA A',
+            guid: "KA00001",
+            createdDate: Date.now(),
+            price: 11,
+            category: "WI"
+        },
+         {
+            id: '7',
+            name: 'KTEA B',
+            guid: "W2020202020",
+            createdDate: Date.now(),
+            price: 45,
+            category: "WI"
+        },
+         {
+            id: '8',
+            name: 'LTE',
+            guid: "W2020202020",
+            createdDate: Date.now(),
+            price: 125,
+            category: "WI"
+        },
+         {
+            id: '9',
+            name: 'GFTA',
+            guid: "W2020202020",
+            createdDate: Date.now(),
             price: 125,
             category: "WI"
         }
@@ -98,6 +154,11 @@ export class DataGridsExampleComponent implements OnInit {
     rowClickEvent: string;
     handleRowClick(event: GridRowClickEvent) : void {
         this.rowClickEvent = JSON.stringify(event, null, 5);
+    }
+
+    cellClickEvent: string;
+    handleCellClick(event: GridCellClickEvent): void {
+        this.cellClickEvent = JSON.stringify(event, null, 5);
     }
 
 }

@@ -233,8 +233,9 @@ export class DataGridComponent implements ControlValueAccessor {
 
     @Output('rowClick') onRowClick: EventEmitter<GridRowClickEvent> = new EventEmitter<GridRowClickEvent>();
 
-    @Output('selectAll') onSelectAll: EventEmitter<GridSelectAllEvent> =
-    new EventEmitter<GridSelectAllEvent>();
+    @Output('selectAll') onSelectAll: EventEmitter<GridSelectAllEvent> = new EventEmitter<GridSelectAllEvent>();
+
+    @Output('cellClick') onCellClick: EventEmitter<GridCellClickEvent> = new EventEmitter<GridCellClickEvent>();
 
     constructor( @Optional() @Inject(DOCUMENT) private _document: any,
         private _changeDetectorRef: ChangeDetectorRef) { }    
@@ -274,6 +275,10 @@ export class DataGridComponent implements ControlValueAccessor {
             }).length > 0 : false;
         }
         return this._value ? this._value.indexOf(row) > -1 : false;
+    }
+
+    handleCellClick(event: GridCellClickEvent) {
+        this.onCellClick.emit(event);
     }
 
     select(row: any, event: Event, currentSelected: number): void {

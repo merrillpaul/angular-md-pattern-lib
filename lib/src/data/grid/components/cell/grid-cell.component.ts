@@ -1,9 +1,10 @@
 import {
-    Component, Renderer2, ElementRef, Input,
-    ContentChildren, TemplateRef, QueryList, AfterContentInit
+    Component, Renderer2, ElementRef, Input, Output,
+    ContentChildren, TemplateRef, QueryList, AfterContentInit, EventEmitter
 } from '@angular/core';
 
 import { GridColumnMetadata } from '../../common/types/grid.column.metadata';
+import { GridCellClickEvent } from '../../common/events/grid.cell.click.event';
 import { EditorType } from '../../common/enums/editor.type.enum';
 import { GridEditorType } from '../../common/types/grid.editor';
 import { ListItems } from '../../common/types/grid.list.items';
@@ -29,6 +30,8 @@ export class GridCellComponent implements AfterContentInit {
     @Input('row') row: any;
 
     @Input('rowIndex') rowIndex: number;
+
+    @Output('cellClick') onCellClick: EventEmitter<GridCellClickEvent> = new EventEmitter<GridCellClickEvent>();
 
     private _dataCell: boolean = true;
 
@@ -71,6 +74,12 @@ export class GridCellComponent implements AfterContentInit {
             this._editing = true;
             console.log('Cell Clicked', this.rowIndex, this.row, this.row[this.column.name], this._editing);
         }
+        this.onCellClick.emit({
+            row: this.row,
+            rowIndex: this.rowIndex,
+            column: this.column,
+            data: this.row[this.column.name]
+        });
     }
 
     getTemplateRef(name: string): TemplateRef<any> {

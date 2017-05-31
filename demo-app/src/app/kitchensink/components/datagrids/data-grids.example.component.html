@@ -11,7 +11,8 @@
           [multiple]="true"   
           [(ngModel)]="selectedRows" 
           (sortChange)="sort($event)" 
-          (rowClick)="handleRowClick($event)"              
+          (rowClick)="handleRowClick($event)"  
+          (cellClick)="handleCellClick($event)"            
           >
         </psn-data-grid>
     <div class="md-padding" *ngIf="!dataTable.hasData" fxLayout="row" fxLayoutAlign="center center">
@@ -30,7 +31,13 @@
     <span *ngIf="selectedRows.length" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
     </p>
     <p> Row Click Event: </p>
-    <p>{{rowClickEvent}}</p>
+    <p>
+     {{rowClickEvent}}
+    </p>
+    <p> Cell Click Event: </p>
+    <p>
+      {{cellClickEvent}}
+    </p>
   </md-card-actions>
   <md-divider></md-divider>
   <md-card-content>
