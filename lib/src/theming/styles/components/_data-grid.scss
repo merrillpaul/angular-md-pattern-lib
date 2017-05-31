@@ -62,7 +62,7 @@
     }
     &.mat-selectable tbody > tr.psn-data-row {
       &:not([disabled]):not(.mat-selected):focus {
-        background-color: mat-color($background, 'hover');
+        //background-color: mat-color($background, 'hover');
       }
       &.mat-selected {
         background-color: mat-color($primary, 0.12);
@@ -74,7 +74,7 @@
           //background-color: mat-color($background, 'hover');
         }
         &:active {
-          background-color: mat-color($primary, 0.12);
+         // background-color: mat-color($primary, 0.12);
         }
       }
     }
