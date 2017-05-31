@@ -43,7 +43,7 @@ export const CONTROL_VALUE_ACCESSOR: any = {
     styleUrls: ['./data-grid.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataGridComponent implements ControlValueAccessor, AfterContentInit {
+export class DataGridComponent implements ControlValueAccessor {
     /**
     * Implemented as part of ControlValueAccessor.
     */
@@ -71,9 +71,7 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     private _selectedBeforeLastIndex: number = -1;
     private _lastArrowKeyDirection: SortOrder;
 
-    /** template fetching support */
-    private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
-    @ContentChildren(GridCustomColumnTemplateDirective) _templates: QueryList<GridCustomColumnTemplateDirective>;
+   
 
     @ViewChildren(GridRowComponent) _rows: QueryList<GridRowComponent>;
 
@@ -239,27 +237,8 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     new EventEmitter<GridSelectAllEvent>();
 
     constructor( @Optional() @Inject(DOCUMENT) private _document: any,
-        private _changeDetectorRef: ChangeDetectorRef) { }
-
-    ngAfterContentInit(): void {
-        for (let i: number = 0; i < this._templates.toArray().length; i++) {
-            this._templateMap.set(
-                this._templates.toArray()[i].psnGridColumnTemplate,
-                this._templates.toArray()[i].templateRef,
-            );
-        }
-    }
-
-    getCellValue(column: GridColumnMetadata, value: any): string {
-        if (column.nested === undefined || column.nested) {
-            return this._getNestedValue(column.name, value);
-        }
-        return value[column.name];
-    }
-
-    getTemplateRef(name: string): TemplateRef<any> {
-        return this._templateMap.get(name);
-    }
+        private _changeDetectorRef: ChangeDetectorRef) { }    
+    
 
     clearModel(): void {
         this._value.splice(0, this._value.length);
@@ -462,19 +441,7 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     }
 
     onChange = (_: any) => empty;
-    onTouched = () => empty;
-
-    private _getNestedValue(name: string, value: any): string {
-        if (!(value instanceof Object) || !name) {
-            return value;
-        }
-        if (name.indexOf('.') > -1) {
-            let splitName: string[] = name.split(/\.(.+)/, 2);
-            return this._getNestedValue(splitName[1], value[splitName[0]]);
-        } else {
-            return value[name];
-        }
-    }
+    onTouched = () => empty;   
 
     /**
      * Does the actual Row Selection

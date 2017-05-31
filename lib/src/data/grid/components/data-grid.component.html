@@ -37,7 +37,7 @@
         (keydown.shift.space)="blockEvent($event)"
         (keydown.shift)="disableTextSelection()"
         (keyup.shift)="enableTextSelection()">
-      <td psn-data-cell class="mat-checkbox-cell" *ngIf="isSelectable">
+      <td psn-data-cell class="mat-checkbox-cell" data="false" *ngIf="isSelectable">
         <md-pseudo-checkbox
           color="primary"
           [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
@@ -49,16 +49,11 @@
       <td psn-data-cell
           [hidden]="column.hidden"
           *ngFor="let column of columns"
-          [columnInfo]="column"
+          [column]="column"
           [row]="row"
-          [rowIndex]="rowIndex"                    
+          [rowIndex]="rowIndex"  
+                            
           >
-        <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
-        <ng-template
-          *ngIf="getTemplateRef(column.name)"
-          [ngTemplateOutlet]="getTemplateRef(column.name)"
-          [ngOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
-        </ng-template>
       </td>
     </tr>
   </table>

@@ -1,1 +1,6 @@
-<ng-content (click)="handleCellClick($event)"></ng-content>
+<ng-content *ngIf="!datacell"></ng-content>
+<span [ngClass]="{'editing': editing}" class="psn-data-cell-body" *ngIf="datacell" (click)="handleCellClick($event)">
+    <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
+    <ng-template *ngIf="getTemplateRef(column.name)" [ngTemplateOutlet]="getTemplateRef(column.name)" [ngOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
+    </ng-template>
+</span>
