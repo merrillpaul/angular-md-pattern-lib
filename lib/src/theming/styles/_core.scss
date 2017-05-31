@@ -34,6 +34,7 @@
 @import './components/menu';
 @import './components/data-grid';
 @import './components/icon';
+@import './components/date_picker';
 
 @import './pages/login';
 
@@ -95,6 +96,7 @@
     @include psn-menu-theme($theme); 
     @include psn-data-grid-theme($theme);
     @include psn-icon-theme($theme);
+    @include psn-datepicker-theme($theme);
 }
 
  

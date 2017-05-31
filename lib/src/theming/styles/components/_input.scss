@@ -33,7 +33,9 @@
             }
         }
         .mat-input-underline {
-            display: none;
+            //display: none; // causes issues with md datepicker. it relies on thius underline to position the overlay doh !
+            // maybe i need to do visibility hidden only for datpicker's underlines
+            visibility: hidden;
         }
 
          .mat-input-wrapper {

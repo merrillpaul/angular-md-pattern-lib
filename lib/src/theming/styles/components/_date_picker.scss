@@ -1,0 +1,12 @@
+@mixin psn-datepicker-theme($theme) {
+
+    .mat-datepicker-toggle {
+        position: absolute;
+        right: 0px;
+        top: 18px;
+        width: 24px !important;
+        height: 24px !important;
+        
+    }
+
+}

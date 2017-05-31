@@ -40,7 +40,7 @@
       line-height: 20px;
       md-input-container {
         .mat-input-underline {
-          display: none;
+          visibility: hidden;
         }
       }
     }
