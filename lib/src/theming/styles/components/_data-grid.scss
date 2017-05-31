@@ -84,4 +84,15 @@
     background-color: mat-color($primary, 0.12);
     color: mat-color($primary);
   }
+  td.psn-data-cell {    
+      height: 48px;
+      &.editing {
+          padding: 0px;
+      }
+      .psn-data-cell-body {
+              height: 100%;
+              width: 100%;
+              position: relative;
+      }
+  }
 }

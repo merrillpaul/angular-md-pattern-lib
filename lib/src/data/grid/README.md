@@ -74,3 +74,79 @@
       }
   ]
  ```
+
+
+## With Custom COlumn Elements
+
+```html
+         [columns]="columns2"
+          [selectable]="false"
+          [clickable]="false"
+          >
+            <ng-template psnGridColumnTemplate="createdDate" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
+          
+                <md-input-container>
+                    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date {{rowIndex}}">
+                    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                </md-input-container>
+                <md-datepicker #picker></md-datepicker>
+            
+        </ng-template>
+
+        <ng-template psnGridColumnTemplate="actions" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                 <button (click)="alert(row, rowIndex)" md-raised-button color="accent" >Save</button>
+                 <button md-raised-button color="warn" [mdMenuTriggerFor]="menu">Delete</button>
+                    <button md-icon-button [mdMenuTriggerFor]="menu">
+                    <md-icon>more_vert</md-icon>
+                    </button>
+                    <md-menu #menu="mdMenu">
+                        <button md-menu-item> Refresh </button>
+                        <button md-menu-item> Settings </button>
+                        <button md-menu-item> Help </button>
+                        <button md-menu-item disabled> Sign Out </button>
+                    </md-menu>
+            </div>
+        </ng-template>
+
+
+         <ng-template psnGridColumnTemplate="guid" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
+            <div fxLayout="row" fxLayoutAlign="start center" >
+                <md-input-container fxFlex>
+                    <input mdInput placeholder="Guid" value="{{row[column]}}">
+                </md-input-container>
+            </div>
+        </ng-template>
+        </psn-data-grid>
+```
+
+```typescript
+ columns1: GridColumnMetadata[] = [
+        {
+            name: "name",
+            label: "Subtest Name"            
+        },
+        {
+            name: "guid",
+            label: "Guid"
+        },
+        {
+            name: 'createdDate',
+            label: "Created Date"
+            
+        },
+        {
+            name: 'price',
+            label: "Price"           
+        },
+        {
+            name: 'category',
+            label: "Category"
+           
+        },
+         {
+            name: "actions",
+            label: "Actions"            
+        }
+    ];
+```

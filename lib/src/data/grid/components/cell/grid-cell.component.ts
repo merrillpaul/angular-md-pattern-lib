@@ -1,5 +1,5 @@
 import {
-    Component, Renderer2, ElementRef, Input, Output,
+    Component, Renderer2, ElementRef, Input, Output, forwardRef, Inject,
     ContentChildren, TemplateRef, QueryList, AfterContentInit, EventEmitter
 } from '@angular/core';
 
@@ -9,6 +9,7 @@ import { EditorType } from '../../common/enums/editor.type.enum';
 import { GridEditorType } from '../../common/types/grid.editor';
 import { ListItems } from '../../common/types/grid.list.items';
 import { GridCustomColumnTemplateDirective } from '../../directives/grid.template.directive';
+import { DataGridComponent } from '../data-grid.component';
 
 @Component({
     selector: 'td[psn-data-cell]',
@@ -16,14 +17,14 @@ import { GridCustomColumnTemplateDirective } from '../../directives/grid.templat
     styleUrls: ['./grid-cell.component.scss']
 })
 
-export class GridCellComponent implements AfterContentInit {
-    constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
+export class GridCellComponent {
+    constructor(private _elementRef: ElementRef, private _renderer: Renderer2,
+        @Inject(forwardRef(() => DataGridComponent)) private _dataGrid: DataGridComponent
+    ) {
         this._renderer.addClass(this._elementRef.nativeElement, 'psn-data-cell');
     }
 
-    /** template fetching support */
-    private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
-    @ContentChildren(GridCustomColumnTemplateDirective) _templates: QueryList<GridCustomColumnTemplateDirective>;
+
 
     @Input('column') column: GridColumnMetadata;
 
@@ -43,14 +44,7 @@ export class GridCellComponent implements AfterContentInit {
         return this._dataCell;
     }
 
-    ngAfterContentInit(): void {
-        for (let i: number = 0; i < this._templates.toArray().length; i++) {
-            this._templateMap.set(
-                this._templates.toArray()[i].psnGridColumnTemplate,
-                this._templates.toArray()[i].templateRef,
-            );
-        }
-    }
+
 
 
     private _editing: boolean = false;
@@ -72,7 +66,8 @@ export class GridCellComponent implements AfterContentInit {
         if (this.column.editable === true) {
             event.stopPropagation();
             this._editing = true;
-            console.log('Cell Clicked', this.rowIndex, this.row, this.row[this.column.name], this._editing);
+            this._renderer.addClass(this._elementRef.nativeElement, 'editing');
+            //console.log('Cell Clicked', this.rowIndex, this.row, this.row[this.column.name], this._editing);
         }
         this.onCellClick.emit({
             row: this.row,
@@ -82,8 +77,8 @@ export class GridCellComponent implements AfterContentInit {
         });
     }
 
-    getTemplateRef(name: string): TemplateRef<any> {
-        return this._templateMap.get(name);
+    getTemplateRef(name: string): TemplateRef<any> {        
+        return this._dataGrid.getTemplateRef(name);
     }
 
     getCellValue(column: GridColumnMetadata, value: any): string {

@@ -1,6 +1,7 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdSelectionModule } from '@angular/material';
 
@@ -48,7 +49,8 @@ const GRID_COMPS: Type<any>[] = [
         MdCheckboxModule, 
         MdTooltipModule, 
         MdIconModule, 
-        MdSelectionModule
+        MdSelectionModule,
+        FlexLayoutModule
     ],
     exports: [
         GRID_COMPS

@@ -43,7 +43,7 @@ export const CONTROL_VALUE_ACCESSOR: any = {
     styleUrls: ['./data-grid.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataGridComponent implements ControlValueAccessor {
+export class DataGridComponent implements ControlValueAccessor, AfterContentInit {
     /**
     * Implemented as part of ControlValueAccessor.
     */
@@ -71,7 +71,22 @@ export class DataGridComponent implements ControlValueAccessor {
     private _selectedBeforeLastIndex: number = -1;
     private _lastArrowKeyDirection: SortOrder;
 
+    /** template fetching support */
+    private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
+    @ContentChildren(GridCustomColumnTemplateDirective) _templates: QueryList<GridCustomColumnTemplateDirective>;
+
+    ngAfterContentInit(): void {
+        for (let i: number = 0; i < this._templates.toArray().length; i++) {
+            this._templateMap.set(
+                this._templates.toArray()[i].psnGridColumnTemplate,
+                this._templates.toArray()[i].templateRef,
+            );
+        }
+    }
    
+    getTemplateRef(name: string): TemplateRef<any> {
+       return this._templateMap.get(name);
+    }
 
     @ViewChildren(GridRowComponent) _rows: QueryList<GridRowComponent>;
 

@@ -33,6 +33,7 @@
 @import './components/label';
 @import './components/menu';
 @import './components/data-grid';
+@import './components/icon';
 
 @import './pages/login';
 
@@ -93,6 +94,7 @@
     @include psn-label-theme($theme);   
     @include psn-menu-theme($theme); 
     @include psn-data-grid-theme($theme);
+    @include psn-icon-theme($theme);
 }
 
  

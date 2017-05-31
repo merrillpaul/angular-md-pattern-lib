@@ -1,6 +1,8 @@
 <ng-content *ngIf="!datacell"></ng-content>
-<span [ngClass]="{'editing': editing}" class="psn-data-cell-body" *ngIf="datacell" (click)="handleCellClick($event)">
-    <span class="md-body-1" *ngIf="!getTemplateRef(column.name)">{{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}</span>
-    <ng-template *ngIf="getTemplateRef(column.name)" [ngTemplateOutlet]="getTemplateRef(column.name)" [ngOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name }">
-    </ng-template>
-</span>
+<div [ngClass]="{'editing': editing}" fxLayout="row" fxLayoutAlign="start center" class="psn-data-cell-body" *ngIf="datacell && !getTemplateRef(column.name)" (click)="handleCellClick($event)">
+    <div class="md-body-1">
+        {{column.format ? column.format(getCellValue(column, row)) : getCellValue(column, row)}}
+    </div>    
+</div>
+<ng-template *ngIf=" datacell && getTemplateRef(column.name)" [ngTemplateOutlet]="getTemplateRef(column.name)" [ngOutletContext]="{ value: getCellValue(column, row), row: row, column: column.name, rowIndex: rowIndex }">
+</ng-template>

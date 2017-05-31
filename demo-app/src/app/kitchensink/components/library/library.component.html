@@ -230,7 +230,7 @@
                 <md-icon>format_align_left</md-icon>
               </md-button-toggle>
               <md-button-toggle value="center">
-                <md-icon>format_align_center</md-icon>
+                <md-icon color="success">format_align_center</md-icon>
               </md-button-toggle>
               <md-button-toggle value="right">
                 <md-icon>format_align_right</md-icon>
@@ -584,6 +584,14 @@
           <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="78259">
           <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
         </md-input-container>
+      </div>
+
+      <div layout="row" layout-margin>
+         <md-input-container flex="50">
+              <input mdInput [mdDatepicker]="picker" placeholder="Choose a date ">
+              <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker #picker></md-datepicker>
       </div>
     </form>
   </md-card-content>

@@ -1,0 +1,21 @@
+@mixin psn-icon-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $extraColors: map-get($theme, extraColors);
+  //$foreground: map-get($theme, foreground);
+  //$background: map-get($theme, background);
+  $colors: (      
+      success: map-get($extraColors, success),
+      secondary: map-get($extraColors, secondary)
+  );
+
+  .mat-icon {
+    @each $name, $color in $colors {
+            &.mat-#{$name} {
+                color: mat-color($color);               
+            }  
+     }
+  }
+  
+}
