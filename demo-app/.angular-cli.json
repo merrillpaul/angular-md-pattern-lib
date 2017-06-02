@@ -24,8 +24,13 @@
         "../node_modules/@pearson/angular-material/theming/pearson-material.css"
       ],
       "scripts": [
-        
+        "../node_modules/iscroll/build/iscroll.js"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [          
+              
+        ]
+      },
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

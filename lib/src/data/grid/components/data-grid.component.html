@@ -1,60 +1,77 @@
-<div class="mat-table-container" title>
-  <table psn-table-body
-         [class.mat-selectable]="isSelectable"
-         [class.mat-clickable]="isClickable">
-    <th psn-data-column class="mat-checkbox-column" *ngIf="isSelectable">
-      <md-checkbox
-        #checkBoxAll
-        color="primary"
-        *ngIf="isMultiple"
-        [disabled]="!hasData"
-        [indeterminate]="indeterminate && !allSelected && hasData"
-        [checked]="allSelected && hasData"
-        (click)="selectAll(!checkBoxAll.checked)"
-        (keyup.enter)="selectAll(!checkBoxAll.checked)"
-        (keyup.space)="selectAll(!checkBoxAll.checked)"
-        (keydown.space)="blockEvent($event)">
-      </md-checkbox>
-    </th>
-    <th psn-data-column
-        *ngFor="let column of columns"
-        [name]="column.name"
-        [columnInfo]="column"
-        [active]="(column.sortable || isSortable) && column === sortByColumn"
-        [sortable]="column.sortable ||  isSortable"
-        [sortOrder]="sortOrderEnum"
-        [hidden]="column.hidden"
-        (sortChange)="handleSort(column)">
-        <span [mdTooltip]="column.tooltip">{{column.label}}</span>
-    </th>
-    <tr psn-data-row
-        [tabIndex]="isSelectable ? 0 : -1"
-        [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
-        *ngFor="let row of data; let rowIndex = index"
-        (click)="handleRowClick(row, $event, rowIndex)"
-        (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
-        (keydown.space)="blockEvent($event)"
-        (keydown.shift.space)="blockEvent($event)"
-        (keydown.shift)="disableTextSelection()"
-        (keyup.shift)="enableTextSelection()">
-      <td psn-data-cell class="mat-checkbox-cell" data="false" *ngIf="isSelectable">
-        <md-pseudo-checkbox
-          color="primary"
-          [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
-          (mousedown)="disableTextSelection()"
-          (mouseup)="enableTextSelection()"
-          (click)="stopPropagation($event); select(row, $event, rowIndex);">
-        </md-pseudo-checkbox>
-      </td>
-      <td psn-data-cell
-          [hidden]="column.hidden"
-          *ngFor="let column of columns"
-          [column]="column"
-          [row]="row"
-          [rowIndex]="rowIndex"  
-          (cellClick)="handleCellClick($event)"                  
-          >
-      </td>
-    </tr>
-  </table>
+<div class="mat-table-container"  >
+
+  <div class="psn-data-table" [class.mat-selectable]="isSelectable" [class.mat-clickable]="isClickable">
+     
+     <div psn-table-header fxHide.xs >
+        <div psn-data-column class="mat-checkbox-column" *ngIf="isSelectable">
+          <md-checkbox
+            #checkBoxAll
+            color="primary"
+            *ngIf="isMultiple"
+            [disabled]="!hasData"
+            [indeterminate]="indeterminate && !allSelected && hasData"
+            [checked]="allSelected && hasData"
+            (click)="selectAll(!checkBoxAll.checked)"
+            (keyup.enter)="selectAll(!checkBoxAll.checked)"
+            (keyup.space)="selectAll(!checkBoxAll.checked)"
+            (keydown.space)="blockEvent($event)">
+          </md-checkbox>
+        </div>
+
+
+        <div psn-data-column [fxFlex]="column.width?  column.width: 'grow'" 
+            *ngFor="let column of columns"
+            [name]="column.name"
+            [columnInfo]="column"
+            [active]="(column.sortable || isSortable) && column === sortByColumn"
+            [sortable]="column.sortable ||  isSortable"
+            [sortOrder]="sortOrderEnum"
+            [hidden]="column.hidden"
+            (sortChange)="handleSort(column)">
+            <span [mdTooltip]="column.tooltip">{{column.label}}</span>
+        </div>
+        
+     </div> 
+
+
+
+
+     <div psn-table-body [gridHeight]="gridHeight">
+         <div  psn-data-row  fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="center center" fxLayout.xs="column"   [tabIndex]="isSelectable ? 0 : -1"
+          [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
+          *ngFor="let row of data; let rowIndex = index"
+          (click)="handleRowClick(row, $event, rowIndex)"
+          (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
+          (keydown.space)="blockEvent($event)"
+          (keydown.shift.space)="blockEvent($event)"
+          (keydown.shift)="disableTextSelection()"
+          (keyup.shift)="enableTextSelection()">
+            
+          <div psn-data-cell class="mat-checkbox-cell" data="false" *ngIf="isSelectable">
+              <md-pseudo-checkbox
+                color="primary"
+                [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
+                (mousedown)="disableTextSelection()"
+                (mouseup)="enableTextSelection()"
+                (click)="stopPropagation($event); select(row, $event, rowIndex);">
+              </md-pseudo-checkbox>
+          </div>
+
+          <div psn-data-cell [fxFlex]="column.width?  column.width: 'grow'" 
+            [hidden]="column.hidden"
+            *ngFor="let column of columns"
+            [column]="column"
+            [row]="row"
+            [rowIndex]="rowIndex"  
+            (cellClick)="handleCellClick($event)"                  
+            >
+        </div>
+
+        </div>
+     </div>
+
+  </div>
+
+
+
 </div>

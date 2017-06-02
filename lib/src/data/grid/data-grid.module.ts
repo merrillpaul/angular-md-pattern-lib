@@ -8,27 +8,29 @@ import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdSelectionModule } fr
 import { GridCellComponent } from './components/cell/grid-cell.component';
 import { GridColumnComponent } from './components/column/grid-column.component';
 import { GridRowComponent } from './components/row/grid-row.component';
+import { GridHeaderComponent } from './components/header/grid-header.component';
 import { GridBodyComponent } from './components/body/grid-body.component';
 import { DataGridComponent } from './components/data-grid.component';
 import { GridCustomColumnTemplateDirective } from './directives/grid.template.directive';
 import { DataGridService } from './services/data-grid.service';
 
 
-export * from './common/enums/editor.type.enum';
-export * from './common/enums/sort.order.enum';
-export * from './common/events/grid.select.event';
-export * from './common/events/grid.select.all.event';
-export * from './common/events/grid.row.click.event';
-export * from './common/events/grid.cell.click.event';
-export * from './common/events/grid.cell.changed.event';
-export * from './common/events/grid.column.sort.event';
-export * from './common/types/grid.editor';
-export * from './common/types/grid.list.items';
-export * from './common/types/grid.column.metadata';
+export { EditorType } from './common/enums/editor.type.enum';
+export { SortOrder } from './common/enums/sort.order.enum';
+export { GridRowSelectEvent } from './common/events/grid.select.event';
+export { GridSelectAllEvent } from './common/events/grid.select.all.event';
+export { GridRowClickEvent } from './common/events/grid.row.click.event';
+export { GridCellClickEvent } from './common/events/grid.cell.click.event';
+export { GridCellChangedEvent } from './common/events/grid.cell.changed.event';
+export { GridColumnSortChangeEvent } from './common/events/grid.column.sort.event';
+export { GridEditorType } from './common/types/grid.editor';
+export { ListItems } from './common/types/grid.list.items';
+export { GridColumnMetadata } from './common/types/grid.column.metadata';
 
 export { GridCellComponent } from './components/cell/grid-cell.component';
 export { GridColumnComponent } from './components/column/grid-column.component';
 export { GridRowComponent } from './components/row/grid-row.component';
+export { GridHeaderComponent } from './components/header/grid-header.component';
 export { GridBodyComponent } from './components/body/grid-body.component';
 export { DataGridComponent } from './components/data-grid.component';
 export { DataGridService } from './services/data-grid.service';
@@ -37,6 +39,7 @@ const GRID_COMPS: Type<any>[] = [
     GridCellComponent,
     GridColumnComponent,
     GridRowComponent,
+    GridHeaderComponent,
     GridBodyComponent,
     DataGridComponent,
     GridCustomColumnTemplateDirective

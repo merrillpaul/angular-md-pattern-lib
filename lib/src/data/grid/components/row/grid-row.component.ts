@@ -1,7 +1,7 @@
 import { Component, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'tr[psn-data-row]',
+  selector: 'div[psn-data-row]',
   styleUrls: ['./grid-row.component.scss' ],
   templateUrl: './grid-row.component.html',
 })

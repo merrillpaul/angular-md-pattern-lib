@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { DialogService, GridColumnMetadata, EditorType, GridColumnSortChangeEvent, SortOrder, PageChangeEvent, GridRowClickEvent, GridCellClickEvent } from '@pearson/angular-material';
+import { DialogService, PageChangeEvent } from '@pearson/angular-material';
+
+import { GridColumnMetadata, EditorType, GridColumnSortChangeEvent, SortOrder, 
+    GridRowClickEvent, GridCellClickEvent } from '@pearson/angular-material';
 
 const DATE_FORMAT: (v: any) => any = (v: number) => {
     return new Date(v);
@@ -25,10 +28,13 @@ export class DataGridsExampleComponent implements OnInit {
             label: "Subtest Name",
             editable: true,
             sortable: true
+           
         },
         {
             name: "guid",
-            label: "Guid"
+            label: "Guid",
+            width: "150px"           
+            
         },
         {
             name: 'createdDate',

@@ -61,6 +61,12 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     private _indeterminate: boolean = false;
     private _selectOnClick: boolean = true;
 
+    /**
+     * Can be px, rem, em, vh etc
+     * Setting a grid height gets a scroll with locked column headers
+     */
+    private _gridHeight: string;
+
     /** sorting */
     private _sortable: boolean = false;
     private _sortBy: GridColumnMetadata;
@@ -167,6 +173,15 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     }
     get isSelectable(): boolean {
         return this._selectable;
+    }
+
+    @Input('gridHeight')
+    set gridHeight(height: string) {
+        this._gridHeight = height;
+    }
+    
+    get gridHeight(): string {
+        return this._gridHeight;
     }
 
     @Input('clickable')

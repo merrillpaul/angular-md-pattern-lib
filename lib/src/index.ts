@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
+import 'iscroll';
 
 import {
   MdAutocompleteModule,

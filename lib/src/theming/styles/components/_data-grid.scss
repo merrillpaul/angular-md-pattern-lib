@@ -12,25 +12,23 @@
       success: map-get($extraColors, success),
       secondary: map-get($extraColors, secondary)
   );
-  
-  table[psn-table-body] {
 
-    
-
-    tbody {
+  div.psn-data-table {
+    div.psn-table-body {
       .psn-data-row {      
-        //border-bottom-color: mat-color($foreground, divider);
+        //  border-bottom-color: mat-color($foreground, divider);
         &:nth-child(odd) {
-          background-color: rgba(0, 0, 0, 0.04);
+          background-color: rgba(0, 0, 0, 0.02);
         }
       }
     }
+   
 
     .mat-checkbox-cell,
     .mat-checkbox-column {
-      color: mat-color($foreground, secondary-text);
+      //color: mat-color($foreground, secondary-text);
       md-pseudo-checkbox.mat-pseudo-checkbox-checked {
-        color: mat-color($primary, 500);
+       // color: mat-color($primary, 500);
       }
     }
     .psn-data-cell {
@@ -60,39 +58,47 @@
         color: mat-color($foreground, base);
       }
     }
-    &.mat-selectable tbody > tr.psn-data-row {
+    &.mat-selectable div.psn-table-body > div.psn-data-row {
       &:not([disabled]):not(.mat-selected):focus {
-        //background-color: mat-color($background, 'hover');
+        // background-color: mat-color($background, 'hover');
       }
       &.mat-selected {
         background-color: mat-color($primary, 0.12);
       }
     }
-    &.mat-clickable tbody > tr.psn-data-row {
+    &.mat-clickable div.psn-table-body > div.psn-data-row {
       &:not([disabled]){
         &:hover {
-          //background-color: mat-color($background, 'hover');
-          background-color: mat-color($primary, 0.07);
+          // background-color: mat-color($background, 'hover');
+          background-color: mat-color($primary, 0.07);          
         }
         &:active {
          // background-color: mat-color($primary, 0.12);
         }
       }
     }
+
+    .mat-selectable div.psn-table-body > div.psn-data-row {
+      transition: background 2s;
+    }
+
   }
   .mat-selected-title {
     background-color: mat-color($primary, 0.12);
     color: mat-color($primary);
   }
-  td.psn-data-cell {    
-      height: 48px;
+
+  div.psn-data-cell {        
       &.editing {
-          padding: 0px;
+          //padding: 0px;
       }
       .psn-data-cell-body {
               height: 100%;
               width: 100%;
               position: relative;
       }
-  }
+      &.mat-checkbox-cell {
+        padding: 0 24px;
+      }
+  } 
 }

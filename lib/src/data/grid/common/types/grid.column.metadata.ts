@@ -11,4 +11,5 @@ export interface GridColumnMetadata {
     editable?:boolean;
     editor?: GridEditorType;
     nested?:boolean;
+    width?:string;
 }

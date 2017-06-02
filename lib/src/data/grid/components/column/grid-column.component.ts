@@ -7,7 +7,7 @@ import { GridColumnMetadata } from '../../common/types/grid.column.metadata';
 
 
 @Component({
-  selector: 'th[psn-data-column]',
+  selector: 'div[psn-data-column]',
   styleUrls: ['./grid-column.component.scss' ],
   templateUrl: './grid-column.component.html',
 })

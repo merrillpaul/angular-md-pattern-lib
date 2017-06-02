@@ -2,20 +2,18 @@ $backdrop-index: 80;
 $checkbox-size: 18px;
 
 .mat-table-container {
-  display: block;
+
   max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: auto; 
+ 
 }
 
-table.psn-data-table {
-  &.mat-selectable tbody > tr.psn-data-row {
-    transition: background-color 0.2s;
-  }
+div.psn-data-table {
+  
 
   &.mat-selectable .psn-data-column,
-  &.mat-selectable th.psn-data-column,
-  &.mat-selectable td.psn-data-cell {
+  &.mat-selectable div.psn-data-column,
+  &.mat-selectable div.psn-data-cell {
     &:first-child {
       width: 20px;
       padding: 0 24px;
@@ -31,8 +29,8 @@ table.psn-data-table {
     }
   }
 
-  td.mat-checkbox-cell,
-  th.mat-checkbox-column {
+  div.mat-checkbox-cell,
+  div.mat-checkbox-column {
     width: $checkbox-size;
     font-size: 0 !important;
     md-pseudo-checkbox {

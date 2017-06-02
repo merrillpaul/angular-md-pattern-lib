@@ -12,7 +12,7 @@ import { GridCustomColumnTemplateDirective } from '../../directives/grid.templat
 import { DataGridComponent } from '../data-grid.component';
 
 @Component({
-    selector: 'td[psn-data-cell]',
+    selector: 'div[psn-data-cell]',
     templateUrl: './grid-cell.component.html',
     styleUrls: ['./grid-cell.component.scss']
 })
@@ -64,7 +64,7 @@ export class GridCellComponent {
 
     handleCellClick(event: Event) {
         if (this.column.editable === true) {
-            event.stopPropagation();
+           // event.stopPropagation();
             this._editing = true;
             this._renderer.addClass(this._elementRef.nativeElement, 'editing');
             //console.log('Cell Clicked', this.rowIndex, this.row, this.row[this.column.name], this._editing);

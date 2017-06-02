@@ -150,3 +150,32 @@
         }
     ];
 ```
+
+
+## Grids with fixed height 
+Grids with fixed height get the locked column headers
+html
+ 
+ - Make sure you add the scripts in your ng app  in .angular-cli.jsno as shown below
+ ```json
+ "scripts": [
+        "../node_modules/iscroll/build/iscroll.js"
+      ],
+ ```     
+This is because for some reason iscroll is not a proper webpackable module
+
+ ```html
+<psn-data-grid
+   gridHeight="300px|rem|em|vh"
+  [data]="data"
+  [columns]="columns"
+  [selectable]="true|false"
+  [multiple]="true|false"
+  [sortable]="true|false"
+  [sortBy]="sortBy"
+  [sortOrder]="'ASC'|'DESC'"
+  (sortChange)="sortEvent($event)"
+  (rowSelect)="selectEvent($event)"
+  (selectAll)="selectAllEvent($event)"> 
+</psn-data-grid>
+ ```
