@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 
 import { DialogService, PageChangeEvent } from '@pearson/angular-material';
@@ -18,7 +18,7 @@ const CURRENCY_FORMAT: (v: any) => any = (v: number) => {
     templateUrl: './data-grids.example.component.html'
 })
 export class DataGridsExampleComponent implements OnInit {
-    constructor(private _dlg: DialogService) { }
+    constructor(private _dlg: DialogService, private ref: ChangeDetectorRef) { }
 
     ngOnInit() { }
 
@@ -200,6 +200,30 @@ export class DataGridsExampleComponent implements OnInit {
             category: "WI"
         }
     ];
+
+    addRow(): void {
+        let data = this.data.map((it) => it);
+        data.unshift( {
+            name: 'NEW',
+            guid: "NNNNN",
+            createdDate: Date.now(),
+            price: 0,
+            category: "WI"
+        });
+        this.data = data;       
+    }
+
+    changeAllRows(): void {
+        this.data = this.data.concat(this.data1.map((it) => {
+            it.name = 'New ' + it.name;
+            return it;
+        }));
+    }
+
+    onDataAdded(event): void {
+        console.log('On data added', event);
+    }
+
     data1: any[] = [
         {
             id: '1',

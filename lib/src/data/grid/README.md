@@ -1,23 +1,31 @@
 ## Usage
 
  ```html
-<psn-data-grid
-  [data]="data"
-  [columns]="columns"
-  [selectable]="true|false"
-  [multiple]="true|false"
-  [sortable]="true|false"
-  [sortBy]="sortBy"
-  [sortOrder]="'ASC'|'DESC'"
-  (sortChange)="sortEvent($event)"
-  (rowSelect)="selectEvent($event)"
-  (selectAll)="selectAllEvent($event)"> 
-</psn-data-grid>
+ <psn-data-grid
+          #dataTable
+          [data]="data"
+          [columns]="columns"
+          [selectable]="true"
+          [clickable]="true"
+          [multiple]="true"   
+          [(ngModel)]="selectedRows"          
+          (sortChange)="sort($event)" 
+          (rowClick)="handleRowClick($event)"  
+          (cellClick)="handleCellClick($event)"  
+          (dataAdded)="onDataAdded($event)"          
+          >
+        </psn-data-grid>
  ```
 
 ### Other attr
 - selectOnClick true|false default true to select a row on click of row instead of checkbox
-
+### events
+- (sortChange)
+- (rowClick)
+- (cellClick)
+- (dataAdded)
+- (dataRemoved)
+   
  ### with custom column markup
 
  ```html

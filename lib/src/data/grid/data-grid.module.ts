@@ -23,6 +23,8 @@ export { GridRowClickEvent } from './common/events/grid.row.click.event';
 export { GridCellClickEvent } from './common/events/grid.cell.click.event';
 export { GridCellChangedEvent } from './common/events/grid.cell.changed.event';
 export { GridColumnSortChangeEvent } from './common/events/grid.column.sort.event';
+export { GridRowsAddedEvent } from './common/events/grid.rows.added.event';
+export { GridRowsRemovedEvent } from './common/events/grid.rows.removed.event';
 export { GridEditorType } from './common/types/grid.editor';
 export { ListItems } from './common/types/grid.list.items';
 export { GridColumnMetadata } from './common/types/grid.column.metadata';

@@ -1,6 +1,7 @@
 import {
     Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy, ChangeDetectorRef,
-    ContentChildren, TemplateRef, AfterContentInit, QueryList, Inject, Optional, ViewChildren
+    ContentChildren, ViewChild, TemplateRef, AfterContentInit, QueryList, Inject, Optional, ViewChildren,
+    DoCheck, IterableDiffers, IterableChangeRecord, AfterViewInit
 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
@@ -12,6 +13,8 @@ import { GridCellClickEvent } from '../common/events/grid.cell.click.event';
 import { GridColumnSortChangeEvent } from '../common/events/grid.column.sort.event';
 import { GridRowClickEvent } from '../common/events/grid.row.click.event';
 import { GridSelectAllEvent } from '../common/events/grid.select.all.event';
+import { GridRowsAddedEvent } from '../common/events/grid.rows.added.event';
+import { GridRowsRemovedEvent } from '../common/events/grid.rows.removed.event';
 import { GridRowSelectEvent } from '../common/events/grid.select.event';
 
 import { EditorType } from '../common/enums/editor.type.enum';
@@ -43,13 +46,18 @@ export const CONTROL_VALUE_ACCESSOR: any = {
     styleUrls: ['./data-grid.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataGridComponent implements ControlValueAccessor, AfterContentInit {
+export class DataGridComponent implements ControlValueAccessor, AfterContentInit, DoCheck, AfterViewInit {
     /**
     * Implemented as part of ControlValueAccessor.
     */
     private _value: any[] = [];
     /** Callback registered via registerOnChange (ControlValueAccessor) */
     private _onChangeCallback: (_: any) => void = empty;
+
+    private _refreshEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+    private _dataAddedEvent: EventEmitter<GridRowsAddedEvent> = new EventEmitter<GridRowsAddedEvent>();
+    private _dataRemovedEvent: EventEmitter<GridRowsRemovedEvent> = new EventEmitter<GridRowsRemovedEvent>();
+    
 
     /** internal attributes */
     private _data: any[];
@@ -81,6 +89,15 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     private _templateMap: Map<string, TemplateRef<any>> = new Map<string, TemplateRef<any>>();
     @ContentChildren(GridCustomColumnTemplateDirective) _templates: QueryList<GridCustomColumnTemplateDirective>;
 
+    /** differ to listen to add or delete data */
+    private differ: any;
+
+    constructor( @Optional() @Inject(DOCUMENT) private _document: any,
+        differs: IterableDiffers,
+        private _changeDetectorRef: ChangeDetectorRef) {
+        this.differ = differs.find([]).create(null);
+    }
+
     ngAfterContentInit(): void {
         for (let i: number = 0; i < this._templates.toArray().length; i++) {
             this._templateMap.set(
@@ -89,13 +106,45 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
             );
         }
     }
-   
+
+    private _initialized: boolean = false;
+    ngAfterViewInit(): void {
+        this._initialized = true;    
+    }
+
+    ngDoCheck() {
+        var changes = this.differ.diff(this._data);
+        if (changes && this._initialized === true ) {
+            changes.forEachAddedItem((r) => {
+                this._dataAddedEvent.emit(new GridRowsAddedEvent(r))
+            });
+            changes.forEachRemovedItem((r) => {
+                this._dataRemovedEvent.emit(new GridRowsRemovedEvent(r))
+            });
+        }
+    }
+
     getTemplateRef(name: string): TemplateRef<any> {
-       return this._templateMap.get(name);
+        return this._templateMap.get(name);
     }
 
     @ViewChildren(GridRowComponent) _rows: QueryList<GridRowComponent>;
 
+
+    get refreshEvent(): EventEmitter<boolean> {
+        return this._refreshEvent;
+    }
+
+    @Output('dataAdded')
+    get dataAddedEvent(): EventEmitter<GridRowsAddedEvent> {
+        return this._dataAddedEvent;
+    }
+
+    @Output('dataRemoved')
+    get dataRemovedEvent(): EventEmitter<GridRowsRemovedEvent> {
+        return this._dataRemovedEvent;
+    }
+    
     /**
      * Returns true if all values are selected.
      */
@@ -179,7 +228,7 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     set gridHeight(height: string) {
         this._gridHeight = height;
     }
-    
+
     get gridHeight(): string {
         return this._gridHeight;
     }
@@ -267,15 +316,17 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
 
     @Output('cellClick') onCellClick: EventEmitter<GridCellClickEvent> = new EventEmitter<GridCellClickEvent>();
 
-    constructor( @Optional() @Inject(DOCUMENT) private _document: any,
-        private _changeDetectorRef: ChangeDetectorRef) { }    
-    
+
+
 
     clearModel(): void {
         this._value.splice(0, this._value.length);
     }
     refresh(): void {
         this._calculateCheckboxState();
+        if ( this._initialized === true) {
+            this._refreshEvent.emit(true);
+        }
         this._changeDetectorRef.markForCheck();
     }
 
@@ -476,7 +527,7 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     }
 
     onChange = (_: any) => empty;
-    onTouched = () => empty;   
+    onTouched = () => empty;
 
     /**
      * Does the actual Row Selection
