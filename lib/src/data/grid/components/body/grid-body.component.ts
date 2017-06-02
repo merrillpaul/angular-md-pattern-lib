@@ -39,13 +39,15 @@ export class GridBodyComponent implements AfterViewInit, AfterContentInit {
     }
 
     private setupScrollbars(): void {
-        this._iscroll = new IScroll(this._elementRef.nativeElement, {
-            scrollbars: true,
-            mouseWheel: true,
-            interactiveScrollbars: true,
-            shrinkScrollbars: 'scale',
-            fadeScrollbars: true
-        });
+        if (this._gridHeight) {
+            this._iscroll = new IScroll(this._elementRef.nativeElement, {
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
     }
 
     ngAfterContentInit(): void {

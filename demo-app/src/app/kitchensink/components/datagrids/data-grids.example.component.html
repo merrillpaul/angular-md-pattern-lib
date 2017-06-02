@@ -1,5 +1,5 @@
 <md-card>
-  <md-card-title>Data Grids</md-card-title>  
+  <md-card-title>Data Grids with Fixed Headers and Height with IScroll</md-card-title>  
   <md-card-content>
   
    <psn-data-grid
@@ -8,7 +8,7 @@
           [columns]="columns"
           [selectable]="true"
           [clickable]="true"
-          gridHeight="300px"
+          gridHeight="20rem"
           [multiple]="true"   
           [(ngModel)]="selectedRows"          
           (sortChange)="sort($event)" 
@@ -16,6 +16,7 @@
           (cellClick)="handleCellClick($event)"            
           >
         </psn-data-grid>
+        
     <div class="md-padding" *ngIf="!dataTable.hasData" fxLayout="row" fxLayoutAlign="center center">
         <h3>No results to display.</h3>
     </div>
@@ -107,6 +108,7 @@
           [data]="data2"
           [columns]="columns2"
           [selectable]="false"
+           gridHeight="300px"
           [clickable]="false"
           >
             <ng-template psnGridColumnTemplate="createdDate" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">

@@ -10,13 +10,16 @@ To install this library, run:
 $ npm install @pearson/angular-material --save
 ```
 
-### Add theme css in .angular-cli.json
+### Add theme css and iscroll in .angular-cli.json
 Add the theme css file in your angular cli json as shown below:-
 ```
 "styles": [
         .... other scss/css files,
         "../node_modules/@pearson/angular-material/theming/pearson-material.css"
       ],
+"scripts": [
+      "../node_modules/iscroll/build/iscroll.js"
+    ],     
 ```      
 
 ### Application package.json
