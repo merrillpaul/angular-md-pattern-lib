@@ -11,9 +11,5 @@ Project One pattern library
 
 
 ### Pending
-- inverted colors for message
-- form field look and feel according to PSN Pattern lib instead of using material design
-- data table
 - Breadcrumbs
-- Tabs look and feel
 - tooltip look and feel
