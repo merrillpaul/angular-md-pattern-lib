@@ -45,7 +45,8 @@
     } 
 
     .mat-raised-button {
-      border: 1px solid map-get($background, status-bar) !important;
+      //border: 1px solid map-get($background, status-bar) !important;
+      border: 1px solid rgba(0, 0, 0, 0.25) !important;
       &.mat-primary  {
         border: none !important;
         &:hover {

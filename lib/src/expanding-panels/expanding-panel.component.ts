@@ -39,7 +39,7 @@ export class ExpandingPanelComponent {
   private _expand: boolean = false;
   private _keepSummary: boolean = false;
   private _disabled: boolean = false;
-  private appliedColor: string = 'primary';
+  appliedColor: string = 'primary';
 
   constructor(private _renderer: Renderer2,
     private _changeDetectorRef: ChangeDetectorRef,

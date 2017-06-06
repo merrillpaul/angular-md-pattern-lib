@@ -105,4 +105,18 @@
             //color: mat-color($background, card);
         }
     }
+
+    .nav-toolbar-content {
+        a.active::after {
+            position: absolute;
+            height: 3px;
+            display: inline-block;
+            background: mat-color($primary);;
+            width: 100%;           
+            left: 0;
+            bottom: 0;
+            content: "";
+        }
+    }
 }
+
