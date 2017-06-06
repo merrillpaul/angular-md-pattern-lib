@@ -41,6 +41,7 @@
           [class.mat-selected]="(isClickable || isSelectable) && isRowSelected(row)"
           *ngFor="let row of data; let rowIndex = index"
           (click)="handleRowClick(row, $event, rowIndex)"
+          (contextmenu)="onRightClick($event, row, rowIndex)"
           (keyup)="isSelectable && _rowKeyup($event, row, rowIndex)"
           (keydown.space)="blockEvent($event)"
           (keydown.shift.space)="blockEvent($event)"

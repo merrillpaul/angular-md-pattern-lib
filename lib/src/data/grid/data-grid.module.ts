@@ -18,6 +18,7 @@ import { DataGridService } from './services/data-grid.service';
 export { EditorType } from './common/enums/editor.type.enum';
 export { SortOrder } from './common/enums/sort.order.enum';
 export { GridRowSelectEvent } from './common/events/grid.select.event';
+export { GridRowContextClickEvent } from './common/events/grid.row.context.click.event';
 export { GridSelectAllEvent } from './common/events/grid.select.all.event';
 export { GridRowClickEvent } from './common/events/grid.row.click.event';
 export { GridCellClickEvent } from './common/events/grid.cell.click.event';

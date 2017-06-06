@@ -10,6 +10,7 @@ import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/material';
 
 import { GridCellChangedEvent } from '../common/events/grid.cell.changed.event';
 import { GridCellClickEvent } from '../common/events/grid.cell.click.event';
+import { GridRowContextClickEvent } from '../common/events/grid.row.context.click.event';
 import { GridColumnSortChangeEvent } from '../common/events/grid.column.sort.event';
 import { GridRowClickEvent } from '../common/events/grid.row.click.event';
 import { GridSelectAllEvent } from '../common/events/grid.select.all.event';
@@ -57,6 +58,7 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
     private _refreshEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
     private _dataAddedEvent: EventEmitter<GridRowsAddedEvent> = new EventEmitter<GridRowsAddedEvent>();
     private _dataRemovedEvent: EventEmitter<GridRowsRemovedEvent> = new EventEmitter<GridRowsRemovedEvent>();
+ 
     
 
     /** internal attributes */
@@ -316,8 +318,7 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
 
     @Output('cellClick') onCellClick: EventEmitter<GridCellClickEvent> = new EventEmitter<GridCellClickEvent>();
 
-
-
+    @Output('contextClick') onContextClick: EventEmitter<GridRowContextClickEvent> = new EventEmitter<GridRowContextClickEvent>();
 
     clearModel(): void {
         this._value.splice(0, this._value.length);
@@ -415,6 +416,10 @@ export class DataGridComponent implements ControlValueAccessor, AfterContentInit
                 this.select(row, event, currentSelected);
             }
         }
+    }
+
+    onRightClick(event: Event, row: any, currentSelected: number): void {
+        this.onContextClick.emit({ row: row, rowIndex: currentSelected, event: event  });
     }
 
     handleSort(column: GridColumnMetadata): void {
