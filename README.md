@@ -13,3 +13,7 @@ Project One pattern library
 ### Pending
 - Breadcrumbs
 - tooltip look and feel
+
+### look for custom classes to quickly apply colors 
+- themes/utilities/_colors.scss
+- themes/utilities/_color_theme.scss

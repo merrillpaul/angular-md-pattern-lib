@@ -1,4 +1,5 @@
 @mixin psn-input-theme($theme) {
+    $background: map-get($theme, background );
     .mat-input-container {
         font-family: $mat-font-family;
     
@@ -7,6 +8,7 @@
                 border: 1px solid rgba(0, 0, 0, 0.22);
                 border-radius: 2px;
                 height: 2rem;
+                background: mat-color($background, card); 
             }
             .mat-input-placeholder-wrapper {
                 font-size: $list-font-size;
@@ -14,7 +16,7 @@
                 left: 5px;
             }
             input {
-                padding-left: 5px;
+                //padding-left: 2px;
             }
         }
          .mat-input-placeholder {

@@ -3,8 +3,8 @@
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
   $extraColors: map-get($theme, extraColors);
-  //$foreground: map-get($theme, foreground);
-  //$background: map-get($theme, background);
+  $background: map-get($theme, background );
+  
   $colors: (
       primary: $primary,
       accent: $accent,
@@ -37,6 +37,7 @@
       border: 1px solid rgba(0, 0, 0, 0.22);
       border-radius: 2px;
       padding-left: 5px;
+      background: mat-color($background, card); 
       .mat-select-trigger {
           .mat-select-underline {
               display: none;

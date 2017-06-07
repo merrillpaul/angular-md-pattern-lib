@@ -22,7 +22,7 @@
 .tc-orange-50               {   color: mat-color($mat-orange, 50) !important;                    }
 .tc-deep-orange-50          {   color: mat-color($mat-deep-orange, 50) !important;               }
 .tc-brown-50                {   color: mat-color($mat-brown, 50) !important;                     }
-.tc-grey-50                 {   color: mat-color($mat-grey, 50) !important;                      }
+.tc-grey-50                 {   color: mat-color($mat-pearson-grey, 50) !important;                      }
 .tc-blue-grey-50            {   color: mat-color($mat-blue-grey, 50) !important;                 }
 
 // 100
@@ -43,7 +43,7 @@
 .tc-orange-100              {   color: mat-color($mat-orange, 100) !important;                   }
 .tc-deep-orange-100         {   color: mat-color($mat-deep-orange, 100) !important;              }
 .tc-brown-100               {   color: mat-color($mat-brown, 100) !important;                    }
-.tc-grey-100                {   color: mat-color($mat-grey, 100) !important;                     }
+.tc-grey-100                {   color: mat-color($mat-pearson-grey, 100) !important;                     }
 .tc-blue-grey-100           {   color: mat-color($mat-blue-grey, 100) !important;                }
 
 // 200
@@ -64,7 +64,7 @@
 .tc-orange-200              {   color: mat-color($mat-orange, 200) !important;                   }
 .tc-deep-orange-200         {   color: mat-color($mat-deep-orange, 200) !important;              }
 .tc-brown-200               {   color: mat-color($mat-brown, 200) !important;                    }
-.tc-grey-200                {   color: mat-color($mat-grey, 200) !important;                     }
+.tc-grey-200                {   color: mat-color($mat-pearson-grey, 200) !important;                     }
 .tc-blue-grey-200           {   color: mat-color($mat-blue-grey, 200) !important;                }
 
 // 300
@@ -85,7 +85,7 @@
 .tc-orange-300              {   color: mat-color($mat-orange, 300) !important;                   }
 .tc-deep-orange-300         {   color: mat-color($mat-deep-orange, 300) !important;              }
 .tc-brown-300               {   color: mat-color($mat-brown, 300) !important;                    }
-.tc-grey-300                {   color: mat-color($mat-grey, 300) !important;                     }
+.tc-grey-300                {   color: mat-color($mat-pearson-grey, 300) !important;                     }
 .tc-blue-grey-300           {   color: mat-color($mat-blue-grey, 300) !important;                }
 
 // 400
@@ -106,7 +106,7 @@
 .tc-orange-400              {   color: mat-color($mat-orange, 400) !important;                   }
 .tc-deep-orange-400         {   color: mat-color($mat-deep-orange, 400) !important;              }
 .tc-brown-400               {   color: mat-color($mat-brown, 400) !important;                    }
-.tc-grey-400                {   color: mat-color($mat-grey, 400) !important;                     }
+.tc-grey-400                {   color: mat-color($mat-pearson-grey, 400) !important;                     }
 .tc-blue-grey-400           {   color: mat-color($mat-blue-grey, 400) !important;                }
 
 // 500
@@ -127,7 +127,7 @@
 .tc-orange-500              {   color: mat-color($mat-orange, 500) !important;                   }
 .tc-deep-orange-500         {   color: mat-color($mat-deep-orange, 500) !important;              }
 .tc-brown-500               {   color: mat-color($mat-brown, 500) !important;                    }
-.tc-grey-500                {   color: mat-color($mat-grey, 500) !important;                     }
+.tc-grey-500                {   color: mat-color($mat-pearson-grey, 500) !important;                     }
 .tc-blue-grey-500           {   color: mat-color($mat-blue-grey, 500) !important;                }
 
 // 600
@@ -148,7 +148,7 @@
 .tc-orange-600              {   color: mat-color($mat-orange, 600) !important;                   }
 .tc-deep-orange-600         {   color: mat-color($mat-deep-orange, 600) !important;              }
 .tc-brown-600               {   color: mat-color($mat-brown, 600) !important;                    }
-.tc-grey-600                {   color: mat-color($mat-grey, 600) !important;                     }
+.tc-grey-600                {   color: mat-color($mat-pearson-grey, 600) !important;                     }
 .tc-blue-grey-600           {   color: mat-color($mat-blue-grey, 600) !important;                }
 
 // 700
@@ -169,7 +169,7 @@
 .tc-orange-700              {   color: mat-color($mat-orange, 700) !important;                   }
 .tc-deep-orange-700         {   color: mat-color($mat-deep-orange, 700) !important;              }
 .tc-brown-700               {   color: mat-color($mat-brown, 700) !important;                    }
-.tc-grey-700                {   color: mat-color($mat-grey, 700) !important;                     }
+.tc-grey-700                {   color: mat-color($mat-pearson-grey, 700) !important;                     }
 .tc-blue-grey-700           {   color: mat-color($mat-blue-grey, 700) !important;                }
 
 // 800
@@ -190,7 +190,7 @@
 .tc-orange-800              {   color: mat-color($mat-orange, 800) !important;                   }
 .tc-deep-orange-800         {   color: mat-color($mat-deep-orange, 800) !important;              }
 .tc-brown-800               {   color: mat-color($mat-brown, 800) !important;                    }
-.tc-grey-800                {   color: mat-color($mat-grey, 800) !important;                     }
+.tc-grey-800                {   color: mat-color($mat-pearson-grey, 800) !important;                     }
 .tc-blue-grey-800           {   color: mat-color($mat-blue-grey, 800) !important;                }
 
 // 900
@@ -211,7 +211,7 @@
 .tc-orange-900              {   color: mat-color($mat-orange, 900) !important;                   }
 .tc-deep-orange-900         {   color: mat-color($mat-deep-orange, 900) !important;              }
 .tc-brown-900               {   color: mat-color($mat-brown, 900) !important;                    }
-.tc-grey-900                {   color: mat-color($mat-grey, 900) !important;                     }
+.tc-grey-900                {   color: mat-color($mat-pearson-grey, 900) !important;                     }
 .tc-blue-grey-900           {   color: mat-color($mat-blue-grey, 900) !important;                }
 
 // A100
@@ -321,7 +321,7 @@
 .bgc-orange-50               {   background-color: mat-color($mat-orange, 50) !important;         }
 .bgc-deep-orange-50          {   background-color: mat-color($mat-deep-orange, 50) !important;    }
 .bgc-brown-50                {   background-color: mat-color($mat-brown, 50) !important;          }
-.bgc-grey-50                 {   background-color: mat-color($mat-grey, 50) !important;           }
+.bgc-grey-50                 {   background-color: mat-color($mat-pearson-grey, 50) !important;           }
 .bgc-blue-grey-50            {   background-color: mat-color($mat-blue-grey, 50) !important;      }
 
 // 100
@@ -342,7 +342,7 @@
 .bgc-orange-100              {   background-color: mat-color($mat-orange, 100) !important;        }
 .bgc-deep-orange-100         {   background-color: mat-color($mat-deep-orange, 100) !important;   }
 .bgc-brown-100               {   background-color: mat-color($mat-brown, 100) !important;         }
-.bgc-grey-100                {   background-color: mat-color($mat-grey, 100) !important;          }
+.bgc-grey-100                {   background-color: mat-color($mat-pearson-grey, 100) !important;          }
 .bgc-blue-grey-100           {   background-color: mat-color($mat-blue-grey, 100) !important;     }
 
 // 200
@@ -363,7 +363,7 @@
 .bgc-orange-200              {   background-color: mat-color($mat-orange, 200) !important;        }
 .bgc-deep-orange-200         {   background-color: mat-color($mat-deep-orange, 200) !important;   }
 .bgc-brown-200               {   background-color: mat-color($mat-brown, 200) !important;         }
-.bgc-grey-200                {   background-color: mat-color($mat-grey, 200) !important;          }
+.bgc-grey-200                {   background-color: mat-color($mat-pearson-grey, 200) !important;          }
 .bgc-blue-grey-200           {   background-color: mat-color($mat-blue-grey, 200) !important;     }
 
 // 300
@@ -384,7 +384,7 @@
 .bgc-orange-300              {   background-color: mat-color($mat-orange, 300) !important;        }
 .bgc-deep-orange-300         {   background-color: mat-color($mat-deep-orange, 300) !important;   }
 .bgc-brown-300               {   background-color: mat-color($mat-brown, 300) !important;         }
-.bgc-grey-300                {   background-color: mat-color($mat-grey, 300) !important;          }
+.bgc-grey-300                {   background-color: mat-color($mat-pearson-grey, 300) !important;          }
 .bgc-blue-grey-300           {   background-color: mat-color($mat-blue-grey, 300) !important;     }
 
 // 400
@@ -405,7 +405,7 @@
 .bgc-orange-400              {   background-color: mat-color($mat-orange, 400) !important;        }
 .bgc-deep-orange-400         {   background-color: mat-color($mat-deep-orange, 400) !important;   }
 .bgc-brown-400               {   background-color: mat-color($mat-brown, 400) !important;         }
-.bgc-grey-400                {   background-color: mat-color($mat-grey, 400) !important;          }
+.bgc-grey-400                {   background-color: mat-color($mat-pearson-grey, 400) !important;          }
 .bgc-blue-grey-400           {   background-color: mat-color($mat-blue-grey, 400) !important;     }
 
 // 500
@@ -426,7 +426,7 @@
 .bgc-orange-500              {   background-color: mat-color($mat-orange, 500) !important;        }
 .bgc-deep-orange-500         {   background-color: mat-color($mat-deep-orange, 500) !important;   }
 .bgc-brown-500               {   background-color: mat-color($mat-brown, 500) !important;         }
-.bgc-grey-500                {   background-color: mat-color($mat-grey, 500) !important;          }
+.bgc-grey-500                {   background-color: mat-color($mat-pearson-grey, 500) !important;          }
 .bgc-blue-grey-500           {   background-color: mat-color($mat-blue-grey, 500) !important;     }
 
 // 600
@@ -447,7 +447,7 @@
 .bgc-orange-600              {   background-color: mat-color($mat-orange, 600) !important;        }
 .bgc-deep-orange-600         {   background-color: mat-color($mat-deep-orange, 600) !important;   }
 .bgc-brown-600               {   background-color: mat-color($mat-brown, 600) !important;         }
-.bgc-grey-600                {   background-color: mat-color($mat-grey, 600) !important;          }
+.bgc-grey-600                {   background-color: mat-color($mat-pearson-grey, 600) !important;          }
 .bgc-blue-grey-600           {   background-color: mat-color($mat-blue-grey, 600) !important;     }
 
 // 700
@@ -468,7 +468,7 @@
 .bgc-orange-700              {   background-color: mat-color($mat-orange, 700) !important;        }
 .bgc-deep-orange-700         {   background-color: mat-color($mat-deep-orange, 700) !important;   }
 .bgc-brown-700               {   background-color: mat-color($mat-brown, 700) !important;         }
-.bgc-grey-700                {   background-color: mat-color($mat-grey, 700) !important;          }
+.bgc-grey-700                {   background-color: mat-color($mat-pearson-grey, 700) !important;          }
 .bgc-blue-grey-700           {   background-color: mat-color($mat-blue-grey, 700) !important;     }
 
 // 800
@@ -489,7 +489,7 @@
 .bgc-orange-800              {   background-color: mat-color($mat-orange, 800) !important;        }
 .bgc-deep-orange-800         {   background-color: mat-color($mat-deep-orange, 800) !important;   }
 .bgc-brown-800               {   background-color: mat-color($mat-brown, 800) !important;         }
-.bgc-grey-800                {   background-color: mat-color($mat-grey, 800) !important;          }
+.bgc-grey-800                {   background-color: mat-color($mat-pearson-grey, 800) !important;          }
 .bgc-blue-grey-800           {   background-color: mat-color($mat-blue-grey, 800) !important;     }
 
 // 900
@@ -510,7 +510,7 @@
 .bgc-orange-900              {   background-color: mat-color($mat-orange, 900) !important;        }
 .bgc-deep-orange-900         {   background-color: mat-color($mat-deep-orange, 900) !important;   }
 .bgc-brown-900               {   background-color: mat-color($mat-brown, 900) !important;         }
-.bgc-grey-900                {   background-color: mat-color($mat-grey, 900) !important;          }
+.bgc-grey-900                {   background-color: mat-color($mat-pearson-grey, 900) !important;          }
 .bgc-blue-grey-900           {   background-color: mat-color($mat-blue-grey, 900) !important;     }
 
 // A100
@@ -620,7 +620,7 @@
 .fill-orange-50               {   fill: mat-color($mat-orange, 50) !important;                    }
 .fill-deep-orange-50          {   fill: mat-color($mat-deep-orange, 50) !important;               }
 .fill-brown-50                {   fill: mat-color($mat-brown, 50) !important;                     }
-.fill-grey-50                 {   fill: mat-color($mat-grey, 50) !important;                      }
+.fill-grey-50                 {   fill: mat-color($mat-pearson-grey, 50) !important;                      }
 .fill-blue-grey-50            {   fill: mat-color($mat-blue-grey, 50) !important;                 }
 
 // 100
@@ -641,7 +641,7 @@
 .fill-orange-100              {   fill: mat-color($mat-orange, 100) !important;                   }
 .fill-deep-orange-100         {   fill: mat-color($mat-deep-orange, 100) !important;              }
 .fill-brown-100               {   fill: mat-color($mat-brown, 100) !important;                    }
-.fill-grey-100                {   fill: mat-color($mat-grey, 100) !important;                     }
+.fill-grey-100                {   fill: mat-color($mat-pearson-grey, 100) !important;                     }
 .fill-blue-grey-100           {   fill: mat-color($mat-blue-grey, 100) !important;                }
 
 // 200
@@ -662,7 +662,7 @@
 .fill-orange-200              {   fill: mat-color($mat-orange, 200) !important;                   }
 .fill-deep-orange-200         {   fill: mat-color($mat-deep-orange, 200) !important;              }
 .fill-brown-200               {   fill: mat-color($mat-brown, 200) !important;                    }
-.fill-grey-200                {   fill: mat-color($mat-grey, 200) !important;                     }
+.fill-grey-200                {   fill: mat-color($mat-pearson-grey, 200) !important;                     }
 .fill-blue-grey-200           {   fill: mat-color($mat-blue-grey, 200) !important;                }
 
 // 300
@@ -683,7 +683,7 @@
 .fill-orange-300              {   fill: mat-color($mat-orange, 300) !important;                   }
 .fill-deep-orange-300         {   fill: mat-color($mat-deep-orange, 300) !important;              }
 .fill-brown-300               {   fill: mat-color($mat-brown, 300) !important;                    }
-.fill-grey-300                {   fill: mat-color($mat-grey, 300) !important;                     }
+.fill-grey-300                {   fill: mat-color($mat-pearson-grey, 300) !important;                     }
 .fill-blue-grey-300           {   fill: mat-color($mat-blue-grey, 300) !important;                }
 
 // 400
@@ -704,7 +704,7 @@
 .fill-orange-400              {   fill: mat-color($mat-orange, 400) !important;                   }
 .fill-deep-orange-400         {   fill: mat-color($mat-deep-orange, 400) !important;              }
 .fill-brown-400               {   fill: mat-color($mat-brown, 400) !important;                    }
-.fill-grey-400                {   fill: mat-color($mat-grey, 400) !important;                     }
+.fill-grey-400                {   fill: mat-color($mat-pearson-grey, 400) !important;                     }
 .fill-blue-grey-400           {   fill: mat-color($mat-blue-grey, 400) !important;                }
 
 // 500
@@ -725,7 +725,7 @@
 .fill-orange-500              {   fill: mat-color($mat-orange, 500) !important;                   }
 .fill-deep-orange-500         {   fill: mat-color($mat-deep-orange, 500) !important;              }
 .fill-brown-500               {   fill: mat-color($mat-brown, 500) !important;                    }
-.fill-grey-500                {   fill: mat-color($mat-grey, 500) !important;                     }
+.fill-grey-500                {   fill: mat-color($mat-pearson-grey, 500) !important;                     }
 .fill-blue-grey-500           {   fill: mat-color($mat-blue-grey, 500) !important;                }
 
 // 600
@@ -746,7 +746,7 @@
 .fill-orange-600              {   fill: mat-color($mat-orange, 600) !important;                   }
 .fill-deep-orange-600         {   fill: mat-color($mat-deep-orange, 600) !important;              }
 .fill-brown-600               {   fill: mat-color($mat-brown, 600) !important;                    }
-.fill-grey-600                {   fill: mat-color($mat-grey, 600) !important;                     }
+.fill-grey-600                {   fill: mat-color($mat-pearson-grey, 600) !important;                     }
 .fill-blue-grey-600           {   fill: mat-color($mat-blue-grey, 600) !important;                }
 
 // 700
@@ -767,7 +767,7 @@
 .fill-orange-700              {   fill: mat-color($mat-orange, 700) !important;                   }
 .fill-deep-orange-700         {   fill: mat-color($mat-deep-orange, 700) !important;              }
 .fill-brown-700               {   fill: mat-color($mat-brown, 700) !important;                    }
-.fill-grey-700                {   fill: mat-color($mat-grey, 700) !important;                     }
+.fill-grey-700                {   fill: mat-color($mat-pearson-grey, 700) !important;                     }
 .fill-blue-grey-700           {   fill: mat-color($mat-blue-grey, 700) !important;                }
 
 // 800
@@ -788,7 +788,7 @@
 .fill-orange-800              {   fill: mat-color($mat-orange, 800) !important;                   }
 .fill-deep-orange-800         {   fill: mat-color($mat-deep-orange, 800) !important;              }
 .fill-brown-800               {   fill: mat-color($mat-brown, 800) !important;                    }
-.fill-grey-800                {   fill: mat-color($mat-grey, 800) !important;                     }
+.fill-grey-800                {   fill: mat-color($mat-pearson-grey, 800) !important;                     }
 .fill-blue-grey-800           {   fill: mat-color($mat-blue-grey, 800) !important;                }
 
 // 900
@@ -809,7 +809,7 @@
 .fill-orange-900              {   fill: mat-color($mat-orange, 900) !important;                   }
 .fill-deep-orange-900         {   fill: mat-color($mat-deep-orange, 900) !important;              }
 .fill-brown-900               {   fill: mat-color($mat-brown, 900) !important;                    }
-.fill-grey-900                {   fill: mat-color($mat-grey, 900) !important;                     }
+.fill-grey-900                {   fill: mat-color($mat-pearson-grey, 900) !important;                     }
 .fill-blue-grey-900           {   fill: mat-color($mat-blue-grey, 900) !important;                }
 
 // A100
@@ -899,4 +899,4 @@
 .fill-white-4                 {   fill: white !important;                      }
 
 
-// TODO add pearson flavors
+
