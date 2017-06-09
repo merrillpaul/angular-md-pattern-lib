@@ -128,3 +128,16 @@ export function FadeInOutAnimation(duration: number = 150): AnimationTriggerMeta
     transition('1 => 0', animate(duration + 'ms ease-out')),
   ]);
 }
+
+export function FadeOnEnterAnimation(duration: number = 150): AnimationTriggerMetadata {
+  return trigger('fadeOnEnter', [
+  transition(':enter', [
+          style({opacity: 0}),
+          animate(`${duration}ms ease-in`, style({opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({opacity: 1}),
+          animate(`${duration}ms ease-out`, style({opacity: 0}))
+        ])
+  ]);
+}
