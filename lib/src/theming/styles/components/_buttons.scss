@@ -34,6 +34,14 @@
     $warn: map-get($theme, warn);
     $hoverFactor: 0.85;
 
+    $colors: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      success: map-get($extraColors, success),
+      secondary: map-get($extraColors, secondary)
+   );
+
     &.mat-warn .mat-button-focus-overlay {
       background-color: mat-color($warn, 0.12) !important;
     }
@@ -47,35 +55,14 @@
     .mat-raised-button {
       //border: 1px solid map-get($background, status-bar) !important;
       border: 1px solid rgba(0, 0, 0, 0.25) !important;
-      &.mat-primary  {
-        border: none !important;
-        &:hover {
-          background-color: mat-color($primary, $hoverFactor) !important;
-        }
-      }
-
-      &.mat-accent  {
-        border: none !important;
-        &:hover {
-          background-color: mat-color($accent, $hoverFactor) !important;
-        }
-      }
-
-      &.mat-warn  {
-       border: none !important;
-        &:hover {
-          background-color: mat-color($warn, $hoverFactor) !important;
-        }
-      }
-
-      @each $name, $color in $extraColors {      
-          &.#{$name} {
-            border: none !important;
-            &:hover {
-              background-color: mat-color($color, $hoverFactor) !important;
-            }
-          }
-      }     
+      @each $name, $color in $colors {
+          &.mat-#{$name} {
+              border: none !important;
+              &:hover {
+                background-color: mat-color($color, $hoverFactor) !important;
+              }
+          }  
+      }      
 
       &:hover {
         @include _mat-button-focus-color($theme);
