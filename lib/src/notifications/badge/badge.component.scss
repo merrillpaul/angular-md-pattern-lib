@@ -3,7 +3,7 @@ $badge-content-size: 40px !default;
 
 :host {
   position: relative;
-  display: block;
+  display: inline-block;
   text-align: center;
   min-width: $badge-content-size;
   height: $badge-content-size;
