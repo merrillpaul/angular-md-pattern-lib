@@ -20,4 +20,14 @@
         background: mat-color($primary, 300) !important;
         color: mat-color($background, card) !important; 
     }
+
+
+
+    @each $name, $color in $colors {
+            &.tc-#{$name} {
+                &, > * {
+                    color: mat-color($color, 500) !important; 
+                }        
+            }  
+        }
 }

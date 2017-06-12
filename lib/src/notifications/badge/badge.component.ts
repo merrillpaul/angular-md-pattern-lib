@@ -24,10 +24,13 @@ export class BadgeComponent implements AfterContentInit {
   private _notifications: string = '';
   private _positionY: BadgeVerticalPosition;
   private _positionX: BadgeHorizontalPosition;
+  private _size:number = 20;
+  
 
    constructor(private _renderer: Renderer2,
               private _elementRef: ElementRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'psn-badge');
+    this._renderer.addClass(this._elementRef.nativeElement, 'md-' + this._size);
   }
 
  
@@ -44,6 +47,13 @@ export class BadgeComponent implements AfterContentInit {
   get x(): BadgeHorizontalPosition {
     return this._positionX;
   }
+
+  @Input()
+  set size(size: number) {
+    this._renderer.removeClass(this._elementRef.nativeElement, 'md-' + this._size);
+    this._renderer.addClass(this._elementRef.nativeElement, 'md-' + size);
+    this._size = size;   
+  }  
 
   
   @Input()
