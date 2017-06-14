@@ -163,3 +163,9 @@
     -webkit-font-feature-settings: 'liga';
     font-feature-settings: 'liga';
 }
+
+
+@mixin pearson_color($color, $property : 'color'  ) {
+    $colorCls: map-get($pearson_palette, $color );
+    #{$property}: mat-color($colorCls, 500);
+}

@@ -915,35 +915,13 @@
 .bgc-secondary            {    background-color: mat-color($mat-pearson-graphite-grey, 500) !important;              }
 .bgc-lime                {    background-color: mat-color($mat-pearson-lime, 500) !important;              }
 
-$colorVariations: (
-    50,
-    100,
-    200,
-    300,
-    400,
-    500,
-    600,
-    700,
-    800,
-    900,
-    A100,
-    A200,
-    A400,
-    A700
-);
 
-$pearson_colors: (
-    primary: $mat-pearson-midnite-blue,
-    accent: $mat-pearson-juicy-orange,
-    warn: $mat-pearson-strawberry-red,
-    success: $mat-pearson-fresh-green,
-    secondary: $mat-pearson-graphite-grey,
-    lime: $mat-pearson-lime
-);
+
+
 
 
 @each $colorVar in $colorVariations {
-    @each $colorClass, $color in $pearson_colors {
+    @each $colorClass, $color in $pearson_palette {
         .tc-#{$colorClass}-#{$colorVar} {
                 color: mat-color($color, $colorVar) !important;  
         }
@@ -952,4 +930,5 @@ $pearson_colors: (
         }
     }
 }
+
 

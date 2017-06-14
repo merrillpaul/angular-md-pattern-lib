@@ -396,3 +396,13 @@ $mat-pearson-dark-theme-foreground: (
   text:            white
 );
 
+$pearson_palette: (
+    primary: mat-palette($mat-pearson-midnite-blue),
+    accent:  mat-palette($mat-pearson-juicy-orange),
+    warn:    mat-palette($mat-pearson-strawberry-red),
+    success:  mat-palette($mat-pearson-fresh-green),
+    secondary: mat-palette($mat-pearson-graphite-grey, 300),
+    lime: $mat-pearson-lime
+);
+
+

@@ -50,6 +50,19 @@ To accomplish this, update your .angular-cli.json:
 
 Now you can reuse any mixins in your scss file.
 
+For example if you want to call the `material-icon-pseudo` mixin from styles/_mixins.scss in a component.scss just include the import statement relative to @pearson/angular-material/theming.
+Like:-
+
+```
+@import 'pearson-theme';
+
+.some-class {
+  :after {
+    @include material-icon-pseudo("check"); 
+    @include pearson_color(success);
+  }
+}
+```
 ### Application package.json
 Add the following in your package json ( override angular version if needed), if you see a lot of `UNMET PEER DEPENDENCIES` error. This is because
 from NPM v3.0 and higher , the auto installation of peer depencies is now a responsibility of the application developer. 

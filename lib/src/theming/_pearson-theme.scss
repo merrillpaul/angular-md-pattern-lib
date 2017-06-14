@@ -1,3 +1,8 @@
+@import '~@angular/material/theming';
+@import 'styles/variables';
+@import 'styles/palette';
+@import 'styles/mixins';
+
 
 // Creates a container object for a light theme to be given to individual component theme mixins.
 @function mat-pearson-light-theme($primary, $accent, $warn: mat-palette($mat-pearson-strawberry-red), $success: mat-palette($mat-pearson-fresh-green), $secondary: mat-palette($mat-pearson-graphite-grey)) {
@@ -30,4 +35,23 @@
     foreground: $mat-pearson-dark-theme-foreground,
     background: $mat-pearson-dark-theme-background
   );
+}
+
+
+@function get_pearson_light_theme() {
+    $primary: map-get($pearson_palette, primary );
+    $accent:  map-get($pearson_palette, accent );
+    $warn:    map-get($pearson_palette, warn );
+    $success:    map-get($pearson_palette, success );
+    $secondary:    map-get($pearson_palette, secondary );
+    @return mat-pearson-light-theme($primary, $accent, $warn, $success, $secondary);
+}
+
+@function get_pearson_dark_theme() {
+    $primary: map-get($pearson_palette, primary );
+    $accent:  map-get($pearson_palette, accent );
+    $warn:    map-get($pearson_palette, warn );
+    $success:    map-get($pearson_palette, success );
+    $secondary:    map-get($pearson_palette, secondary );
+    @return mat-pearson-dark-theme($primary, $accent, $warn, $success, $secondary);
 }

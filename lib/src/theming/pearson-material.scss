@@ -1,35 +1,7 @@
-@import '~@angular/material/theming';
-@import 'styles/core';
 @import 'pearson-theme';
+@import 'styles/utilities/utilities';
+@import 'styles/core';
 @include mat-core();
-
-
-$pearson_palette: (
-    primary: mat-palette($mat-pearson-midnite-blue),
-    accent:  mat-palette($mat-pearson-juicy-orange),
-    warn:    mat-palette($mat-pearson-strawberry-red),
-    success:  mat-palette($mat-pearson-fresh-green),
-    secondary: mat-palette($mat-pearson-graphite-grey, 300)
-);
-
-
-@function get_pearson_light_theme() {
-    $primary: map-get($pearson_palette, primary );
-    $accent:  map-get($pearson_palette, accent );
-    $warn:    map-get($pearson_palette, warn );
-    $success:    map-get($pearson_palette, success );
-    $secondary:    map-get($pearson_palette, secondary );
-    @return mat-pearson-light-theme($primary, $accent, $warn, $success, $secondary);
-}
-
-@function get_pearson_dark_theme() {
-    $primary: map-get($pearson_palette, primary );
-    $accent:  map-get($pearson_palette, accent );
-    $warn:    map-get($pearson_palette, warn );
-    $success:    map-get($pearson_palette, success );
-    $secondary:    map-get($pearson_palette, secondary );
-    @return mat-pearson-dark-theme($primary, $accent, $warn, $success, $secondary);
-}
 
 @mixin pearson_theme() {
     $theme: get_pearson_light_theme();

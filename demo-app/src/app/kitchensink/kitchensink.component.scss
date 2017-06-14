@@ -1,4 +1,12 @@
+@import 'pearson-theme';
+
 :host {
   display: block;
  //height: 100%;
+ .kitchen-header {
+   &:after {
+    @include material-icon-pseudo("check");
+    @include pearson_color(accent);
+   }
+ }
 }
