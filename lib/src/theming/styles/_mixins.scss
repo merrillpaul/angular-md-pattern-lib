@@ -165,7 +165,7 @@
 }
 
 
-@mixin pearson_color($color, $property : 'color'  ) {
+@mixin pearson_color($color, $property : 'color', $colorSwitch: 500  ) {
     $colorCls: map-get($pearson_palette, $color );
-    #{$property}: mat-color($colorCls, 500);
+    #{$property}: mat-color($colorCls, $colorSwitch);
 }

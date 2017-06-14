@@ -40,20 +40,20 @@
             margin: 0;
         }
         md-card-title {
-            padding-top: $padding;
-            padding-left: $padding;
-            padding-right: $padding;
+            padding-top: $cardPadding;
+            padding-left: $cardPadding;
+            padding-right: $cardPadding;
         }
         md-card-subtitle {
-            padding-left: $padding;
-            padding-right: $padding;
+            padding-left: $cardPadding;
+            padding-right: $cardPadding;
         }
         md-card-content {
-            padding: $padding;
+            padding: $cardPadding;
         }
         &, & .mat-card {
             & .mat-card-actions:last-child {
-                padding: $padding / 2;
+                padding: $cardPadding / 2;
                 margin: 0;
             }
         }
