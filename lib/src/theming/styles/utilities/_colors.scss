@@ -22,7 +22,7 @@
 .tc-orange-50               {   color: mat-color($mat-orange, 50) !important;                    }
 .tc-deep-orange-50          {   color: mat-color($mat-deep-orange, 50) !important;               }
 .tc-brown-50                {   color: mat-color($mat-brown, 50) !important;                     }
-.tc-grey-50                 {   color: mat-color($mat-pearson-grey, 50) !important;                      }
+.tc-grey-50                 {   color: mat-color($mat-pearson-grey, 50) !important;              }
 .tc-blue-grey-50            {   color: mat-color($mat-blue-grey, 50) !important;                 }
 
 // 100
@@ -899,4 +899,57 @@
 .fill-white-4                 {   fill: white !important;                      }
 
 
+
+// pearson colors for tc and bgc
+.tc-primary              {   color: mat-color($mat-pearson-midnite-blue, 500) !important;              }
+.tc-accent               {   color: mat-color($mat-pearson-juicy-orange, 500) !important;              }
+.tc-warn                 {   color: mat-color($mat-pearson-strawberry-red, 500) !important;              }
+.tc-success              {   color: mat-color($mat-pearson-fresh-green, 500) !important;              }
+.tc-secondary            {   color: mat-color($mat-pearson-graphite-grey, 500) !important;              }
+.tc-lime                {   color: mat-color($mat-pearson-lime, 500) !important;              }
+
+.bgc-primary              {   background-color: mat-color($mat-pearson-midnite-blue, 500) !important;              }
+.bgc-accent               {    background-color: mat-color($mat-pearson-juicy-orange, 500) !important;              }
+.bgc-warn                 {    background-color: mat-color($mat-pearson-strawberry-red, 500) !important;              }
+.bgc-success              {    background-color: mat-color($mat-pearson-fresh-green, 500) !important;              }
+.bgc-secondary            {    background-color: mat-color($mat-pearson-graphite-grey, 500) !important;              }
+.bgc-lime                {    background-color: mat-color($mat-pearson-lime, 500) !important;              }
+
+$colorVariations: (
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    A100,
+    A200,
+    A400,
+    A700
+);
+
+$pearson_colors: (
+    primary: $mat-pearson-midnite-blue,
+    accent: $mat-pearson-juicy-orange,
+    warn: $mat-pearson-strawberry-red,
+    success: $mat-pearson-fresh-green,
+    secondary: $mat-pearson-graphite-grey,
+    lime: $mat-pearson-lime
+);
+
+
+@each $colorVar in $colorVariations {
+    @each $colorClass, $color in $pearson_colors {
+        .tc-#{$colorClass}-#{$colorVar} {
+                color: mat-color($color, $colorVar) !important;  
+        }
+        .bgc-#{$colorClass}-#{$colorVar} {
+                background-color: mat-color($color, $colorVar) !important;  
+        }
+    }
+}
 

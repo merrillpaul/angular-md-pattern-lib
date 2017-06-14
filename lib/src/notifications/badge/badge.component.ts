@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, ChangeDetectionStrategy,
+import { Component, Input, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef,
          ViewChild, ElementRef, AfterContentInit, Renderer2 } from '@angular/core';
 
 export enum BadgeVerticalPosition {
@@ -27,17 +27,50 @@ export class BadgeComponent implements AfterContentInit {
   private _size:number = 20;
   
 
-   constructor(private _renderer: Renderer2,
+   constructor(private _renderer: Renderer2,          
+        private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'psn-badge');
     this._renderer.addClass(this._elementRef.nativeElement, 'md-' + this._size);
+    this.setupColor(this._color);
   }
 
  
   @ViewChild('content') content: ElementRef;
-
  
-  @Input() color: 'primary' | 'accent' | 'success' | 'secondary' | 'warn' = 'primary';
+
+  private _color: string = 'primary';
+
+    /**
+     * color?: primary | accent | warn
+     *
+     * Sets the color of the message.
+     * Can also use any material color: purple | light-blue | lime, etc.
+     */
+    @Input('color')
+    set color(color: string) {        
+        this._color = color;
+        this.setupColor(color);
+        this._changeDetectorRef.markForCheck();
+    }
+
+    get color(): string {
+        return this._color;
+    }
+
+    /**
+     * 
+     * @param color Sets up the color theme and also looks for any overrides from common material colors for background and text colors
+     */
+    private setupColor(color: string) {
+       
+         if (color === 'primary' || color === 'accent' || color === 'warn' || color === 'success' || color === 'secondary') {
+            this._color =  'mat-' + color;
+        } else {            
+            this._color = `bgc-${color} tc-${color}-700`
+        }
+        
+    }
 
 
   @Input()

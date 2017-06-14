@@ -298,6 +298,40 @@ $mat-pearson-link-blue: (
     )
 );
 
+$mat-pearson-lime: (
+    50 : #fafbe2,
+    100 : #f2f4b7,
+    200 : #e9ed87,
+    300 : #e0e656,
+    400 : #d9e032,
+    500 : #d2db0e,
+    600 : #cdd70c,
+    //700 : #c7d20a,
+    700: #003057,
+    800 : #c1cd08,
+    900 : #b6c404,
+    A100 : #fdffec,
+    A200 : #f9ffb9,
+    A400 : #f5ff86,
+    A700 : #f3ff6d,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: $black-87-opacity,
+        600: $black-87-opacity,
+        700: $black-87-opacity,
+        800: $black-87-opacity,
+        900: $black-87-opacity,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: $black-87-opacity
+    )
+);
+
 // Background palette for light themes.
 $mat-pearson-light-theme-background: (
   status-bar: map_get($mat-pearson-grey, 50),
