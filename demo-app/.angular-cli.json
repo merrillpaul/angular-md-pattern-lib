@@ -20,15 +20,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss",
-        "../node_modules/@pearson/angular-material/theming/pearson-material.css"
+        "styles.scss"       
       ],
       "scripts": [
         "../node_modules/iscroll/build/iscroll.js"
       ],
       "stylePreprocessorOptions": {
         "includePaths": [          
-              
+          "../node_modules/@pearson/angular-material/theming"                   
         ]
       },
       "environmentSource": "environments/environment.ts",

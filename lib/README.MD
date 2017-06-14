@@ -22,6 +22,34 @@ Add the theme css file in your angular cli json as shown below:-
     ],     
 ```      
 
+### Alternate way to get the themes
+We can add the original SCSS files into the app so that we get access to the theme variable, mixins, color palettes etc. 
+For example the end app developer can access the themes using
+`$peason_light_theme: get_pearson_light_theme();`
+
+To accomplish this, update your .angular-cli.json:
+-  angualr-cli json
+```
+"styles": [
+        "styles.scss"       
+      ],
+      "scripts": [
+        "../node_modules/iscroll/build/iscroll.js"
+      ],
+      "stylePreprocessorOptions": {
+        "includePaths": [          
+          "../node_modules/@pearson/angular-material/theming"                   
+        ]
+      },
+``` 
+- your main scss ( styles.scss in this example )
+* Add the pearson scss as the first line
+```
+@import '~@pearson/angular-material/theming/pearson-material';
+```
+
+Now you can reuse any mixins in your scss file.
+
 ### Application package.json
 Add the following in your package json ( override angular version if needed), if you see a lot of `UNMET PEER DEPENDENCIES` error. This is because
 from NPM v3.0 and higher , the auto installation of peer depencies is now a responsibility of the application developer. 
