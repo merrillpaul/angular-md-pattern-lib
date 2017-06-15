@@ -1,0 +1,57 @@
+<div fxLayout="column" fxFlex>
+
+
+<md-card >
+  <md-card-title>IScroll in Lists</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+  
+    <h3>Simple List</h3>
+    <div psn-scroller [containerHeight]="media.query('xs') ? '100px': '250px'">
+     <md-nav-list>
+      <ng-template let-item let-last="last" ngFor [ngForOf]="states">
+        <a md-list-item > {{item.name}} </a>
+        <md-divider *ngIf="!last"></md-divider>
+      </ng-template>
+    </md-nav-list>
+    </div>
+
+
+    <md-divider class="push-top-sm push-bottom-sm"></md-divider>
+
+   
+
+  </md-card-content>
+</md-card>
+
+
+
+
+<md-card>
+  <md-card-title>IScroll for Cards</md-card-title>
+  <md-divider></md-divider>
+  <md-card-content>
+  
+    <h3>List of cards</h3>
+   
+     <div psn-scroller containerHeight="25rem">
+      <ng-template let-item let-last="last" ngFor [ngForOf]="states">
+          <md-card>
+              <md-card-content>
+                   <a md-list-item > {{item.name}} </a>
+              </md-card-content>
+          </md-card>
+        
+          <md-divider *ngIf="!last"></md-divider>
+      </ng-template>
+     </div>
+
+
+    <md-divider class="push-top-sm push-bottom-sm"></md-divider>
+
+   
+
+  </md-card-content>
+</md-card>
+
+</div>

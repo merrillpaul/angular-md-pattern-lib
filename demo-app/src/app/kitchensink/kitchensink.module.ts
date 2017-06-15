@@ -16,7 +16,8 @@ import {
   PagingBarExampleComponent,
   NotificationsExampleComponent,
   ChartsExampleComponent,
-  DataGridsExampleComponent
+  DataGridsExampleComponent,
+  IScrollExampleComponent
 } from './components';
 
 @NgModule({
@@ -36,7 +37,8 @@ import {
     PagingBarExampleComponent,
     NotificationsExampleComponent,
     ChartsExampleComponent,
-    DataGridsExampleComponent
+    DataGridsExampleComponent,
+    IScrollExampleComponent
   ]
 })
 export class KitchensinkModule { }

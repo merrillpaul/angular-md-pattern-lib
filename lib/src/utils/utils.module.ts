@@ -8,6 +8,7 @@ import { CollapseAnimation } from './animation/collapse';
 import { PearsonLoginComponent } from './pages/login.component';
 import { InvertedColorDirective } from './directives/inverted.color.directive';
 
+
 export { PearsonToggleDirective, PearsonFadeDirective, FadeInOutAnimation, FadeOnEnterAnimation,
     CollapseAnimation, PearsonLoginComponent, InvertedColorDirective };
 @NgModule({

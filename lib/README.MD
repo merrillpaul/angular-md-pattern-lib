@@ -64,28 +64,18 @@ Like:-
 }
 ```
 ### Application package.json
-Add the following in your package json ( override angular version if needed), if you see a lot of `UNMET PEER DEPENDENCIES` error. This is because
-from NPM v3.0 and higher , the auto installation of peer depencies is now a responsibility of the application developer. 
-
-See here - 
-- http://stackoverflow.com/questions/35207380/how-to-install-npm-peer-dependencies-automatically
-- https://github.com/npm/npm/releases/tag/v3.0.0 ( Look at 'Breaking Changes' section)
+Your application's package json should contain only references to `@pearson/angular-material` in the dependencies section. All angular, material, flex layout and other required libraries are resolved from this package.
 
 ```
-"@angular/common": "^4.1.2",
-        "@angular/animations": "^4.1.2",
-        "@angular/core": "^4.1.2",
-        "@angular/forms": "^4.1.2",
-        "@angular/http": "^4.1.2",
-        "@angular/router": "^4.1.2",
-        "@angular/material": "2.0.0-beta.5",
-        "@swimlane/ngx-charts": "^5.2.1",
-        "ng2-toastr": "^4.0.1",
-        "d3": "^4.6.0",
-        "hammerjs": "^2.0.8",
-        "highlight.js": "9.11.0",
-        "showdown": "1.6.4",
-        "web-animations-js": "2.2.2"
+"dependencies": {
+    "@pearson/angular-material": "0.1.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.4.0",
+    "zone.js": "^0.8.10"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.0.6",
+    "@angular/compiler-cli": "4.1.3",
 ```
 
 and then from your Angular `AppModule`:

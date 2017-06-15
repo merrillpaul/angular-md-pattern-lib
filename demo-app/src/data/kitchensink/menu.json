@@ -28,6 +28,13 @@
           "color": "red-700",
           "title": "Paging"
      },
+     {
+          "description": "IScroller",
+          "icon": "swap_vert",
+          "route": "scroll",
+          "color": "lime-700",
+          "title": "IScroller"
+     },
       {
           "description": "Data Grids",
           "icon": "view_list",

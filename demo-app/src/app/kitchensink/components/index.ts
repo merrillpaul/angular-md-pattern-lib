@@ -8,3 +8,4 @@ export * from './paging/paging.example.component';
 export * from './notifications/notifications.component';
 export * from './charts/charts.component';
 export * from './datagrids/data-grids.example.component';
+export * from './scroll/scroll.example';

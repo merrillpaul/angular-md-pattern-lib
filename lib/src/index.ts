@@ -120,6 +120,12 @@ export * from './file-upload/file-upload.module';
 import { PearsonLabelModule } from './label/label.module';
 export * from './label/label.module';
 
+/**
+ * SCROLLER
+ */
+import { PearsonScrollerModule } from './scroller/scroller.module';
+export * from './scroller/scroller.module';
+
 const MODULES = [
   HttpModule,
   JsonpModule,
@@ -175,7 +181,8 @@ const MODULES = [
   PearsonNavModule,
   PearsonDataModule,
   PearsonFileUploadModule,
-  PearsonLabelModule
+  PearsonLabelModule,
+  PearsonScrollerModule
 ];
 
 

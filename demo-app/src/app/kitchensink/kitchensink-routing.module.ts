@@ -12,7 +12,8 @@ import {
     PagingBarExampleComponent,
     NotificationsExampleComponent,
     ChartsExampleComponent,
-    DataGridsExampleComponent
+    DataGridsExampleComponent,
+    IScrollExampleComponent
 } from './components';
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
       { path: 'paging', component: PagingBarExampleComponent },
       { path: 'notifications', component: NotificationsExampleComponent },
       { path: 'charts', component: ChartsExampleComponent },
-      { path: 'datagrids', component: DataGridsExampleComponent }
+      { path: 'datagrids', component: DataGridsExampleComponent },
+      { path: 'scroll', component: IScrollExampleComponent }
     ]    
   },
   {
