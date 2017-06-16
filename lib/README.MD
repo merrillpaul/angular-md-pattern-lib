@@ -4,7 +4,6 @@
 ## Installation
 
 To install this library, run:
-- remove all references in your project's package json to all angular material, hammerjs, d3, ngx-charts etc, and any flex layouts. Running the install command below adds all of this.
 
 ```bash
 $ npm install @pearson/angular-material --save
@@ -13,15 +12,15 @@ $ npm install @pearson/angular-material --save
 ### Application package.json
 Ideally your application package.json should have only
 ```
- "dependencies": {
-    "@pearson/angular-material": "0.2.0",
+  "dependencies": {
+    "@pearson/angular-material": "^0.2.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.10"
   },
   "devDependencies": {
-    "@angular/cli": "1.1.1",
-    "@angular/compiler-cli": "4.1.3",
+    "@angular/cli": "^1.1.1",
+    "@angular/compiler-cli": "^4.2.2",
     ..
 ```
 That is, no reference to angular or angular-material packages. These would be resolved by the @pearson/angular-material package.
@@ -90,7 +89,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
+// Import the library
 import { PearsonMaterialModule } from '@pearson/angular-material';
 
 @NgModule({
