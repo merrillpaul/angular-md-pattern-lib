@@ -406,7 +406,9 @@ $pearson_palette: (
     warn:    mat-palette($mat-pearson-strawberry-red),
     success:  mat-palette($mat-pearson-fresh-green),
     secondary: mat-palette($mat-pearson-graphite-grey, 300),
-    lime: $mat-pearson-lime
+    lime: mat-palette($mat-pearson-lime),
+    yellow: mat-palette($mat-pearson-sunshine-yellow),
+    link: mat-palette($mat-pearson-link-blue)
 );
 
 

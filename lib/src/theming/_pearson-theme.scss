@@ -5,14 +5,17 @@
 
 
 // Creates a container object for a light theme to be given to individual component theme mixins.
-@function mat-pearson-light-theme($primary, $accent, $warn: mat-palette($mat-pearson-strawberry-red), $success: mat-palette($mat-pearson-fresh-green), $secondary: mat-palette($mat-pearson-graphite-grey)) {
+@function mat-pearson-light-theme($primary, $accent, $warn, $success, $secondary, $lime, $yellow, $link) {
   @return (
     primary: $primary,
     accent: $accent,
     warn: $warn,
     extraColors: (
       success: $success,
-      secondary: $secondary
+      secondary: $secondary,
+      lime: $lime,
+      yellow: $yellow,
+      link: $link
     ),   
     is-dark: false,
     foreground: $mat-pearson-light-theme-foreground,
@@ -22,14 +25,17 @@
 
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
-@function mat-pearson-dark-theme($primary, $accent, $warn: mat-palette($mat-pearson-strawberry-red), $success: mat-palette($mat-pearson-fresh-green), $secondary: mat-palette($mat-pearson-graphite-grey)) {
+@function mat-pearson-dark-theme($primary, $accent, $warn, $success, $secondary, $lime, $yellow, $link) {
   @return (
     primary: $primary,
     accent: $accent,
     warn: $warn,
     extraColors: (
       success: $success,
-      secondary: $secondary
+      secondary: $secondary,
+      lime: $lime,
+      yellow: $yellow,
+      link: $link
     ),    
     is-dark: true,
     foreground: $mat-pearson-dark-theme-foreground,
@@ -44,7 +50,10 @@
     $warn:    map-get($pearson_palette, warn );
     $success:    map-get($pearson_palette, success );
     $secondary:    map-get($pearson_palette, secondary );
-    @return mat-pearson-light-theme($primary, $accent, $warn, $success, $secondary);
+    $lime:    map-get($pearson_palette, lime );
+    $yellow:    map-get($pearson_palette, yellow );
+    $link:    map-get($pearson_palette, link );    
+    @return mat-pearson-light-theme($primary, $accent, $warn, $success, $secondary, $lime, $yellow, $link);
 }
 
 @function get_pearson_dark_theme() {
@@ -53,5 +62,8 @@
     $warn:    map-get($pearson_palette, warn );
     $success:    map-get($pearson_palette, success );
     $secondary:    map-get($pearson_palette, secondary );
-    @return mat-pearson-dark-theme($primary, $accent, $warn, $success, $secondary);
+    $lime:    map-get($pearson_palette, lime );
+    $yellow:    map-get($pearson_palette, yellow );
+    $link:    map-get($pearson_palette, link );
+    @return mat-pearson-dark-theme($primary, $accent, $warn, $success, $secondary,$lime, $yellow, $link);
 }

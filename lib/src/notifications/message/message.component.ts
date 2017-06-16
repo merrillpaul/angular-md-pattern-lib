@@ -60,7 +60,8 @@ export class MessageComponent implements AfterViewInit {
     this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._color);
     this._renderer.removeClass(this._elementRef.nativeElement, 'bgc-' + this._color + '-100');
     this._renderer.removeClass(this._elementRef.nativeElement, 'tc-' + this._color + '-700');
-    if (color === 'primary' || color === 'accent' || color === 'warn' || color === 'success' || color === 'secondary') {
+    if (color === 'primary' || color === 'accent' || color === 'warn' || color === 'success' || color === 'secondary'
+    || color === 'lime' || color === 'yellow' || color === 'link') {
       this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + color);
     } else {
       this._renderer.addClass(this._elementRef.nativeElement, 'bgc-' + color + '-100');
