@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterContentInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MdSnackBar } from '@angular/material';
@@ -13,7 +13,7 @@ import { UsersService, IUser } from '../../services';
   styleUrls: ['./users.component.scss'],
   viewProviders: [ UsersService ],
 })
-export class UsersComponent implements AfterViewInit {
+export class UsersComponent implements AfterContentInit {
 
   users: IUser[];
   filteredUsers: IUser[];
@@ -31,7 +31,7 @@ export class UsersComponent implements AfterViewInit {
     this._router.navigate(['/']);
   }
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
    
 
     this._titleService.setTitle( 'Users' );

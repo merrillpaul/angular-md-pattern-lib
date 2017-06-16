@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, AfterContentInit } from '@angular/core';
 
 
 import { SpinnerService, SpinnerType, SpinnerMode, SpinnerConfig } from '@pearson/angular-material';
@@ -7,7 +7,7 @@ import { SpinnerService, SpinnerType, SpinnerMode, SpinnerConfig } from '@pearso
     selector: 'loading-example',
     templateUrl: './loading.example.component.html'
 })
-export class LoadingExampleComponent implements OnInit {
+export class LoadingExampleComponent implements AfterContentInit {
     constructor(private _loadingService: SpinnerService) {
         this._loadingService.create({
             name: 'configFullscreenDemo',
@@ -77,8 +77,8 @@ export class LoadingExampleComponent implements OnInit {
         description: '',
     };
 
-    ngOnInit(): void {
-        this.toggleDefaultFullscreenDemo();
+    ngAfterContentInit(): void {
+       // this.toggleDefaultFullscreenDemo();
         this.startDirectives();
     }
 

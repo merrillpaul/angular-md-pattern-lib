@@ -1,5 +1,5 @@
 
-import { Component, AfterViewInit, ElementRef, Inject, Renderer2, ViewContainerRef } from '@angular/core';
+import { Component, AfterContentInit, ElementRef, Inject, Renderer2, ViewContainerRef } from '@angular/core';
 import { DOCUMENT, Title } from '@angular/platform-browser';
 import { MediaQueryService, SpinnerService, ToastService } from '@pearson/angular-material';
 
@@ -13,7 +13,7 @@ import { KitchensinkService } from 'services';
   styleUrls: ['./kitchensink.component.scss'],
   viewProviders: [KitchensinkService]
 })
-export class KitchensinkComponent implements AfterViewInit {
+export class KitchensinkComponent implements AfterContentInit {
 
 
   items: Object[] = [];
@@ -28,7 +28,7 @@ export class KitchensinkComponent implements AfterViewInit {
     }
 
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     this._titleService.setTitle('NG Material Kitchen Sink');
     this._loadingService.register('kitchen.side.load');
     this._kitchenService.getMenu().subscribe((menuItems: Object[]) => {

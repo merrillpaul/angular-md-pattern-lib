@@ -14,14 +14,14 @@ $ npm install @pearson/angular-material --save
 Ideally your application package.json should have only
 ```
  "dependencies": {
-    "@pearson/angular-material": "^0.2.0",
+    "@pearson/angular-material": "0.2.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.10"
   },
   "devDependencies": {
     "@angular/cli": "1.1.1",
-    "@angular/compiler-cli": "^4.2.0",
+    "@angular/compiler-cli": "4.1.3",
     ..
 ```
 That is, no reference to angular or angular-material packages. These would be resolved by the @pearson/angular-material package.

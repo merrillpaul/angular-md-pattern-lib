@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, Route, RouterModule } from '@angular/router';
+
+import { CoreModule } from './core/core.module';
 const routes: Routes =
 [
   //{ path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboardModule'},
@@ -14,7 +16,7 @@ const routes: Routes =
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true }), CoreModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
