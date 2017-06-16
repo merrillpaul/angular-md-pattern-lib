@@ -7,7 +7,10 @@
   //$background: map-get($theme, background);
   $colors: (      
       success: map-get($extraColors, success),
-      secondary: map-get($extraColors, secondary)
+      secondary: map-get($extraColors, secondary),
+      lime: map-get($extraColors, lime),
+      yellow: map-get($extraColors, yellow),
+      link: map-get($extraColors, link)
   );
 
   .mat-icon {

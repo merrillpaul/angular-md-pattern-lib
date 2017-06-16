@@ -12,7 +12,10 @@
         accent: $accent,
         warn: $warn,
         success: map-get($extraColors, success),
-        secondary: map-get($extraColors, secondary)
+        secondary: map-get($extraColors, secondary),
+        lime: map-get($extraColors, lime),
+        link: map-get($extraColors, link),
+        yellow: map-get($extraColors, yellow)
     );
 
     .mat-sidenav-container {

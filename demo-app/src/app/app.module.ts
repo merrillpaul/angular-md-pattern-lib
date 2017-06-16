@@ -18,7 +18,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule,
+    CoreModule.forRoot(),
     SharedModule  
   ], // modules needed to run this module
   providers: [    

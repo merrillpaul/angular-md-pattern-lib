@@ -52,7 +52,8 @@ export class ExpandingPanelComponent {
 
   @Input('color')
   set color(color: string) {
-    if (color === 'primary' || color === 'accent' || color === 'warn' || color === 'success' || color === 'secondary') {
+    if (color === 'primary' || color === 'accent' || color === 'warn' || color === 'success' || color === 'secondary'
+    || color === 'lime' || color === 'yellow' || color === 'link') {
        this.appliedColor = 'mat-' + color;
     } else {
       this.appliedColor = color;

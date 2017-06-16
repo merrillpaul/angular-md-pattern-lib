@@ -8,9 +8,7 @@
   $colors: (
       primary: $primary,
       accent: $accent,
-      warn: $warn,
-      success: map-get($extraColors, success),
-      secondary: map-get($extraColors, secondary)
+      warn: $warn
   );
 
 
@@ -22,7 +20,13 @@
                 background-color: mat-color($color);
                 color: mat-color($color, default-contrast);
             }  
-        }
+          }
+          @each $name, $color in $extraColors {
+            &.mat-#{$name} {
+                background-color: mat-color($color);
+                color: mat-color($color, default-contrast);
+            }  
+          }
       }    
   }
 }

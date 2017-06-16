@@ -4,11 +4,26 @@
 ## Installation
 
 To install this library, run:
-- remove all references in your project's package json to all angular material, hammerjs, d3, ngx-charts etc, and any flex layouts. Running the install command below adds all of this.
 
 ```bash
 $ npm install @pearson/angular-material --save
 ```
+
+### Application package.json
+Ideally your application package.json should have only
+```
+  "dependencies": {
+    "@pearson/angular-material": "^0.2.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.4.0",
+    "zone.js": "^0.8.10"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.1.1",
+    "@angular/compiler-cli": "^4.2.2",
+    ..
+```
+That is, no reference to angular or angular-material packages. These would be resolved by the @pearson/angular-material package.
 
 ### Add theme css and iscroll in .angular-cli.json
 Add the theme css file in your angular cli json as shown below:-
@@ -28,7 +43,7 @@ For example the end app developer can access the themes using
 `$peason_light_theme: get_pearson_light_theme();`
 
 To accomplish this, update your .angular-cli.json:
--  angualr-cli json
+-  angular-cli json
 ```
 "styles": [
         "styles.scss"       
@@ -63,22 +78,10 @@ Like:-
   }
 }
 ```
-### Application package.json
-Your application's package json should contain only references to `@pearson/angular-material` in the dependencies section. All angular, material, flex layout and other required libraries are resolved from this package.
 
-```
-"dependencies": {
-    "@pearson/angular-material": "0.1.0",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.4.0",
-    "zone.js": "^0.8.10"
-  },
-  "devDependencies": {
-    "@angular/cli": "^1.0.6",
-    "@angular/compiler-cli": "4.1.3",
-```
 
-and then from your Angular `AppModule`:
+### Applying the Module
+
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -86,7 +89,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
+// Import the library
 import { PearsonMaterialModule } from '@pearson/angular-material';
 
 @NgModule({
@@ -124,7 +127,7 @@ $ npm run lint
 
 To publish to npm registry
 ```bash
-$ npm run publish
+$ npm run npm-publish
 ```
 
 ## License

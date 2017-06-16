@@ -64,7 +64,9 @@ export class BadgeComponent implements AfterContentInit {
      */
     private setupColor(color: string) {
        
-         if (color === 'primary' || color === 'accent' || color === 'warn' || color === 'success' || color === 'secondary') {
+         if (color === 'primary' || color === 'accent'
+          || color === 'warn' || color === 'success' || color === 'secondary'
+           || color === 'lime' || color === 'yellow' || color === 'link') {
             this._color =  'mat-' + color;
         } else {            
             this._color = `bgc-${color} tc-${color}-700`

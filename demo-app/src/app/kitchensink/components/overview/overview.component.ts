@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterContentInit } from '@angular/core';
 import { MediaQueryService, SpinnerService } from '@pearson/angular-material';
 
 import { KitchensinkService } from 'services';
@@ -9,7 +9,7 @@ import { KitchensinkService } from 'services';
   styleUrls: ['./overview.component.scss'],
   viewProviders: [KitchensinkService]
 })
-export class OverviewComponent implements AfterViewInit {
+export class OverviewComponent implements AfterContentInit {
 
   items: Object[] = [];
 
@@ -18,7 +18,7 @@ export class OverviewComponent implements AfterViewInit {
     private _kitchenService: KitchensinkService) { }
 
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     this._spinnerService.register('kitchen.overview.load');
     this._kitchenService.getMenu().subscribe((menuItems: any[]) => {
       this.items = menuItems.filter((it) => !it.skip);
