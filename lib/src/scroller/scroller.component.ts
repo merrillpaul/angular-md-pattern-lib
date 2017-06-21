@@ -1,4 +1,4 @@
-import { ElementRef, Renderer2, AfterContentInit, AfterViewInit, OnDestroy, Input, Component, HostListener } from '@angular/core';
+import { ElementRef, Renderer2, AfterContentInit, AfterViewInit, OnDestroy, Input, Component, HostListener, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -20,6 +20,8 @@ export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit
     constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
 
     }
+
+    @ViewChild("scrollable") scrollableChild: ElementRef;
 
     @Input('containerHeight')
     set gridHeight(height: string) {
@@ -85,7 +87,8 @@ export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit
             mouseWheel: true,
             interactiveScrollbars: true,
             shrinkScrollbars: 'scale',
-            fadeScrollbars: true
+            fadeScrollbars: true,
+            checkDOMChanges: true
         });
 
     }
@@ -103,6 +106,7 @@ export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit
         }
     }
 
+    observer: MutationObserver;
     ngAfterViewInit(): void {
         if (this._browserScroll === false) {
             this.setupScrollbars();
@@ -110,6 +114,15 @@ export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit
         setTimeout(() => {
             this.onResize(null);
         }, 1000);
+
+        this.observer = new MutationObserver(mutations => {
+            setTimeout(() => {
+                //console.log('Mutations', mutations);
+                this.onResize(null);
+            }, 100);
+        });
+        let config: MutationObserverInit = { attributes: true, childList: true, characterData: true, subtree: true };
+        this.observer.observe(this.scrollableChild.nativeElement, config);
     }
 
     ngOnDestroy(): void {
