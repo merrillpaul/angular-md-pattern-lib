@@ -1,4 +1,4 @@
-import { ElementRef, Renderer2, AfterContentInit, AfterViewInit, Input, Component } from '@angular/core';
+import { ElementRef, Renderer2, AfterContentInit, AfterViewInit, OnDestroy, Input, Component, HostListener } from '@angular/core';
 
 
 @Component({ 
@@ -9,9 +9,11 @@ import { ElementRef, Renderer2, AfterContentInit, AfterViewInit, Input, Componen
     ]
     
 })
-export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit {
+export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit , OnDestroy{
+    
 
-    private _containerHeight: string = '200px';
+
+    private _containerHeight: string;
     private _iscroll: IScroll;
     constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
         
@@ -27,15 +29,24 @@ export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit
         return this._containerHeight;
     }
 
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.setIfHeight();
+        this.onRefresh();
+    }
+
 
     private setIfHeight(): void {
         if (this._containerHeight) {           
             this._renderer.setStyle(this._elementRef.nativeElement, 'height', this._containerHeight);
+        } else {
+            let parent = this._elementRef.nativeElement.parentElement;
+            this._renderer.setStyle(this._elementRef.nativeElement, 'height', `${parent.offsetHeight}px`);
         }
     }
 
     private setupScrollbars(): void {
-        if (this._containerHeight) {
+       
             this._iscroll = new IScroll(this._elementRef.nativeElement, {
                 scrollbars: true,
                 mouseWheel: true,
@@ -44,7 +55,6 @@ export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit
                 fadeScrollbars: true
             });
 
-        }
     }
 
     private onRefresh(): void {
@@ -54,12 +64,19 @@ export class PearsonScrollerComponent implements AfterContentInit, AfterViewInit
         }
     }
 
-    ngAfterContentInit(): void {
-        this.setIfHeight();
-    }
+    ngAfterContentInit(): void {        
+            this.setIfHeight();        
+    }   
 
     ngAfterViewInit(): void {
-        this.setupScrollbars();        
+        this.setupScrollbars(); 
+        setTimeout( () => {
+            this.onResize(null);           
+        }, 1000);       
+    }
+
+    ngOnDestroy(): void {
+        this._iscroll && this._iscroll.destroy();
     }
 
     public refreshScroll(): void {
