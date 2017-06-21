@@ -26,6 +26,13 @@
     -ms-text-size-adjust: none;
     -o-text-size-adjust: none;
     text-size-adjust: none;
-}
+  }
+
+  &.browserScroll {
+    overflow: auto;
+    .psn-scrollable {
+      position: relative;
+    }
+  }
   
 }

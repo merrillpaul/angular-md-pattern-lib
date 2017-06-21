@@ -14,4 +14,13 @@ This can also listen for media, for example
  ...
 </div>
 ``` 
-You would need to inject `MediaQueryService` into your component.
+
+## Use Browser scrolling 
+```
+<div class="test-session-ctr" psn-scroller [browserScroll]="!media.query('gt-xs')">
+            <router-outlet></router-outlet>
+        </div>      
+```
+Here, we fallback to typical browser scroller for smaller xs media.
+
+- You would need to inject `MediaQueryService` into your component.
