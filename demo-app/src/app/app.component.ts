@@ -1,4 +1,4 @@
-import { Component, HostBinding, ViewContainerRef, AfterViewInit } from '@angular/core';
+import { Component, HostBinding, ViewContainerRef, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdIconRegistry } from '@angular/material';
 import { OverlayContainer } from '@angular/material';
@@ -22,7 +22,7 @@ export class AppComponent implements AfterViewInit {
 
   currentUser: UserDetails;
   currentPage: string;
-  currentThemeIdx: number = 5;
+  currentThemeIdx: number = 1;
   themes: string[] = [
     'pearson_dark_theme',
     'pearson_theme'
@@ -59,6 +59,8 @@ export class AppComponent implements AfterViewInit {
     private _vcr: ViewContainerRef,
     private _toastService: ToastService,
     public security: SecurityService,
+    private renderer: Renderer2,
+    private element: ElementRef,
     private _router: Router) {
 
 
@@ -109,14 +111,17 @@ export class AppComponent implements AfterViewInit {
       this.currentThemeIdx++;
     }
     let theme = this.themes[this.currentThemeIdx];
+    
     let clist = this.overlayContainer.getContainerElement().classList;
     this.themes.forEach((it) => {
       if (it !== '' && clist.contains(it)) {
         this.overlayContainer.getContainerElement().classList.remove(it);
       }
+      this.renderer.removeClass(this.element.nativeElement, it);
     });
     if (theme !== '') {
       this.overlayContainer.getContainerElement().classList.add(theme);
+      this.renderer.addClass(this.element.nativeElement, theme);
     }
   }
 

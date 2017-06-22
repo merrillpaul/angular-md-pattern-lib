@@ -1,5 +1,5 @@
 # @pearson/angular-material
-- Heavily uses angular flex laout - (https://github.com/angular/flex-layout)
+- Heavily uses angular flex layout - (https://github.com/angular/flex-layout)
 
 ## Installation
 
@@ -133,3 +133,7 @@ $ npm run npm-publish
 ## License
 
 TODO
+
+
+## Issues:
+- angular/compiler-cli is still at 4.1.3 due to https://github.com/angular/angular/issues/17171
