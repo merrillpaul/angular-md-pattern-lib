@@ -13,7 +13,7 @@ $ npm install @pearson/angular-material --save
 Ideally your application package.json should have only
 ```
   "dependencies": {
-    "@pearson/angular-material": "^0.2.0",
+    "@pearson/angular-material": "^0.2.2",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.10"
