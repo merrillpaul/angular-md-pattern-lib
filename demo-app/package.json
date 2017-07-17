@@ -13,7 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@pearson/angular-material": "^0.2.1",
+    "@pearson/angular-material": "^0.2.2",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.10"
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@angular/cli": "^1.2.1",
     "@angular/compiler-cli": "^4.2.2",
-    "@pearson/angular-material": "^0.2.1",
+    "@pearson/angular-material": "^0.2.2",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
