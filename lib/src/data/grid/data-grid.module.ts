@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdSelectionModule } from '@angular/material';
+import { MdCheckboxModule, MdTooltipModule, MdIconModule, MdSelectModule, MdPseudoCheckboxModule } from '@angular/material';
 
 import { GridCellComponent } from './components/cell/grid-cell.component';
 import { GridColumnComponent } from './components/column/grid-column.component';
@@ -55,7 +55,8 @@ const GRID_COMPS: Type<any>[] = [
         MdCheckboxModule, 
         MdTooltipModule, 
         MdIconModule, 
-        MdSelectionModule,
+        MdSelectModule,
+        MdPseudoCheckboxModule,
         FlexLayoutModule
     ],
     exports: [

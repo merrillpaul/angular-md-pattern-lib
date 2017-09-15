@@ -1,6 +1,6 @@
 @mixin psn-input-theme($theme) {
     $background: map-get($theme, background );
-    .mat-input-container {
+    .mat-input-container, .mat-form-field {
         font-family: $mat-font-family;
     
         .mat-input-infix {

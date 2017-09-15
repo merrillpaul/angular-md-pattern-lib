@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
-import { MdSidenav, MdSidenavToggleResult } from '@angular/material';
+import { MdSidenav, MdDrawerToggleResult } from '@angular/material';
 
 @Component({
   selector: 'nav-manage-list',
@@ -55,21 +55,21 @@ export class NavManageListComponent {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdSidenavToggleResult> {
+  public toggle(): Promise<MdDrawerToggleResult> {
     return this._sideNav.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdSidenavToggleResult> {
+  public open(): Promise<MdDrawerToggleResult> {
     return this._sideNav.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdSidenavToggleResult> {
+  public close(): Promise<MdDrawerToggleResult> {
     return this._sideNav.close();
   }
 

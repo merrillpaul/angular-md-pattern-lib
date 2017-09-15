@@ -17,6 +17,7 @@
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
+    "skipMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "pearson-angular-material.js",
     "flatModuleId": "@pearson/angular-material"

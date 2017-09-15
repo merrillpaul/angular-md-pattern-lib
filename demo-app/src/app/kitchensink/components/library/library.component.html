@@ -609,9 +609,10 @@
       <div layout="row" layout-margin>
          <md-input-container flex="50">
               <input mdInput [mdDatepicker]="picker" placeholder="Choose a date ">
-              <button mdSuffix [mdDatepickerToggle]="picker"></button>
+              <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+              <md-datepicker #picker></md-datepicker>
           </md-input-container>
-          <md-datepicker #picker></md-datepicker>
+          
       </div>
     </form>
   </md-card-content>
