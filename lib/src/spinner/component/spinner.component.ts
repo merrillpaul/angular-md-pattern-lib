@@ -1,6 +1,6 @@
 import { Component, ViewChild, TemplateRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
-import { TemplatePortal } from '@angular/material';
+import { TemplatePortal } from '@angular/cdk/portal';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
@@ -45,7 +45,7 @@ export class SpinnerComponent {
 
   animation: boolean = false;
 
-  content: TemplatePortal;
+  content: TemplatePortal<any>;
 
   set mode(mode: SpinnerMode) {
     this._defaultMode = mode;

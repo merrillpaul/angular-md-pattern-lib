@@ -18,7 +18,7 @@
         yellow: map-get($extraColors, yellow)
     );
 
-    .mat-sidenav-container {
+    .mat-sidenav-container, .mat-drawer-container {
         background-color: mat-color($background, status-bar);
     }
 

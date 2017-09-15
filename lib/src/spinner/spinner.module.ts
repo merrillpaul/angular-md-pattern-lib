@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MdProgressBarModule, MdProgressSpinnerModule, OverlayModule, PortalModule } from '@angular/material';
+import { MdProgressBarModule, MdProgressSpinnerModule } from '@angular/material';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SpinnerComponent, SpinnerMode, SpinnerStrategy, SpinnerStyle, SpinnerType } from './component/spinner.component';

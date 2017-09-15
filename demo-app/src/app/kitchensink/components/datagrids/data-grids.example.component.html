@@ -120,7 +120,7 @@
           
                 <md-input-container>
                     <input mdInput [mdDatepicker]="picker" placeholder="Choose a date {{rowIndex}}">
-                    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>                    
                 </md-input-container>
                 <md-datepicker #picker></md-datepicker>
             

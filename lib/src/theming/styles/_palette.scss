@@ -346,6 +346,8 @@ $mat-pearson-light-theme-background: (
   selected-button: map_get($mat-pearson-grey, 300),
   selected-disabled-button: map_get($mat-pearson-grey, 400),
   disabled-button-toggle: map_get($mat-pearson-grey, 200),
+  unselected-chip: map_get($mat-pearson-grey, 300),
+  disabled-list-option: map_get($mat-pearson-grey, 200),
 );
 
 // Background palette for dark themes.
@@ -362,6 +364,8 @@ $mat-pearson-dark-theme-background: (
   selected-button: map_get($mat-pearson-grey, 700),
   selected-disabled-button: map_get($mat-pearson-grey, 900),
   disabled-button-toggle: map_get($mat-pearson-grey, 900),
+  unselected-chip: map_get($mat-pearson-grey, 700),
+  disabled-list-option: black,
 );
 
 
@@ -379,6 +383,7 @@ $mat-pearson-light-theme-foreground: (
   icon:            rgba(black, 0.54),
   icons:           rgba(black, 0.54),
   text:            rgba(black, 0.87),
+  slider-min:        rgba(black, 0.87),
   slider-off:        rgba(black, 0.26),
   slider-off-active: rgba(black, 0.38)
 );
@@ -397,6 +402,7 @@ $mat-pearson-dark-theme-foreground: (
   icons:           white,
   text:            white,
   slider-off:        rgba(white, 0.3),
+  slider-min:        white,
   slider-off-active: rgba(white, 0.3)
 );
 
