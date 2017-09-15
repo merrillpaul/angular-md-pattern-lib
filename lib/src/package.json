@@ -3,7 +3,7 @@
     "main": "./pearson-angular-material.umd.js",
     "module": "./index.js",
     "typings": "./pearson-angular-material.d.ts",
-    "version": "0.2.2",
+    "version": "1.0.0",
     "keywords": [
         "angular",
         "material",
