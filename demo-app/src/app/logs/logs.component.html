@@ -1,31 +1,31 @@
 <div  fxFlex fxLayout="column" fxFill >
 
-<md-toolbar color="primary" show-sm show-xs hide-lg hide-xl>
+<mat-toolbar color="primary" show-sm show-xs hide-lg hide-xl>
   <span></span>
   <div td-toolbar-content fxLayout="row" fxLayoutAlign="start center" fxFlex>
-    <button (click)="logsSideNav.toggle()" md-icon-button><md-icon class="md-24">menu</md-icon></button>    
+    <button (click)="logsSideNav.toggle()" mat-icon-button><mat-icon class="mat-24">menu</mat-icon></button>    
   </div>
-</md-toolbar>
+</mat-toolbar>
 
-<md-sidenav-container fxFlex="100" fxLayout="column"> 
+<mat-sidenav-container fxFlex="100" fxLayout="column"> 
 
-  <md-sidenav 
+  <mat-sidenav 
     #logsSideNav
     [mode]="(media.query('gt-sm')   ) ? 'side' : 'push'" 
     [opened]="(media.query('gt-sm') ) ? true: false">
-    <md-nav-list >
+    <mat-nav-list >
       <ng-template let-item let-last="last" ngFor [ngForOf]="products">
-        <a md-list-item  (click)="selectProduct(item)" [ngClass]="{'active': item === selectedProduct}">
-          <md-icon md-list-avatar>{{item.icon}}</md-icon>
-          <h3 md-line> {{item.name}} </h3>
-          <p md-line> product logs </p>
+        <a mat-list-item  (click)="selectProduct(item)" [ngClass]="{'active': item === selectedProduct}">
+          <mat-icon mat-list-avatar>{{item.icon}}</mat-icon>
+          <h3 mat-line> {{item.name}} </h3>
+          <p mat-line> product logs </p>
         </a>
-        <md-divider *ngIf="!last" md-inset></md-divider>
+        <mat-divider *ngIf="!last" mat-inset></mat-divider>
       </ng-template>
-    </md-nav-list>
-  </md-sidenav> 
+    </mat-nav-list>
+  </mat-sidenav> 
 
   <logs-details *ngIf="selectedProduct" [product]="selectedProduct"></logs-details>
 
-</md-sidenav-container>
+</mat-sidenav-container>
 </div>

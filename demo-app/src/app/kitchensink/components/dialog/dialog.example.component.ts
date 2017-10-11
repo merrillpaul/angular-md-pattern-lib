@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MdSnackBar, MdDialog } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { DialogService, ToastService } from '@pearson/angular-material'
 import { DialogOptions, DialogType, ToastRequest, ToastDismissMode } from '@pearson/angular-material';
 import { Toast } from 'ng2-toastr/ng2-toastr';
@@ -18,7 +18,7 @@ export class DialogExampleComponent implements OnInit {
   constructor(
     private _dialogService: DialogService,
     private _toastService: ToastService,
-    private _snackBarService: MdSnackBar
+    private _snackBarService: MatSnackBar
   ) { }
 
   ngOnInit() {

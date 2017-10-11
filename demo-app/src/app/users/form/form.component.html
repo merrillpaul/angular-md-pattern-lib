@@ -1,11 +1,11 @@
-<md-card>
-      <md-card-title>User Form</md-card-title>
-      <md-divider></md-divider>
-      <md-card-content class="push-bottom-none">
+<mat-card>
+      <mat-card-title>User Form</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content class="push-bottom-none">
         <form #userForm="ngForm">
           <div fxLayout="column">
             <span> User Name: </span>
-            <md-input-container fxFlex> 
+            <mat-input-container fxFlex> 
               <input mdInput
                       #displayNameElement
                       #displayNameControl="ngModel"
@@ -15,18 +15,18 @@
                       name="displayName" 
                       maxlength="20" 
                       required>
-              <md-hint align="start">
+              <mat-hint align="start">
                 <span [hidden]="displayNameControl.pristine" class="tc-red-600">
                   <span [hidden]="!displayNameControl.errors?.required">Required</span>
                 </span>
-              </md-hint>
-              <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
-            </md-input-container>
+              </mat-hint>
+              <mat-hint align="end">{{displayNameElement.value.length}} / 20</mat-hint>
+            </mat-input-container>
           </div>
 
           <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
             <span> Email: </span>
-            <md-input-container fxFlex> 
+            <mat-input-container fxFlex> 
               <input mdInput
                       #emailElement
                       #emailControl="ngModel"
@@ -37,23 +37,23 @@
                       maxlength="30"
                       pattern="^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$"
                       required>
-              <md-hint align="start">
+              <mat-hint align="start">
                 <span [hidden]="emailControl.pristine" class="tc-red-600">
                   <span [hidden]="!emailControl.errors?.required">Required</span>
                   <span [hidden]="!emailControl.errors?.pattern">incorrect pattern</span>
                 </span>
-              </md-hint>
-              <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
-            </md-input-container>
+              </mat-hint>
+              <mat-hint align="end">{{emailElement.value.length}} / 30</mat-hint>
+            </mat-input-container>
           </div>
           <div fxLayout="row">
-            <md-slide-toggle [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
+            <mat-slide-toggle [(ngModel)]="admin" name="admin">Admin</mat-slide-toggle>
           </div>
         </form>
-      </md-card-content>
-      <md-divider></md-divider>
-      <md-card-actions>
-        <button md-raised-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
-        <button md-button (click)="goBack()">CANCEL</button>
-      </md-card-actions>
-    </md-card>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button mat-raised-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
+        <button mat-button (click)="goBack()">CANCEL</button>
+      </mat-card-actions>
+    </mat-card>

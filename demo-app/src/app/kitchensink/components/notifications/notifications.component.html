@@ -1,95 +1,95 @@
- <md-card>
-        <md-card-title>PSN Menu</md-card-title>
-        <md-divider></md-divider>
-        <md-card-content>
+ <mat-card>
+        <mat-card-title>PSN Menu</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
           <psn-menu>
-            <div psn-menu-header class="md-subhead">Notifications</div>
-            <md-nav-list dense psn-menu-content>
+            <div psn-menu-header class="mat-subhead">Notifications</div>
+            <mat-nav-list dense psn-menu-content>
               <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
-                <a md-list-item>
-                  <md-icon md-list-avatar>today</md-icon>
-                  <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                  <p md-line>22 minutes ago</p>
+                <a mat-list-item>
+                  <mat-icon mat-list-avatar>today</mat-icon>
+                  <h4 mat-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                  <p mat-line>22 minutes ago</p>
                 </a>
-                <md-divider *ngIf="!last"></md-divider>
+                <mat-divider *ngIf="!last"></mat-divider>
               </ng-template>
-            </md-nav-list>
+            </mat-nav-list>
 
-            <button md-button color="success" psn-menu-footer>
+            <button mat-button color="success" psn-menu-footer>
           Notifications footer
         </button>
           </psn-menu>
-        </md-card-content>
-        <md-card-content>
-          <md-toolbar color="secondary">
-            <button md-icon-button>
-          <md-icon>menu</md-icon>
+        </mat-card-content>
+        <mat-card-content>
+          <mat-toolbar color="secondary">
+            <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
         </button>
             <span fxFlex>Toolbar</span>
-            <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-          <md-icon>notifications</md-icon>
+            <button mat-icon-button [mdMenuTriggerFor]="notificationsMenu">
+          <mat-icon>notifications</mat-icon>
         </button>
-            <md-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
+            <mat-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
               <psn-menu>
-                <div psn-menu-header class="md-subhead">Notifications</div>
-                <md-nav-list dense psn-menu-content>
+                <div psn-menu-header class="mat-subhead">Notifications</div>
+                <mat-nav-list dense psn-menu-content>
                   <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
-                    <a md-list-item>
-                      <md-icon md-list-avatar>today</md-icon>
-                      <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                      <p md-line>22 minutes ago</p>
+                    <a mat-list-item>
+                      <mat-icon mat-list-avatar>today</mat-icon>
+                      <h4 mat-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                      <p mat-line>22 minutes ago</p>
                     </a>
-                    <md-divider *ngIf="!last"></md-divider>
+                    <mat-divider *ngIf="!last"></mat-divider>
                   </ng-template>
-                </md-nav-list>
+                </mat-nav-list>
 
-                <button md-button color="success" psn-menu-footer>
+                <button mat-button color="success" psn-menu-footer>
           Notifications footer
         </button>
               </psn-menu>
-            </md-menu>
-            <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
-            <md-menu #toolbarMenu1="mdMenu">
-              <button md-menu-item>
-          <md-icon>settings</md-icon>
+            </mat-menu>
+            <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
+            <mat-menu #toolbarMenu1="mdMenu">
+              <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
           <span>Settings</span>
         </button>
-              <button md-menu-item>
-          <md-icon>exit_to_app</md-icon>
+              <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
           <span>Sign out</span>
         </button>
-            </md-menu>
-          </md-toolbar>
-        </md-card-content>
-      </md-card>
+            </mat-menu>
+          </mat-toolbar>
+        </mat-card-content>
+      </mat-card>
 
-      <md-card>
-        <md-card-title>
+      <mat-card>
+        <mat-card-title>
           Messages and Badges
-        </md-card-title>
-        <md-card-content>
+        </mat-card-title>
+        <mat-card-content>
           <psn-message #message label="Hey" sublabel="title goes here" icon="info" color="success" [opened]="true">
-            <button message-actions md-button>View More</button>
-            <button md-icon-button (click)="message.close()" message-actions>
-            <md-icon>close</md-icon>
+            <button message-actions mat-button>View More</button>
+            <button mat-icon-button (click)="message.close()" message-actions>
+            <mat-icon>close</mat-icon>
           </button>
           </psn-message>
 
-          <md-card>
+          <mat-card>
             <psn-message label="Hey" sublabel="title goes here" icon="info" color="accent" [opened]="true">
             </psn-message>
-          </md-card>
+          </mat-card>
 
-          <md-card>
-            <md-card-title>
+          <mat-card>
+            <mat-card-title>
               Other styles
-            </md-card-title>
+            </mat-card-title>
             <psn-message inverted label="Hey" sublabel="inverted color goes here" icon="info" color="warn" [opened]="true">
             </psn-message>
             <p></p>
             <psn-message inverted label="Hey" sublabel="inverted color goes here" icon="info" color="success" [opened]="true">
-              <button md-icon-button (click)="message.close()" message-actions>
-            <md-icon>close</md-icon>
+              <button mat-icon-button (click)="message.close()" message-actions>
+            <mat-icon>close</mat-icon>
           </button>
             </psn-message>
             <p></p>
@@ -97,33 +97,33 @@
             </psn-message>
             <p></p>
             <psn-message inverted label="Hey" sublabel="inverted color goes here" icon="info" color="primary" [opened]="true">
-              <button md-icon-button (click)="message.close()" message-actions>
-            <md-icon>close</md-icon>
+              <button mat-icon-button (click)="message.close()" message-actions>
+            <mat-icon>close</mat-icon>
           </button>
             </psn-message>
-          </md-card>
+          </mat-card>
 
-          <md-card>
-            <md-card-title>Section</md-card-title>
-            <md-divider></md-divider>
+          <mat-card>
+            <mat-card-title>Section</mat-card-title>
+            <mat-divider></mat-divider>
             <psn-message label="Hmm" sublabel="THere is a problem here" color="warn" icon="error"></psn-message>
-            <md-card-content>
+            <mat-card-content>
               lorem ipsum
-            </md-card-content>
-          </md-card>
+            </mat-card-content>
+          </mat-card>
 
-          <md-card>
-            <md-card-title>Badges</md-card-title>
-            <md-divider></md-divider>
+          <mat-card>
+            <mat-card-title>Badges</mat-card-title>
+            <mat-divider></mat-divider>
             <psn-badge color="primary" x="before" notifications="6+">
-              <md-icon>person</md-icon>
+              <mat-icon>person</mat-icon>
             </psn-badge>
 
             <psn-badge color="success" x="before" notifications="9">
 
             </psn-badge>
 
-            <button md-raised-button color="accent" >Inside Buttons  <psn-badge color="warn" notifications="3"></psn-badge></button>
+            <button mat-raised-button color="accent" >Inside Buttons  <psn-badge color="warn" notifications="3"></psn-badge></button>
 
             <psn-badge size="24" color="warn" x="before" notifications="9">
             </psn-badge>
@@ -144,119 +144,119 @@
             </psn-badge>
 
 
-            <md-nav-list dense flex disableRipple="true">
-              <a md-list-item>
-                <md-icon md-list-avatar>person</md-icon>
-                <h3 md-line> Jyn Erso stole the plans to the Death Star </h3>
-                <p md-line> 10 mins ago </p>
+            <mat-nav-list dense flex disableRipple="true">
+              <a mat-list-item>
+                <mat-icon mat-list-avatar>person</mat-icon>
+                <h3 mat-line> Jyn Erso stole the plans to the Death Star </h3>
+                <p mat-line> 10 mins ago </p>
                 <span></span>
                 <psn-badge color="accent" notifications="B+">
                 </psn-badge>
               </a>
-              <md-divider md-inset></md-divider>
-              <a md-list-item>
-                <md-icon md-list-avatar>person</md-icon>
-                <h3 md-line> Something something something.. dark side. </h3>
-                <p md-line> 9 hours ago </p>
+              <mat-divider mat-inset></mat-divider>
+              <a mat-list-item>
+                <mat-icon mat-list-avatar>person</mat-icon>
+                <h3 mat-line> Something something something.. dark side. </h3>
+                <p mat-line> 9 hours ago </p>
                 <span></span>
                 <psn-badge color="warn" notifications="2">
                 </psn-badge>
               </a>
-              <md-divider md-inset></md-divider>
-              <a md-list-item>
-                <md-icon md-list-avatar>person</md-icon>
-                <h3 md-line> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
-                <p md-line> 2 days ago </p>
+              <mat-divider mat-inset></mat-divider>
+              <a mat-list-item>
+                <mat-icon mat-list-avatar>person</mat-icon>
+                <h3 mat-line> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
+                <p mat-line> 2 days ago </p>
                 <span></span>
                 <psn-badge color="secondary" notifications="A+">
                 </psn-badge>
               </a>
-            </md-nav-list>
+            </mat-nav-list>
 
-          </md-card>
+          </mat-card>
 
-          <md-card>
-            <md-card-title>
+          <mat-card>
+            <mat-card-title>
               Badge in Toolbar
-            </md-card-title>
-            <md-card-content>
-              <md-toolbar color="secondary">
-                <button md-icon-button>
-              <md-icon>menu</md-icon>
+            </mat-card-title>
+            <mat-card-content>
+              <mat-toolbar color="secondary">
+                <button mat-icon-button>
+              <mat-icon>menu</mat-icon>
             </button>
                 <span>Info</span>
                 <span fxFlex></span>
 
                 <psn-badge color="primary" x="before" notifications="Y+">
-                  <md-icon>person</md-icon>
+                  <mat-icon>person</mat-icon>
                 </psn-badge>
                 <psn-badge color="success" notifications="6">
-                  <md-icon>messages</md-icon>
+                  <mat-icon>messages</mat-icon>
                 </psn-badge>
-                <button md-icon-button [mdMenuTriggerFor]="notificationsMenu1">
+                <button mat-icon-button [mdMenuTriggerFor]="notificationsMenu1">
               <psn-badge notifications="66+">
-                <md-icon>notifications</md-icon>
+                <mat-icon>notifications</mat-icon>
               </psn-badge>
             </button>
-                <md-menu #notificationsMenu1="mdMenu" [overlapTrigger]="false">
+                <mat-menu #notificationsMenu1="mdMenu" [overlapTrigger]="false">
                   <psn-menu>
-                    <div psn-menu-header class="md-subhead">Notifications</div>
-                    <md-nav-list dense psn-menu-content>
+                    <div psn-menu-header class="mat-subhead">Notifications</div>
+                    <mat-nav-list dense psn-menu-content>
                       <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
-                        <a md-list-item>
-                          <md-icon md-list-avatar>today</md-icon>
-                          <h4 md-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
-                          <p md-line>22 minutes ago</p>
+                        <a mat-list-item>
+                          <mat-icon mat-list-avatar>today</mat-icon>
+                          <h4 mat-line><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                          <p mat-line>22 minutes ago</p>
                         </a>
-                        <md-divider *ngIf="!last"></md-divider>
+                        <mat-divider *ngIf="!last"></mat-divider>
                       </ng-template>
-                    </md-nav-list>
+                    </mat-nav-list>
 
-                    <button md-button color="success" psn-menu-footer>
+                    <button mat-button color="success" psn-menu-footer>
                   Notifications footer
                 </button>
                   </psn-menu>
-                </md-menu>
+                </mat-menu>
 
 
-              </md-toolbar>
-            </md-card-content>
-          </md-card>
+              </mat-toolbar>
+            </mat-card-content>
+          </mat-card>
 
-          <md-card>
-            <md-card-title>Badge in Tabs</md-card-title>
-            <md-card-content>
-              <md-tab-group md-stretch-tabs>
-                <md-tab>
-                  <ng-template md-tab-label>
+          <mat-card>
+            <mat-card-title>Badge in Tabs</mat-card-title>
+            <mat-card-content>
+              <mat-tab-group mat-stretch-tabs>
+                <mat-tab>
+                  <ng-template mat-tab-label>
                     <div layout="row" layout-align="center center">
                       Activities
                       <psn-badge color="primary" notifications="3">
                       </psn-badge>
                     </div>
                   </ng-template>
-                </md-tab>
-                <md-tab>
-                  <ng-template md-tab-label>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
                     <div layout="row" layout-align="center center">
                       Logs
                       <psn-badge color="warn" notifications="0">
                       </psn-badge>
                     </div>
                   </ng-template>
-                </md-tab>
-                <md-tab>
-                  <ng-template md-tab-label>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
                     <div layout="row" layout-align="center center">
                       Chats
                       <psn-badge color="success" notifications="12">
                       </psn-badge>
                     </div>
                   </ng-template>
-                </md-tab>
-              </md-tab-group>
-            </md-card-content>
-          </md-card>
+                </mat-tab>
+              </mat-tab-group>
+            </mat-card-content>
+          </mat-card>
 
-        </md-card-content>
-      </md-card>
+        </mat-card-content>
+      </mat-card>

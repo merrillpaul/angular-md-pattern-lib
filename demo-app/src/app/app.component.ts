@@ -1,7 +1,7 @@
 import { Component, HostBinding, ViewContainerRef, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
-import { OverlayContainer } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { SpinnerService, ToastService, MediaQueryService } from '@pearson/angular-material';
@@ -51,7 +51,7 @@ export class AppComponent implements AfterViewInit {
 
   ];
 
-  constructor(private _iconRegistry: MdIconRegistry,
+  constructor(private _iconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer,
     private overlayContainer: OverlayContainer,
     private spinnerService: SpinnerService,

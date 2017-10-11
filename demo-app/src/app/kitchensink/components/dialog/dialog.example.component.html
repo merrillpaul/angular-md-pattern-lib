@@ -1,70 +1,70 @@
-<md-card>
-  <md-card-title>Dialogs</md-card-title>
-  <md-card-subtitle> alert, confirm and prompt dialogs</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <md-card-actions>
-      <button md-raised-button color="primary" (click)="openPrimary()" class="text-upper">Primary</button>
-      <button md-raised-button (click)="openSuccess()" class="text-upper success">Success</button>
-      <button md-raised-button (click)="openPrompt()" class="text-upper secondary">Prompt</button>      
-    </md-card-actions>
+<mat-card>
+  <mat-card-title>Dialogs</mat-card-title>
+  <mat-card-subtitle> alert, confirm and prompt dialogs</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="openPrimary()" class="text-upper">Primary</button>
+      <button mat-raised-button (click)="openSuccess()" class="text-upper success">Success</button>
+      <button mat-raised-button (click)="openPrompt()" class="text-upper secondary">Prompt</button>      
+    </mat-card-actions>
    
-  </md-card-content>
-  <md-card-content>
+  </mat-card-content>
+  <mat-card-content>
    
-    <md-card-actions>      
-      <button md-raised-button color="accent" (click)="openWarning()" class="text-upper">Warning</button>
-      <button md-raised-button color="warn" (click)="openDanger()" class="text-upper">Danger</button>
-      <button md-raised-button color="primary" (click)="openAlert()" class="text-upper">Alert</button>
-    </md-card-actions>
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-content>
+    <mat-card-actions>      
+      <button mat-raised-button color="accent" (click)="openWarning()" class="text-upper">Warning</button>
+      <button mat-raised-button color="warn" (click)="openDanger()" class="text-upper">Danger</button>
+      <button mat-raised-button color="primary" (click)="openAlert()" class="text-upper">Alert</button>
+    </mat-card-actions>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     Selected option: {{selectedOption}}
-  </md-card-content>
+  </mat-card-content>
 
 
 
-</md-card>
+</mat-card>
 
-<md-card>
-  <md-card-title>Toasts</md-card-title>
-  <md-card-subtitle> show simple toasts</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <md-card-actions>
-      <button md-raised-button color="primary" (click)="openInfoToast()">Info</button>
-      <button md-raised-button color="accent" (click)="openWarningToast()">Warning</button>
-      <button md-raised-button color="warn" (click)="openErrorToast()">Error</button>
-      <button md-raised-button class="success" (click)="openSuccessToast()">Success</button>
-    </md-card-actions>
-  </md-card-content>
+<mat-card>
+  <mat-card-title>Toasts</mat-card-title>
+  <mat-card-subtitle> show simple toasts</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="openInfoToast()">Info</button>
+      <button mat-raised-button color="accent" (click)="openWarningToast()">Warning</button>
+      <button mat-raised-button color="warn" (click)="openErrorToast()">Error</button>
+      <button mat-raised-button class="success" (click)="openSuccessToast()">Success</button>
+    </mat-card-actions>
+  </mat-card-content>
  
-  <md-divider></md-divider>
-  <md-card-content>
-       <md-card-title>Advanced options</md-card-title>
-        <md-card-actions>
-          <button md-raised-button (click)="openToastForClick()">Dismiss Only on Click</button>
-          <button md-raised-button (click)="openToastForControl()">Control Toast</button>
-          <button md-raised-button (click)="closeControlledToast()">Close the controlled Toast</button>
-          <button md-raised-button color="primary" (click)="openToastWithHtml()">HTML Toast</button>
-        </md-card-actions>              
-  </md-card-content>  
+  <mat-divider></mat-divider>
+  <mat-card-content>
+       <mat-card-title>Advanced options</mat-card-title>
+        <mat-card-actions>
+          <button mat-raised-button (click)="openToastForClick()">Dismiss Only on Click</button>
+          <button mat-raised-button (click)="openToastForControl()">Control Toast</button>
+          <button mat-raised-button (click)="closeControlledToast()">Close the controlled Toast</button>
+          <button mat-raised-button color="primary" (click)="openToastWithHtml()">HTML Toast</button>
+        </mat-card-actions>              
+  </mat-card-content>  
 
-  <md-card-content>
-       <md-card-title>Toast Click handler</md-card-title>
-        <md-card-actions>
-          <button md-raised-button (click)="openToastAndHandleClick()">Handle Toast Click</button>          
-        </md-card-actions>              
-  </md-card-content> 
+  <mat-card-content>
+       <mat-card-title>Toast Click handler</mat-card-title>
+        <mat-card-actions>
+          <button mat-raised-button (click)="openToastAndHandleClick()">Handle Toast Click</button>          
+        </mat-card-actions>              
+  </mat-card-content> 
 
-</md-card>
+</mat-card>
 
-<md-card>
-  <md-card-title>Snack Bar</md-card-title>
-  <md-card-subtitle> shows a notif down</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-raised-button (click)="showSnackbar()">Danger</button>
-  </md-card-actions>
-</md-card>
+<mat-card>
+  <mat-card-title>Snack Bar</mat-card-title>
+  <mat-card-subtitle> shows a notif down</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-raised-button (click)="showSnackbar()">Danger</button>
+  </mat-card-actions>
+</mat-card>

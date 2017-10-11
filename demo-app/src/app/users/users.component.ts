@@ -1,7 +1,7 @@
 import { Component, AfterContentInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 import { SpinnerService, DialogService, MediaQueryService } from '@pearson/angular-material';
 
@@ -22,7 +22,7 @@ export class UsersComponent implements AfterContentInit {
               private _router: Router,
               private _loadingService: SpinnerService,
               private _dialogService: DialogService,
-              private _snackBarService: MdSnackBar,
+              private _snackBarService: MatSnackBar,
               private _usersService: UsersService,
               public media: MediaQueryService) {
   }

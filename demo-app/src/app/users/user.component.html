@@ -1,46 +1,46 @@
 <div  fxFlex fxLayout="column" fxFill >
-<md-toolbar color="success">
-    <button (click)="usersSideNav.toggle()" md-icon-button><md-icon class="md-24">menu</md-icon></button>    
+<mat-toolbar color="success">
+    <button (click)="usersSideNav.toggle()" mat-icon-button><mat-icon class="mat-24">menu</mat-icon></button>    
     <span flex></span>
-    <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
-    <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
-    <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-    <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-</md-toolbar>
+    <button mat-icon-button><mat-icon class="mat-24">view_module</mat-icon></button>
+    <button mat-icon-button><mat-icon class="mat-24">sort</mat-icon></button>
+    <button mat-icon-button><mat-icon class="mat-24">settings</mat-icon></button>
+    <button mat-icon-button><mat-icon class="mat-24">more_vert</mat-icon></button>
+</mat-toolbar>
 
-<md-sidenav-container fxFlex fxLayout="column" fxFill> 
+<mat-sidenav-container fxFlex fxLayout="column" fxFill> 
 
-  <md-sidenav 
+  <mat-sidenav 
     #usersSideNav
     [mode]="(media.query('gt-sm')) ? 'side' : 'push'" 
     [opened]="(media.query('gt-sm')  ) ? true: false">
-    <md-nav-list >
-      <a md-list-item [routerLink]="['/users']">
-        <md-icon md-list-icon>account_circle</md-icon>
+    <mat-nav-list >
+      <a mat-list-item [routerLink]="['/users']">
+        <mat-icon mat-list-icon>account_circle</mat-icon>
         All Users
       </a>
-      <a md-list-item>
-        <md-icon md-list-icon>star</md-icon>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>star</mat-icon>
         Favorites
       </a>
-      <a md-list-item>
-        <md-icon md-list-icon>verified_user</md-icon>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>verified_user</mat-icon>
         Administrators
       </a>
-      <a md-list-item>
-        <md-icon md-list-icon>supervisor_account</md-icon>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
         Non-Admins
       </a>
-      <a md-list-item>
-        <md-icon md-list-icon>inbox</md-icon>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>inbox</mat-icon>
         Archived
       </a>
-    </md-nav-list>
-  </md-sidenav> 
+    </mat-nav-list>
+  </mat-sidenav> 
 
   <router-outlet></router-outlet>
 
-</md-sidenav-container>
+</mat-sidenav-container>
 
 
 </div>

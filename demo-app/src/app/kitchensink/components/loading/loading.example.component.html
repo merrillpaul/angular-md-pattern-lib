@@ -1,62 +1,62 @@
-<md-card>
-  <md-card-title>Loading</md-card-title>
-  <md-card-subtitle>Circular or linear progress loader</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
-    <h3 class="md-title">[spin] directive with (*) syntax</h3>
-    <h4 class="md-subhead">with indetederminate [spingMode], circular [spinType], overlay [spinStrategy], success [spinColor]</h4>
+<mat-card>
+  <mat-card-title>Loading</mat-card-title>
+  <mat-card-subtitle>Circular or linear progress loader</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <h3 class="mat-title">[spin] directive with (*) syntax</h3>
+    <h4 class="mat-subhead">with indetederminate [spingMode], circular [spinType], overlay [spinStrategy], success [spinColor]</h4>
  <div *spin="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'success'">
           <div layout="column" flex>
-            <md-input-container flex>
+            <mat-input-container flex>
               <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-            </md-input-container>
-            <md-input-container flex>
+            </mat-input-container>
+            <mat-input-container flex>
               <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </mat-input-container>
           </div>
         </div>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
         </div>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
-    <h3 class="md-title">[spin] directive with template syntax</h3>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+    <h3 class="mat-title">[spin] directive with template syntax</h3>
  <ng-template spin="replaceTemplateSyntax" spinMode="determinate" spinType="linear" spinStrategy="replace" spinColor="warn">
           <div layout="column" flex>
-            <md-input-container flex>
+            <mat-input-container flex>
               <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-            </md-input-container>
-            <md-select placeholder="Type" [(ngModel)]="replaceDemo.type">
-              <md-option [value]="1">Some type</md-option>
-              <md-option [value]="2">Another type</md-option>
-            </md-select>
-            <md-input-container flex>
+            </mat-input-container>
+            <mat-select placeholder="Type" [(ngModel)]="replaceDemo.type">
+              <mat-option [value]="1">Some type</mat-option>
+              <mat-option [value]="2">Another type</mat-option>
+            </mat-select>
+            <mat-input-container flex>
               <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
-            </md-input-container>
+            </mat-input-container>
           </div>
         </ng-template>
         <div layout="row">
-          <button md-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
         </div>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
-    <h3 class="md-title">Preloaded fullscreen mask</h3>
-    <h4 class="md-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+    <h3 class="mat-title">Preloaded fullscreen mask</h3>
+    <h4 class="mat-subhead">with indeterminate [mode], circular [type], primary [color] by default</h4>
   <div layout="row">
-          <button md-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
-  </md-card-content>
-</md-card>
-<md-card>
-  <md-card-content>
-   <h3 class="md-title">Custom  fullscreen mask</h3>
-    <h4 class="md-subhead">with indeterminate [mode], linear [type], primary [color]</h4>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+   <h3 class="mat-title">Custom  fullscreen mask</h3>
+    <h4 class="mat-subhead">with indeterminate [mode], linear [type], primary [color]</h4>
    <div layout="row">
-          <button md-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
         </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

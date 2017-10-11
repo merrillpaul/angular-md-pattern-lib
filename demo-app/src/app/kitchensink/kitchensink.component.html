@@ -4,12 +4,12 @@
     <nav-content [hideToolBar]="false" [hideMenu]="true" color="primary">
 
       <nav-toolbar-content>
-        <button (click)="kitchenSideNav.toggle()" md-icon-button><md-icon class="md-24">menu</md-icon></button>
+        <button (click)="kitchenSideNav.toggle()" mat-icon-button><mat-icon class="mat-24">menu</mat-icon></button>
         <span fxFlex></span>
-        <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+        <button mat-icon-button><mat-icon class="mat-24">view_module</mat-icon></button>
+        <button mat-icon-button><mat-icon class="mat-24">sort</mat-icon></button>
+        <button mat-icon-button><mat-icon class="mat-24">settings</mat-icon></button>
+        <button mat-icon-button><mat-icon class="mat-24">more_vert</mat-icon></button>
       </nav-toolbar-content>
      
 
@@ -22,18 +22,18 @@
             <span fxFlex></span>      
         </nav-toolbar-content>
 
-          <md-nav-list sidenav-content>
+          <mat-nav-list sidenav-content>
             <ng-template spin="kitchen.side.load">
               <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-                <a md-list-item [routerLink]="[item.route]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" (click)="!media.query('gt-sm') && kitchenSideNav.close()">
-                  <md-icon md-list-avatar>{{item.icon}}</md-icon>
-                  <h3 md-line> {{item.title}} </h3>
-                  <p md-line> {{item.description}} </p>
+                <a mat-list-item [routerLink]="[item.route]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" (click)="!media.query('gt-sm') && kitchenSideNav.close()">
+                  <mat-icon mat-list-avatar>{{item.icon}}</mat-icon>
+                  <h3 mat-line> {{item.title}} </h3>
+                  <p mat-line> {{item.description}} </p>
                 </a>
-                <md-divider *ngIf="!last" md-inset></md-divider>
+                <mat-divider *ngIf="!last" mat-inset></mat-divider>
               </ng-template>
             </ng-template>
-          </md-nav-list>
+          </mat-nav-list>
 
           <nav-body>
             <router-outlet></router-outlet>

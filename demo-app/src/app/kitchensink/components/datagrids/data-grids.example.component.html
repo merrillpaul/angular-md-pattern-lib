@@ -1,9 +1,9 @@
-<md-card>
-  <md-card-title>Data Grids with Fixed Headers and Height with IScroll</md-card-title>  
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Data Grids with Fixed Headers and Height with IScroll</mat-card-title>  
+  <mat-card-content>
   <div fxLayout="row" fxLayoutGap="20px">
-      <button md-raised-button color="primary" (click)="addRow()" >Add Row</button>
-      <button md-raised-button color="secondary" (click)="changeAllRows()" >Change All Rows</button>
+      <button mat-raised-button color="primary" (click)="addRow()" >Add Row</button>
+      <button mat-raised-button color="secondary" (click)="changeAllRows()" >Change All Rows</button>
   </div>    
   
    <psn-data-grid
@@ -22,7 +22,7 @@
           >
         </psn-data-grid>
         
-    <div class="md-padding" *ngIf="!dataTable.hasData" fxLayout="row" fxLayoutAlign="center center">
+    <div class="mat-padding" *ngIf="!dataTable.hasData" fxLayout="row" fxLayoutAlign="center center">
         <h3>No results to display.</h3>
     </div>
      <psn-paginate
@@ -31,11 +31,11 @@
                        [initialPage]="1" [pageSize]="100" [total]="1345" (change)="paginate($event)">
                             <span paginate-label>Filter:</span> Showing {{paginator.range}}  <span >of {{paginator.total}} entries</span>
                   </psn-paginate>
-  </md-card-content>
-  <md-card-actions>
+  </mat-card-content>
+  <mat-card-actions>
     Selections:
     <p>
-    <span *ngIf="selectedRows.length" class="md-body-1">{{selectedRows.length}} item(s) selected</span>
+    <span *ngIf="selectedRows.length" class="mat-body-1">{{selectedRows.length}} item(s) selected</span>
     </p>
     <p> Row Click Event: </p>
     <p>
@@ -45,9 +45,9 @@
     <p>
       {{cellClickEvent}}
     </p>
-  </md-card-actions>
-  <md-divider></md-divider>
-  <md-card-content>
+  </mat-card-actions>
+  <mat-divider></mat-divider>
+  <mat-card-content>
    
       <p>Sort Column: {{sortBy}}</p>
       <p>Sort Direction: {{sortOrder}}</p>
@@ -71,17 +71,17 @@
                       to: {{paginateEvent?.toRow}}
                   </li>
                 </ul>
-  </md-card-content>
+  </mat-card-content>
 
 
 
-</md-card>
+</mat-card>
 
 
 
-<md-card>
-  <md-card-title>Data Grid with custom columns</md-card-title>  
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Data Grid with custom columns</mat-card-title>  
+  <mat-card-content>
   
    <psn-data-grid
           #dataTable1
@@ -93,20 +93,20 @@
             <ng-template psnGridColumnTemplate="actions" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                 <psn-label color="accent"  text="SENT"></psn-label>
-                <md-icon color="success">star</md-icon>
+                <mat-icon color="success">star</mat-icon>
             </div>
         </ng-template>
         </psn-data-grid>
   
-  </md-card-content>
+  </mat-card-content>
 
 
-</md-card>
+</mat-card>
 
 
-<md-card>
-  <md-card-title>Data Grid with Comps Inside</md-card-title>  
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Data Grid with Comps Inside</mat-card-title>  
+  <mat-card-content>
   
    <psn-data-grid
           #dataTable2
@@ -118,41 +118,41 @@
           >
             <ng-template psnGridColumnTemplate="createdDate" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
           
-                <md-input-container>
+                <mat-input-container>
                     <input mdInput [mdDatepicker]="picker" placeholder="Choose a date {{rowIndex}}">
-                    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>                    
-                </md-input-container>
-                <md-datepicker #picker></md-datepicker>
+                    <mat-datepicker-toggle mdSuffix [for]="picker"></mat-datepicker-toggle>                    
+                </mat-input-container>
+                <mat-datepicker #picker></mat-datepicker>
             
         </ng-template>
 
         <ng-template psnGridColumnTemplate="actions" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
-                 <button (click)="alert(row, rowIndex)" md-raised-button color="accent" >Save</button>
-                 <button md-raised-button color="warn" [mdMenuTriggerFor]="menu">Delete</button>
-                    <button md-icon-button [mdMenuTriggerFor]="menu">
-                    <md-icon>more_vert</md-icon>
+                 <button (click)="alert(row, rowIndex)" mat-raised-button color="accent" >Save</button>
+                 <button mat-raised-button color="warn" [mdMenuTriggerFor]="menu">Delete</button>
+                    <button mat-icon-button [mdMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
                     </button>
-                    <md-menu #menu="mdMenu">
-                        <button md-menu-item> Refresh </button>
-                        <button md-menu-item> Settings </button>
-                        <button md-menu-item> Help </button>
-                        <button md-menu-item disabled> Sign Out </button>
-                    </md-menu>
+                    <mat-menu #menu="mdMenu">
+                        <button mat-menu-item> Refresh </button>
+                        <button mat-menu-item> Settings </button>
+                        <button mat-menu-item> Help </button>
+                        <button mat-menu-item disabled> Sign Out </button>
+                    </mat-menu>
             </div>
         </ng-template>
 
 
          <ng-template psnGridColumnTemplate="guid" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
             <div fxLayout="row" fxLayoutAlign="start center" >
-                <md-input-container fxFlex>
+                <mat-input-container fxFlex>
                     <input mdInput placeholder="Guid" value="{{row[column]}}">
-                </md-input-container>
+                </mat-input-container>
             </div>
         </ng-template>
         </psn-data-grid>
   
-  </md-card-content>
+  </mat-card-content>
 
 
-</md-card>
+</mat-card>

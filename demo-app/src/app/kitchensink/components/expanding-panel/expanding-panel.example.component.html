@@ -1,46 +1,46 @@
-<md-card>
-  <md-card-title>Expanding Panels</md-card-title>
-  <md-card-subtitle>Expand & collapse containers</md-card-subtitle>
-  <md-divider></md-divider>
-  <md-card-content>
+<mat-card>
+  <mat-card-title>Expanding Panels</mat-card-title>
+  <mat-card-subtitle>Expand & collapse containers</mat-card-subtitle>
+  <mat-divider></mat-divider>
+  <mat-card-content>
     <p>Expand/Collapse Event for Expansion 1: {{expandCollapseExpansion1Msg}}</p>
     <div layout-gt-xs="row" layout-align-gt-xs="center start">
       <div flex-gt-xs="90">
         <psn-expanding-panel [keepSummary]="true" color="bgc-grey-100" #firstExpander [expand]="expansion1" [disabled]="disabled" (expanded)="expandExpansion1Event()" (collapsed)="collapseExpansion1Event()">
 
-          <md-checkbox>Rbans </md-checkbox>
+          <mat-checkbox>Rbans </mat-checkbox>
           <span fxFlex></span>
           <psn-label color="accent"  text="WAITING"></psn-label>
-          <button (click)="openSuccessToast($event)" md-icon-button>
-          <md-icon>edit</md-icon>
+          <button (click)="openSuccessToast($event)" mat-icon-button>
+          <mat-icon>edit</mat-icon>
         </button>
 
           <expanding-panel-summary>
-            <md-list>
-              <md-list-item>
-                <md-icon md-list-avatar>pin_drop</md-icon>
-                <h3 md-line>Pearson</h3>
-                <h4 md-line>19500 Bulverde Rd</h4>
-                <p md-line>
+            <mat-list>
+              <mat-list-item>
+                <mat-icon mat-list-avatar>pin_drop</mat-icon>
+                <h3 mat-line>Pearson</h3>
+                <h4 mat-line>19500 Bulverde Rd</h4>
+                <p mat-line>
                  San Antonio TX 78259
                 </p>
-              </md-list-item>
-            </md-list>
+              </mat-list-item>
+            </mat-list>
           </expanding-panel-summary>
 
           <expanding-panel-content>
-            <form class="md-padding" fxLayout="column">
-              <md-input-container fxFlex>
+            <form class="mat-padding" fxLayout="column">
+              <mat-input-container fxFlex>
                 <input mdInput placeholder="Company " value="Pearson" />
-              </md-input-container>
-              <md-input-container fxFlex>
+              </mat-input-container>
+              <mat-input-container fxFlex>
                 <textarea mdInput placeholder="Description" rows="4"></textarea>
-              </md-input-container>
+              </mat-input-container>
             </form>
-            <md-divider></md-divider>
+            <mat-divider></mat-divider>
             <div fxLayout="row" fxLayoutGap="10px" layout-padding fxLayoutAlign="end center">
-              <button md-button class="text-upper">Cancel</button>
-              <button md-raised-button color="primary" class="text-upper">Save</button>
+              <button mat-button class="text-upper">Cancel</button>
+              <button mat-raised-button color="primary" class="text-upper">Save</button>
             </div>
           </expanding-panel-content>
 
@@ -50,15 +50,15 @@
 
         <psn-expanding-panel [closeable]="false" #firstExpander1>
 
-          <md-checkbox>WIAT-III - cannot close me </md-checkbox>
+          <mat-checkbox>WIAT-III - cannot close me </mat-checkbox>
           <span fxFlex></span>
-          <button (click)="openSuccessToast()" md-icon-button>
-            <md-icon>edit</md-icon>
+          <button (click)="openSuccessToast()" mat-icon-button>
+            <mat-icon>edit</mat-icon>
           </button>
 
           <expanding-panel-content>
-            <div class="md-padding">
-              <h3 class="md-subhead">md-padding class</h3>
+            <div class="mat-padding">
+              <h3 class="mat-subhead">mat-padding class</h3>
               <div>Phase 1</div>
               <div>Phase 2</div>
               <div>Phase 3</div>
@@ -67,88 +67,88 @@
           </psn-expanding-panel>
 
           <psn-expanding-panel #firstExpander2 color="primary" (expanded)="expanded()" (collapsed)="collapsed()" (closed)="closed()">
-            <md-checkbox>KTEA-III </md-checkbox>
+            <mat-checkbox>KTEA-III </mat-checkbox>
             <span fxFlex></span>
-            <button (click)="openSuccessToast($event)" md-icon-button>
-                <md-icon>edit</md-icon>
+            <button (click)="openSuccessToast($event)" mat-icon-button>
+                <mat-icon>edit</mat-icon>
               </button>
 
             <expanding-panel-content>
-              <md-card>
-                <md-card-title>
+              <mat-card>
+                <mat-card-title>
                   Inner Head
-                </md-card-title>
-                <md-card-content>
+                </mat-card-title>
+                <mat-card-content>
                   Content
-                </md-card-content>
-              </md-card>
+                </mat-card-content>
+              </mat-card>
             </expanding-panel-content>
           </psn-expanding-panel>
 
           <psn-expanding-panel #firstExpander3 color="warn" (expanded)="expanded()" (collapsed)="collapsed()" (closed)="closed()">
-            <md-checkbox>KTEA-III Form B </md-checkbox>
+            <mat-checkbox>KTEA-III Form B </mat-checkbox>
             <span fxFlex></span>
-            <button (click)="openSuccessToast($event)" md-icon-button>
-                <md-icon>edit</md-icon>
+            <button (click)="openSuccessToast($event)" mat-icon-button>
+                <mat-icon>edit</mat-icon>
               </button>
 
             <expanding-panel-content>
-              <md-card>
-                <md-card-title>
+              <mat-card>
+                <mat-card-title>
                   Inner Head
-                </md-card-title>
-                <md-card-content>
+                </mat-card-title>
+                <mat-card-content>
                   Content
-                </md-card-content>
-              </md-card>
+                </mat-card-content>
+              </mat-card>
             </expanding-panel-content>
           </psn-expanding-panel>
 
           <psn-expanding-panel #firstExpander444 color="accent" (expanded)="expanded()" (collapsed)="collapsed()" (closed)="closed()">
-            <md-checkbox>PPVT-4 </md-checkbox>
+            <mat-checkbox>PPVT-4 </mat-checkbox>
             <span fxFlex></span>
-            <button (click)="openSuccessToast($event)" md-icon-button>
-                <md-icon>edit</md-icon>
+            <button (click)="openSuccessToast($event)" mat-icon-button>
+                <mat-icon>edit</mat-icon>
               </button>
 
             <expanding-panel-content>
-              <md-card>
-                <md-card-title>
+              <mat-card>
+                <mat-card-title>
                   Inner Head
-                </md-card-title>
-                <md-card-content>
+                </mat-card-title>
+                <mat-card-content>
                   Content
-                </md-card-content>
-              </md-card>
+                </mat-card-content>
+              </mat-card>
             </expanding-panel-content>
           </psn-expanding-panel>
 
           <psn-expanding-panel #firstExpander55 color="success" (expanded)="expanded()" (collapsed)="collapsed()" (closed)="closed()">
-            <md-checkbox>WISC-V </md-checkbox>
+            <mat-checkbox>WISC-V </mat-checkbox>
             <span fxFlex></span>
             <psn-label color="success"  text="READY"></psn-label>
-            <button (click)="openSuccessToast($event)" md-icon-button>
-                <md-icon>edit</md-icon>
+            <button (click)="openSuccessToast($event)" mat-icon-button>
+                <mat-icon>edit</mat-icon>
               </button>
 
             <expanding-panel-content>
-              <md-card>
-                <md-card-title>
+              <mat-card>
+                <mat-card-title>
                   Inner Head
-                </md-card-title>
-                <md-card-content>
+                </mat-card-title>
+                <mat-card-content>
                   Content
-                </md-card-content>
-              </md-card>
+                </mat-card-content>
+              </mat-card>
             </expanding-panel-content>
           </psn-expanding-panel>
 
       </div>
     </div>
 
-  </md-card-content>
-  <md-divider></md-divider>
-  <md-card-actions>
-    <button md-button color="primary" (click)="firstExpander.toggle()" class="text-upper">Toggle first</button>
-  </md-card-actions>
-</md-card>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="firstExpander.toggle()" class="text-upper">Toggle first</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { slideInDownAnimation } from 'app/app.animations';
-import { MdSnackBar, MdDialog } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 
 
 @Component({
@@ -235,8 +235,8 @@ export class LibraryComponent implements OnInit {
   
   //////////////////
 
-  constructor(private _snackBarService: MdSnackBar,
-    public dialog: MdDialog) {
+  constructor(private _snackBarService: MatSnackBar,
+    public dialog: MatDialog) {
     this.tdStates = this.states;
   }
 

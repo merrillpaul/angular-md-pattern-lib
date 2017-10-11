@@ -1,14 +1,14 @@
-   <md-card>
-        <md-card-title>File Input and Uploads</md-card-title>
-        <md-divider></md-divider>
-        <md-card-content>
-          <md-card>
-            <md-card-title>
+   <mat-card>
+        <mat-card-title>File Input and Uploads</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <mat-card>
+            <mat-card-title>
               Input
-            </md-card-title>
-            <md-card-content>
+            </mat-card-title>
+            <mat-card-content>
               <div fxLayout="row">
-                <md-input-container psnFileDrop
+                <mat-input-container psnFileDrop
                                     [disabled]="disabled"
                                     (fileDrop)="files = $event"
                                     (click)="fileInput1.inputElement.click()"
@@ -21,66 +21,66 @@
                         [value]="files?.length ? (files?.length + ' files') : files?.name"
                         [disabled]="disabled"
                         readonly/>
-                </md-input-container>
-                <button md-icon-button *ngIf="files" (click)="fileInput1.clear()" (keyup.enter)="fileInput1.clear()">
-                  <md-icon>cancel</md-icon>
+                </mat-input-container>
+                <button mat-icon-button *ngIf="files" (click)="fileInput1.clear()" (keyup.enter)="fileInput1.clear()">
+                  <mat-icon>cancel</mat-icon>
                 </button>
                 <psn-file-input class="push-left-sm push-right-sm" #fileInput1 [(ngModel)]="files" multiple>
-                  <md-icon>folder</md-icon>
+                  <mat-icon>folder</mat-icon>
                   <span class="text-upper">Browse...</span>
                 </psn-file-input>
                 <span>
-                  <button md-raised-button color="success" [disabled]="!files" class="text-upper">Submit</button>
+                  <button mat-raised-button color="success" [disabled]="!files" class="text-upper">Submit</button>
                 </span>
               </div>
-            </md-card-content>
-            <md-card-actions>            
+            </mat-card-content>
+            <mat-card-actions>            
            
-            </md-card-actions>
-          </md-card>
+            </mat-card-actions>
+          </mat-card>
           
-          <md-card>
-            <md-card-title>
+          <mat-card>
+            <mat-card-title>
               Upload Single with button
-            </md-card-title>
-            <md-card-content>
+            </mat-card-title>
+            <mat-card-content>
                 <p>Select Event: {{fileSelectMsg}}</p>
                 <p>Upload Event: {{fileUploadMsg}}</p>
                 <psn-file-upload defaultColor="secondary" activeColor="success" #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" [disabled]="disabled">
-                  <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+                  <mat-icon>file_upload</mat-icon><span>{{ singleFileUpload.files?.name }}</span>
                   <ng-template psn-file-input-label>
-                    <md-icon>attach_file</md-icon><span>Choose a file...</span>
+                    <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
                   </ng-template>
                 </psn-file-upload>
              
-            </md-card-content>
-            <md-card-actions>            
+            </mat-card-content>
+            <mat-card-actions>            
            
-            </md-card-actions>
-          </md-card>
+            </mat-card-actions>
+          </mat-card>
 
-           <md-card>
-            <md-card-title>
+           <mat-card>
+            <mat-card-title>
               Upload Multiple with button
-            </md-card-title>
-            <md-card-content>
+            </mat-card-title>
+            <mat-card-content>
                 <p>Select Event: {{fileSelectMultipleMsg}}</p>
                 <p>Upload Event: {{fileUploadMultipleMsg}}</p>
                 <psn-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
                                 accept=".csv" defaultColor="primary" activeColor="success" cancelColor="warn" multiple [disabled]="disabled">
-                  <md-icon>file_upload</md-icon>
+                  <mat-icon>file_upload</mat-icon>
                   <span>
                     {{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
                   </span>
                   <ng-template psn-file-input-label>
-                    <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
+                    <mat-icon>attach_file</mat-icon><span>Choose multiple .sql files...</span>
                   </ng-template>
                 </psn-file-upload>
              
-            </md-card-content>
-            <md-card-actions>            
+            </mat-card-content>
+            <mat-card-actions>            
            
-            </md-card-actions>
-          </md-card>
-        </md-card-content>
-      </md-card>
+            </mat-card-actions>
+          </mat-card>
+        </mat-card-content>
+      </mat-card>

@@ -13,16 +13,17 @@ $ npm install @pearson/angular-material --save
 Ideally your application package.json should have only
 ```
   "dependencies": {
-    "@pearson/angular-material": "^0.2.2",
+    "@pearson/angular-material": "^2.0.0-beta1",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.10"
   },
   "devDependencies": {
-    "@angular/cli": "^1.1.1",
-    "@angular/compiler-cli": "^4.2.2",
+    "@angular/cli": "^1.4.2",    
+    "@angular/compiler": "5.0.0-rc.1",
     ..
 ```
+Look here for an example package.json -> https://github.com/pearca/pearson-angular-md-pattern-lib/blob/master/demo-app/package.json. 
 That is, no reference to angular or angular-material packages. These would be resolved by the @pearson/angular-material package.
 
 ### Add theme css and iscroll in .angular-cli.json
