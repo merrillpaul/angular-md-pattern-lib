@@ -18,8 +18,8 @@
 
     }
 
-    md-toolbar {
-        [md-button] {
+    mat-toolbar {
+        [mat-button] {
             &:first-of-type:not(:last-child) {                
                 margin-left: -6px;
                 [dir='rtl'] & {
@@ -35,14 +35,14 @@
                 }
             }
         }
-        .md-icon-logo {
+        .mat-icon-logo {
             margin-right: 10px;
             [dir='rtl'] & {
                 margin-left: 10px;
                 margin-right: 0;
             }
         }
-        [md-icon-button] {
+        [mat-icon-button] {
             margin: 0 6px;
         }
     }

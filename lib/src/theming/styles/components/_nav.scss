@@ -28,7 +28,7 @@
     nav-drawer,
     nav-layout {
         font-family: $mat-font-family !important;
-        md-toolbar {
+        mat-toolbar {
         @include mat-elevation(1);
         z-index: 1;
         }
@@ -85,17 +85,17 @@
         }
     }
 
-    md-sidenav {
+    mat-sidenav {
         width: $navigation-drawer-width;
         .mat-list-item-content {
-            md-icon {            
+            mat-icon {            
                 @include rtl(margin-left, 0px,$margin);
                 @include rtl(margin-right, $margin, 0px);
                 color: map_get($mat-pearson-grey, 300);
                 fill: map_get($mat-pearson-grey, 300);
             }
         }
-        [md-list-item] {
+        [mat-list-item] {
             &,&:active,&:focus {
             outline: none;
             }

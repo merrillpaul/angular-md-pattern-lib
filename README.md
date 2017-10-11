@@ -11,6 +11,8 @@ Project One pattern library
 - demo-app
     README.md
 
+## Build
+- Use nvm and node version v6.9.3
 
 ### Pending
 - Breadcrumbs

@@ -47,7 +47,7 @@
       }
       
       .psn-expanding-panel-header-content {
-        md-icon.expand-icon {
+        mat-icon.expand-icon {
           color: mat-color($foreground, icon);
         }
         &.mat-disabled {
@@ -57,7 +57,7 @@
         }
       }
     }
-    md-icon.expand-icon {
+    mat-icon.expand-icon {
       color: mat-color($foreground, icon);
     }
     .psn-expanding-panel-header-content

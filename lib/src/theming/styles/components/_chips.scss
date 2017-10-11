@@ -13,9 +13,9 @@
     $foreground: map-get($theme, foreground);
 
     // Fix from material
-    md-chip-list {
+    mat-chip-list {
         &:not(.mat-chip-list-stacked) {
-                .md-chip-list-wrapper {
+                .mat-chip-list-wrapper {
                     .mat-chip:not(.mat-basic-chip) {
                         margin: 0 $mat-chips-chip-margin 0 $mat-chips-chip-margin;
 
@@ -37,7 +37,7 @@
                 }
         }
         &.mat-chip-list-stacked {
-            .md-chip-list-wrapper {
+            .mat-chip-list-wrapper {
                 display: block;
 
                 .mat-chip:not(.mat-basic-chip) {
@@ -75,14 +75,14 @@
         color: mat-color($foreground, text);
         &:focus:not(.td-chip-disabled) {
             background: mat-color($primary);
-            &, md-icon {
+            &, mat-icon {
             color: mat-color($primary, default-contrast);
-            md-icon:hover {
+            mat-icon:hover {
                 color: mat-color($foreground, icon);
             }
             }
         }
-        md-icon {
+        mat-icon {
             color: mat-color($foreground, hint-text);
             &:hover {
             color: mat-color($foreground, icon);

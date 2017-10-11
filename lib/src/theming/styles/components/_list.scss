@@ -4,18 +4,18 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
 
-    md-list md-list-item [md-list-avatar],
-    md-list a[md-list-item] [md-list-avatar],
-    md-nav-list md-list-item [md-list-avatar],
-    md-nav-list a[md-list-item] [md-list-avatar] {
+    mat-list mat-list-item [mat-list-avatar],
+    mat-list a[mat-list-item] [mat-list-avatar],
+    mat-nav-list mat-list-item [mat-list-avatar],
+    mat-nav-list a[mat-list-item] [mat-list-avatar] {
         min-width: 40px;
     }  
 
-    md-list-item,
+    mat-list-item,
     .mat-list-item-content {
-            md-icon {
+            mat-icon {
             color: mat-color($foreground, icon);
-            &[md-list-avatar] {
+            &[mat-list-avatar] {
                 background-color: mat-color($background, hover);
             }
         }
@@ -26,10 +26,10 @@
         }
     }
 
-    md-list-item,
+    mat-list-item,
     .mat-list-item-content {
-        md-icon {
-            &[md-list-avatar] {
+        mat-icon {
+            &[mat-list-avatar] {
                 -webkit-align-items: center;
                 -ms-flex-align: center;
                 align-items: center;
@@ -43,7 +43,7 @@
             }
         }
     }
-    .mat-icon.md-icon-logo {
+    .mat-icon.mat-icon-logo {
         height: auto;
         width: 100px;
     }
