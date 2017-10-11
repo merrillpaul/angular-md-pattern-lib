@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdListModule, MdMenuModule } from '@angular/material';
+import { MatListModule, MatMenuModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PearsonMenuComponent } from './component/menu.component';
@@ -10,13 +10,13 @@ export { PearsonMenuComponent };
 @NgModule({
     imports: [
         CommonModule,
-        MdListModule,
-        MdMenuModule,
+        MatListModule,
+        MatMenuModule,
         FlexLayoutModule
     ],
     exports: [
-        MdListModule,
-        MdMenuModule,
+        MatListModule,
+        MatMenuModule,
         PearsonMenuComponent
     ],
     declarations: [PearsonMenuComponent],

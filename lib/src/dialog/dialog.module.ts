@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { MdDialogModule, MdInputModule, MdButtonModule, MdToolbarModule } from '@angular/material';
+import { MatDialogModule, MatInputModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 
 import { DialogComponent } from './component/dialog.component';
 import { DialogService } from './services/dialog.service';
@@ -17,10 +17,10 @@ export { DialogService };
     imports: [
         FormsModule,
         CommonModule,
-        MdDialogModule,
-        MdInputModule,
-        MdButtonModule,
-        MdToolbarModule
+        MatDialogModule,
+        MatInputModule,
+        MatButtonModule,
+        MatToolbarModule
     ],
     exports: [
         DialogComponent

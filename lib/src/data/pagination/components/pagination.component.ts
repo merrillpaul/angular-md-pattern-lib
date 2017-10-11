@@ -1,6 +1,7 @@
 import { Component, Input, Output, Renderer2, Optional, ChangeDetectorRef, ElementRef, EventEmitter } from '@angular/core';
 
-import { Dir } from '@angular/material';
+//import { Dir } from '@angular/material';
+import { Dir } from '@angular/cdk/bidi';
 
 import { PageChangeEvent } from '../page.event';
 

@@ -3,8 +3,8 @@
 
   <div class="psn-expanding-panel-header {{appliedColor}}"
         [class.mat-disabled]="disabled"
-        md-ripple
-        [mdRippleDisabled]="true"
+        mat-ripple
+        [matRippleDisabled]="true"
         [tabIndex]="disabled? -1 : 0"
         (keydown.enter)="clickEvent()"
         (click)="clickEvent()">
@@ -14,15 +14,15 @@
           fxLayout="row" 
           fxLayoutAlign="start center" 
           fxFlex>
-      <md-icon class="expand-icon" 
-          *ngIf="!expand && !disabled">keyboard_arrow_right</md-icon>
-      <md-icon class="expand-icon"  
-        *ngIf="expand">keyboard_arrow_down</md-icon>
+      <mat-icon class="expand-icon" 
+          *ngIf="!expand && !disabled">keyboard_arrow_right</mat-icon>
+      <mat-icon class="expand-icon"  
+        *ngIf="expand">keyboard_arrow_down</mat-icon>
       <div fxLayoutAlign="start center" fxFlex fxLayout="row" class="psn-expanding-panel-header-content">
           <ng-content></ng-content>
       </div>
-      <md-icon class="expand-icon"  (keydown.enter)="closeEvent($event)"
-        (click)="closeEvent($event)" *ngIf="closeable">close</md-icon>      
+      <mat-icon class="expand-icon"  (keydown.enter)="closeEvent($event)"
+        (click)="closeEvent($event)" *ngIf="closeable">close</mat-icon>      
     </div>
   </div>
 

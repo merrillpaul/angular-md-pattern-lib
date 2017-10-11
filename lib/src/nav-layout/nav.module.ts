@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MdSidenavModule, MdToolbarModule, MdButtonModule, MdIconModule, MdCardModule, MdListModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule, MatCardModule, MatListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NavLayoutComponent, NavSideMenuDirective } from './nav.component';
@@ -33,12 +33,12 @@ export { NavLayoutComponent, NavContentComponent, NavToolbarContentComponent,
 @NgModule({
   imports: [
     CommonModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdButtonModule,
-    MdIconModule,
-    MdCardModule,
-    MdListModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatListModule,
     FlexLayoutModule
   ],
   declarations: [

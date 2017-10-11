@@ -2,7 +2,7 @@ import {
     Component, Directive, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild,
     ElementRef, Renderer2, TemplateRef, ViewContainerRef, ChangeDetectorRef, forwardRef
 } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
+import { TemplatePortalDirective } from '@angular/cdk/portal';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 const noop: any = () => {

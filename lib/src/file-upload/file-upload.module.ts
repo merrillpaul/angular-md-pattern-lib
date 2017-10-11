@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { MdIconModule, MdButtonModule, PortalModule } from '@angular/material';
+import { MatIconModule, MatButtonModule } from '@angular/material';
+import { PortalModule } from '@angular/cdk/portal';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -26,8 +27,8 @@ export { FileService, UploadOptions } from './services/file.service';
         JsonpModule,
         FormsModule,
         CommonModule,
-        MdIconModule,
-        MdButtonModule,
+        MatIconModule,
+        MatButtonModule,
         PortalModule,
         FlexLayoutModule
     ],

@@ -3,9 +3,9 @@
 ```html
 <psn-file-upload #fileUpload defaultColor="accent" activeColor="warn" cancelColor="primary" (select)="selectEvent($event)"
   (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".ext,.anotherExt" [disabled]="disabled" multiple>
-  <md-icon>file_upload</md-icon><span>{{ fileUpload.files?.name }}</span>
+  <mat-icon>file_upload</mat-icon><span>{{ fileUpload.files?.name }}</span>
   <ng-template psn-file-input-label>
-    <md-icon>attach_file</md-icon><span>Choose a file...</span>
+    <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
   </ng-template>
 </psn-file-upload>
 ```
@@ -43,9 +43,9 @@
 <p>Select Event: {{fileSelectMsg}}</p>
 <p>Upload Event: {{fileUploadMsg}}</p>
 <psn-file-upload defaultColor="secondary" activeColor="success" #singleFileUpload (select)="selectEvent($event)" (upload)="uploadEvent($event)" (cancel)="cancelEvent()" [disabled]="disabled">
-    <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
+    <mat-icon>file_upload</mat-icon><span>{{ singleFileUpload.files?.name }}</span>
     <ng-template psn-file-input-label>
-    <md-icon>attach_file</md-icon><span>Choose a file...</span>
+    <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
     </ng-template>
 </psn-file-upload>
 ```
@@ -76,12 +76,12 @@
 <p>Upload Event: {{fileUploadMultipleMsg}}</p>
 <psn-file-upload #fileMultipleUpload (select)="selectMultipleEvent($event)" (upload)="uploadMultipleEvent($event)" (cancel)="cancelMultipleEvent()"
                 accept=".sql" defaultColor="accent" activeColor="success" cancelColor="primary" multiple [disabled]="disabled">
-    <md-icon>file_upload</md-icon>
+    <mat-icon>file_upload</mat-icon>
     <span>
     {{ fileMultipleUpload.files?.name || fileMultipleUpload.files?.length }} <span *ngIf="fileMultipleUpload.files?.length">files selected</span>
     </span>
     <ng-template psn-file-input-label>
-    <md-icon>attach_file</md-icon><span>Choose multiple .sql files...</span>
+    <mat-icon>attach_file</mat-icon><span>Choose multiple .sql files...</span>
     </ng-template>
 </psn-file-upload>
 ```

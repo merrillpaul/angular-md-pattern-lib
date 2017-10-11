@@ -2,7 +2,8 @@ import { Type } from '@angular/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { MdRippleModule, MdIconModule, PortalModule } from '@angular/material';
+import { MatRippleModule, MatIconModule } from '@angular/material';
+import { PortalModule } from '@angular/cdk/portal';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ExpandingPanelComponent, ExpandingPanelContentComponent,
@@ -14,8 +15,8 @@ export { ExpandingPanelComponent } from './expanding-panel.component';
 @NgModule({
   imports: [
     CommonModule,
-    MdRippleModule,
-    MdIconModule,
+    MatRippleModule,
+    MatIconModule,
     PortalModule,
     FlexLayoutModule
   ],

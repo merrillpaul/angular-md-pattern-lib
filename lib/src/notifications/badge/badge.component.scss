@@ -74,7 +74,7 @@ $allowedSizes: 20, 24, 36, 48;
   }
 
    @each $current-size in $allowedSizes {   
-      &.md-#{$current-size} { 
+      &.mat-#{$current-size} { 
          height: $current-size * 2px;
          .psn-badge-ctr {
               line-height: $current-size + 1px;

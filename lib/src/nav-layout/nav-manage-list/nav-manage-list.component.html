@@ -1,5 +1,5 @@
-<md-sidenav-container class="nav-manage-list md-content" fxFlex fxLayout="row">
-  <md-sidenav #sidenav
+<mat-sidenav-container class="nav-manage-list mat-content" fxFlex fxLayout="row">
+  <mat-sidenav #sidenav
               align="start"
               [mode]="mode"
               [opened]="opened"
@@ -7,21 +7,21 @@
               [style.max-width]="sidenavWidth"
               layout="column"
               layout-fill
-              class="md-whiteframe-z1">
-    <ng-content select="md-toolbar[sidenav-content]"></ng-content>
-    <div fxFlex class="list md-content">
+              class="mat-whiteframe-z1">
+    <ng-content select="mat-toolbar[sidenav-content]"></ng-content>
+    <div fxFlex class="list mat-content">
       <ng-content select="[sidenav-content]"></ng-content>
     </div>
-  </md-sidenav>
-  <div fxLayout="column" fxLayoutFill class="md-content">
-    <md-toolbar class="bgc-grey-50">
-      <button md-icon-button class="menu-button" *ngIf="!sidenav.opened" (click)="open()">
-        <md-icon class="md-24">arrow_back</md-icon>
+  </mat-sidenav>
+  <div fxLayout="column" fxLayoutFill class="mat-content">
+    <mat-toolbar class="bgc-grey-50">
+      <button mat-icon-button class="menu-button" *ngIf="!sidenav.opened" (click)="open()">
+        <mat-icon class="mat-24">arrow_back</mat-icon>
       </button>
      <ng-content select="nav-toolbar-content"></ng-content>         
-    </md-toolbar>
+    </mat-toolbar>
     <ng-content select="nav-body"></ng-content> 
 
     <ng-content select="nav-footer-inner"></ng-content>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SafeResourceUrl, SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs/Subscription';
 
-import { MdDrawerToggleResult } from '@angular/material';
+import { MatDrawerToggleResult } from '@angular/material';
 
 import { NavLayoutComponent } from '../nav.component';
 
@@ -135,21 +135,21 @@ export class NavDrawerComponent implements OnInit, OnDestroy {
   /**
    * Proxy toggle method to access sidenav from outside (from td-layout template).
    */
-  public toggle(): Promise<MdDrawerToggleResult> {
+  public toggle(): Promise<MatDrawerToggleResult> {
     return this._layout.toggle();
   }
 
   /**
    * Proxy open method to access sidenav from outside (from td-layout template).
    */
-  public open(): Promise<MdDrawerToggleResult> {
+  public open(): Promise<MatDrawerToggleResult> {
     return this._layout.open();
   }
 
   /**
    * Proxy close method to access sidenav from outside (from td-layout template).
    */
-  public close(): Promise<MdDrawerToggleResult> {
+  public close(): Promise<MatDrawerToggleResult> {
     return this._layout.close();
   }
 }

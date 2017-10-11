@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
-import { MdSidenav, MdDrawerToggleResult } from '@angular/material';
+import { MatSidenav, MatDrawerToggleResult } from '@angular/material';
 
 @Component({
   selector: 'nav-side-content',
@@ -17,18 +17,18 @@ export class NavSideMenuDirective {
 })
 export class NavLayoutComponent {   
 
-  @ViewChild(MdSidenav) sidenav: MdSidenav;
+  @ViewChild(MatSidenav) sidenav: MatSidenav;
 
-  public toggle(): Promise<MdDrawerToggleResult> {
+  public toggle(): Promise<MatDrawerToggleResult> {
     return this.sidenav.toggle();
   }
 
 
-  public open(): Promise<MdDrawerToggleResult> {
+  public open(): Promise<MatDrawerToggleResult> {
     return this.sidenav.open();
   }
 
-  public close(): Promise<MdDrawerToggleResult> {
+  public close(): Promise<MatDrawerToggleResult> {
     return this.sidenav.close();
   }
 

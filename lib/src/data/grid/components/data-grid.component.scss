@@ -33,7 +33,7 @@ div.psn-data-table {
   div.mat-checkbox-column {
     width: $checkbox-size;
     font-size: 0 !important;
-    md-pseudo-checkbox {
+    mat-pseudo-checkbox {
       width: $checkbox-size;
       height: $checkbox-size;
       /deep/ &.mat-pseudo-checkbox-checked::after {
@@ -41,7 +41,7 @@ div.psn-data-table {
         height: 4px !important;
       }
     }
-    md-checkbox {
+    mat-checkbox {
       /deep/ .mat-checkbox-inner-container {
         width: $checkbox-size;
         height: $checkbox-size;

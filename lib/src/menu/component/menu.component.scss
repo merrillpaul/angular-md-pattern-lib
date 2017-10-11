@@ -9,12 +9,12 @@ $menu-spacing: 8px !default;
     padding: $menu-spacing;
     text-align: center;
   }
-  md-list,
-  md-list[dense],
-  md-nav-list,
-  md-nav-list[dense], {
-    a[md-list-item].mat-2-line .mat-list-item-content,
-    md-list-item.mat-2-line .mat-list-item-content {
+  mat-list,
+  mat-list[dense],
+  mat-nav-list,
+  mat-nav-list[dense], {
+    a[mat-list-item].mat-2-line .mat-list-item-content,
+    mat-list-item.mat-2-line .mat-list-item-content {
       height: auto;
       padding: $menu-spacing;
       .mat-list-text {
@@ -24,7 +24,7 @@ $menu-spacing: 8px !default;
           padding-right: 16px;
         }
       }
-      [md-line] + [md-line] {
+      [mat-line] + [mat-line] {
         margin-top: $menu-spacing / 2;
       }
     }

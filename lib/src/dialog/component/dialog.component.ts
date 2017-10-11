@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef, OnInit } from '@angular/core';
 
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 import { DialogOptions } from './dialog.options';
 import { DialogType } from './dialog.type';
@@ -19,14 +19,14 @@ export class DialogComponent implements OnInit {
 
 
     constructor(
-        private _dialogRef: MdDialogRef<DialogComponent>,
+        private _dialogRef: MatDialogRef<DialogComponent>,
         private vc: ViewContainerRef
     ) { }
 
 
 
     ngOnInit(): void {
-        let containers = this.getParentsUntil(this.vc.element.nativeElement, 'md-dialog-container');
+        let containers = this.getParentsUntil(this.vc.element.nativeElement, 'mat-dialog-container');
         let matDlgContainer: any = containers[containers.length - 1];
         this.dialogTypeClass = DialogType[this.dialogType].toLowerCase()
         matDlgContainer.classList += ' psn-dialog dlg-type-' + this.dialogTypeClass;
@@ -65,10 +65,10 @@ export class DialogComponent implements OnInit {
 
     /**
      * Get all of an element's parent elements up the DOM tree until a matching parent is found
-     * @param  {Node}   elem     The element
-     * @param  {String} parent   The selector for the parent to stop at
-     * @param  {String} selector The selector to filter against [optionals]
-     * @return {Array}           The parent elements
+     * @param  elem     The element
+     * @param  parent   The selector for the parent to stop at
+     * @param  selector The selector to filter against [optionals]
+     * @return The parent elements
      */
     private getParentsUntil(elem: any, parent: string, selector: string = undefined) {
 

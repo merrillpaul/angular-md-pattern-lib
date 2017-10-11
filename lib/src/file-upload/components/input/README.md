@@ -3,7 +3,7 @@
 ```html
 <psn-file-input [(ngModel)]="files" color="primary" (select)="selectEvent($event)"
                accept=".ext,.anotherExt" [disabled]="disabled" multiple>
-  <md-icon>attach_file</md-icon><span>Choose a file...</span>
+  <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
 </psn-file-input>
 ```
  
@@ -37,7 +37,7 @@ or
 or an entire markup
 ```html
  <div fxLayout="row">
-    <md-input-container psnFileDrop
+    <mat-input-container psnFileDrop
                         [disabled]="disabled"
                         (fileDrop)="files = $event"
                         (click)="fileInput1.inputElement.click()"
@@ -50,16 +50,16 @@ or an entire markup
             [value]="files?.length ? (files?.length + ' files') : files?.name"
             [disabled]="disabled"
             readonly/>
-    </md-input-container>
-    <button md-icon-button *ngIf="files" (click)="fileInput1.clear()" (keyup.enter)="fileInput1.clear()">
-        <md-icon>cancel</md-icon>
+    </mat-input-container>
+    <button mat-icon-button *ngIf="files" (click)="fileInput1.clear()" (keyup.enter)="fileInput1.clear()">
+        <mat-icon>cancel</mat-icon>
     </button>
     <psn-file-input class="push-left-sm push-right-sm" #fileInput1 [(ngModel)]="files" multiple>
-        <md-icon>folder</md-icon>
+        <mat-icon>folder</mat-icon>
         <span class="text-upper">Browse...</span>
     </psn-file-input>
     <span>
-        <button md-raised-button color="success" [disabled]="!files" class="text-upper">Submit</button>
+        <button mat-raised-button color="success" [disabled]="!files" class="text-upper">Submit</button>
     </span>
  </div>   
 ```

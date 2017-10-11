@@ -4,9 +4,6 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { TemplatePortal, Overlay, OverlayState, OverlayRef, OverlayOrigin, ComponentPortal } from '@angular/material';
-
-
 import { SpinnerContext } from '../directives/spinner.directive';
 import { SpinnerComponent, SpinnerMode, SpinnerStrategy, SpinnerType, SpinnerStyle } from '../component/spinner.component';
 import { SpinnerRef, SpinnerFactory } from './spinner.factory';

@@ -3,7 +3,6 @@ import {
   Directive, Input, Output, TemplateRef, ViewContainerRef, ContentChild
 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { TemplatePortalDirective } from '@angular/material';
 
 import { CollapseAnimation } from '../utils/animation/collapse';
 

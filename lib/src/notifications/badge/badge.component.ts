@@ -31,7 +31,7 @@ export class BadgeComponent implements AfterContentInit {
         private _changeDetectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef) {
     this._renderer.addClass(this._elementRef.nativeElement, 'psn-badge');
-    this._renderer.addClass(this._elementRef.nativeElement, 'md-' + this._size);
+    this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + this._size);
     this.setupColor(this._color);
   }
 
@@ -85,8 +85,8 @@ export class BadgeComponent implements AfterContentInit {
 
   @Input()
   set size(size: number) {
-    this._renderer.removeClass(this._elementRef.nativeElement, 'md-' + this._size);
-    this._renderer.addClass(this._elementRef.nativeElement, 'md-' + size);
+    this._renderer.removeClass(this._elementRef.nativeElement, 'mat-' + this._size);
+    this._renderer.addClass(this._elementRef.nativeElement, 'mat-' + size);
     this._size = size;   
   }  
 

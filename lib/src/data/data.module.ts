@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MdIconModule, MdSelectModule, MdButtonModule } from '@angular/material';
+import { MatIconModule, MatSelectModule, MatButtonModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -17,9 +17,9 @@ export * from './grid/data-grid.module';
         FlexLayoutModule,
         PearsonPaginationModule,
         PearsonDataGridModule,
-        MdIconModule,
-        MdSelectModule,
-        MdButtonModule
+        MatIconModule,
+        MatSelectModule,
+        MatButtonModule
     ],
     exports: [
         PearsonPaginationModule,

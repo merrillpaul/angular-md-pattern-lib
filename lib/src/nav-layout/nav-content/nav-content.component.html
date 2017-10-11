@@ -1,19 +1,19 @@
 <div layout="column" layout-fill >
-  <md-toolbar *ngIf="!hideToolBar" class="{{toolBarClass}}" [color]="color" [ngClass]="{'psn-main-nav': root}">
-    <button md-icon-button class="menu-button" *ngIf="isMainSidenavAvailable && !hideMenu" (click)="openMainSidenav()">
-      <md-icon class="md-24">menu</md-icon>
+  <mat-toolbar *ngIf="!hideToolBar" class="{{toolBarClass}}" [color]="color" [ngClass]="{'psn-main-nav': root}">
+    <button mat-icon-button class="menu-button" *ngIf="isMainSidenavAvailable && !hideMenu" (click)="openMainSidenav()">
+      <mat-icon class="mat-24">menu</mat-icon>
     </button>
     <span *ngIf="icon || logo || toolbarTitle"
           [class.cursor-pointer]="routerEnabled"
           (click)="handleNavigationClick()"
           layout="row"
           layout-align="start center">
-      <md-icon *ngIf="icon">{{icon}}</md-icon>
-      <md-icon *ngIf="logo && !icon" class="md-icon-logo" [svgIcon]="logo"></md-icon>
+      <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+      <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
       <span *ngIf="toolbarTitle">{{toolbarTitle}}</span>
     </span>
     <ng-content select="nav-toolbar-content"></ng-content> 
-  </md-toolbar>
+  </mat-toolbar>
   <ng-content select="nav-body"></ng-content> 
   <div [ngClass]="{'psn-main-nav': root}">
     <ng-content select="nav-footer"></ng-content>

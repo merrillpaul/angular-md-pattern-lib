@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MdProgressBarModule, MdProgressSpinnerModule } from '@angular/material';
+import { MatProgressBarModule, MatProgressSpinnerModule } from '@angular/material';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 
@@ -19,8 +19,8 @@ export { SpinnerService, SpinnerConfig};
     imports: [
         FlexLayoutModule,
         CommonModule,
-        MdProgressBarModule,
-        MdProgressSpinnerModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule,
         OverlayModule,
         PortalModule
     ],

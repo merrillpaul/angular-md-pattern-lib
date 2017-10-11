@@ -1,11 +1,11 @@
 <span class="md-caption" (click)="sortable && handleSortBy()">
   <ng-content></ng-content>
 </span>
-<md-icon 
+<mat-icon 
   class="psn-data-sort-icon" 
   *ngIf="sortable"
   [class.mat-asc]="(!(active) || isAscending())"
   [class.mat-desc]="(active && isDescending())"
   (click)="sortable && handleSortBy()">
   arrow_upward
-</md-icon>
+</mat-icon>

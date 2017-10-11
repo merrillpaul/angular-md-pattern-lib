@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { MdIconModule, MdSelectModule, MdButtonModule } from '@angular/material';
+import { MatIconModule, MatSelectModule, MatButtonModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -16,9 +16,9 @@ export { PaginationComponent, PageChangeEvent };
         CommonModule,
         FlexLayoutModule,
         FormsModule,
-        MdIconModule, 
-        MdSelectModule, 
-        MdButtonModule
+        MatIconModule, 
+        MatSelectModule, 
+        MatButtonModule
     ],
     exports: [
         PaginationComponent

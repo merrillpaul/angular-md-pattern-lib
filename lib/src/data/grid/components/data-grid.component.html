@@ -4,7 +4,7 @@
      
      <div psn-table-header fxHide.xs >
         <div psn-data-column class="mat-checkbox-column" *ngIf="isSelectable">
-          <md-checkbox
+          <mat-checkbox
             #checkBoxAll
             color="primary"
             *ngIf="isMultiple"
@@ -15,7 +15,7 @@
             (keyup.enter)="selectAll(!checkBoxAll.checked)"
             (keyup.space)="selectAll(!checkBoxAll.checked)"
             (keydown.space)="blockEvent($event)">
-          </md-checkbox>
+          </mat-checkbox>
         </div>
 
 
@@ -28,7 +28,7 @@
             [sortOrder]="sortOrderEnum"
             [hidden]="column.hidden"
             (sortChange)="handleSort(column)">
-            <span [mdTooltip]="column.tooltip">{{column.label}}</span>
+            <span [matTooltip]="column.tooltip">{{column.label}}</span>
         </div>
         
      </div> 
@@ -49,13 +49,13 @@
           (keyup.shift)="enableTextSelection()">
             
           <div psn-data-cell class="mat-checkbox-cell" data="false" *ngIf="isSelectable">
-              <md-pseudo-checkbox
+              <mat-pseudo-checkbox
                 color="primary"
                 [state]="isRowSelected(row) ? 'checked' : 'unchecked'"
                 (mousedown)="disableTextSelection()"
                 (mouseup)="enableTextSelection()"
                 (click)="stopPropagation($event); select(row, $event, rowIndex);">
-              </md-pseudo-checkbox>
+              </mat-pseudo-checkbox>
           </div>
 
           <div psn-data-cell [fxFlex]="column.width?  column.width: 'grow'" 

@@ -6,7 +6,7 @@ import {
 import { DOCUMENT } from '@angular/platform-browser';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/material';
+import { ENTER, SPACE, UP_ARROW, DOWN_ARROW } from '@angular/cdk/keycodes';
 
 import { GridCellChangedEvent } from '../common/events/grid.cell.changed.event';
 import { GridCellClickEvent } from '../common/events/grid.cell.click.event';

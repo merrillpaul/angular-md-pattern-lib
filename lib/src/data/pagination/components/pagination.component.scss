@@ -7,11 +7,11 @@
     margin: 0 10px;
   }
 }
-[md-icon-button] {
+[mat-icon-button] {
   font-size: 12px;
   font-weight: normal;
 }
-md-select { 
+mat-select { 
   & /deep/ {
     .mat-select-trigger {
       min-width: 44px;
