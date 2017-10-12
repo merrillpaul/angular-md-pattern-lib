@@ -103,37 +103,37 @@
   <mat-card-title>Menus (dropdowns)</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <button mat-icon-button [mdMenuTriggerFor]="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
-    <mat-menu #menu="mdMenu">
+    <mat-menu #menu="matMenu">
         <button mat-menu-item> Refresh </button>
         <button mat-menu-item> Settings </button>
         <button mat-menu-item> Help </button>
         <button mat-menu-item disabled> Sign Out </button>
     </mat-menu>
-    <button mat-button [mdMenuTriggerFor]="posXMenu">
+    <button mat-button [matMenuTriggerFor]="posXMenu">
       Before
     </button>
-    <mat-menu x-position="before" #posXMenu="mdMenu" class="before">
+    <mat-menu x-position="before" #posXMenu="matMenu" class="before">
         <button mat-menu-item> Refresh </button>
         <button mat-menu-item> Settings </button>
         <button mat-menu-item> Help </button>
         <button mat-menu-item disabled> Sign Out </button>
     </mat-menu>
-    <button mat-button [mdMenuTriggerFor]="aboveMenu">
+    <button mat-button [matMenuTriggerFor]="aboveMenu">
       Above
     </button>
-    <mat-menu y-position="above" #aboveMenu="mdMenu" class="above">
+    <mat-menu y-position="above" #aboveMenu="matMenu" class="above">
         <button mat-menu-item> Refresh </button>
         <button mat-menu-item> Settings </button>
         <button mat-menu-item> Help </button>
         <button mat-menu-item disabled> Sign Out </button>
     </mat-menu>
-    <button mat-button [mdMenuTriggerFor]="iconsMenu">
+    <button mat-button [matMenuTriggerFor]="iconsMenu">
       Icons in Menu
     </button>
-    <mat-menu #iconsMenu="mdMenu">
+    <mat-menu #iconsMenu="matMenu">
       <button mat-menu-item>
         <mat-icon>dialpad</mat-icon>
         <span>Redial</span>
@@ -182,7 +182,7 @@
   <mat-card-content>
     <div layout="row">
       <mat-input-container flex="50">
-        <input mdInput placeholder="State" [mdAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
+        <input matInput placeholder="State" [matAutocomplete]="tdAuto" [(ngModel)]="currentState" #modelDir="ngModel"
           (ngModelChange)="this.tdStates = filterStates(currentState)" [disabled]="tdDisabled">
       </mat-input-container>
     </div>
@@ -193,7 +193,7 @@
       <button mat-button (click)="tdDisabled=!tdDisabled" class="text-upper">Toggle disabled</button>
     </div>
 
-    <mat-autocomplete #tdAuto="mdAutocomplete">
+    <mat-autocomplete #tdAuto="matAutocomplete">
       <mat-option *ngFor="let state of tdStates" [value]="state.name">
         <span>{{ state.name }}</span>
         <span class="demo-secondary-text"> ({{state.code}}) </span>
@@ -245,7 +245,7 @@
         <mat-card-title>with Icons</mat-card-title>
         <mat-divider></mat-divider>
         <mat-card-content>
-            <mat-button-toggle-group #group="mdButtonToggleGroup">
+            <mat-button-toggle-group #group="matButtonToggleGroup">
               <mat-button-toggle value="left">
                 <mat-icon>format_align_left</mat-icon>
               </mat-button-toggle>
@@ -271,7 +271,7 @@
         <mat-card-title>Normal</mat-card-title>
         <mat-divider></mat-divider>
         <mat-card-content>
-            <mat-button-toggle-group #groupAdm="mdButtonToggleGroup">
+            <mat-button-toggle-group #groupAdm="matButtonToggleGroup">
               <mat-button-toggle value="assess">
                 Assess
               </mat-button-toggle>
@@ -570,46 +570,46 @@
     <form>
       <div layout="row" layout-margin>
         <mat-input-container flex>
-          <input mdInput placeholder="Company (disabled)" disabled value="Pearson">
+          <input matInput placeholder="Company (disabled)" disabled value="Pearson">
         </mat-input-container>
       </div>
       <div layout="row" layout-margin>
         <mat-input-container flex>
-          <input mdInput placeholder="First name">
+          <input matInput placeholder="First name">
         </mat-input-container>
         <mat-input-container flex>
-          <input mdInput placeholder=" Will Be Truncated">
-        </mat-input-container>
-      </div>
-
-      <div layout="row" layout-margin>
-        <mat-input-container flex>
-          <textarea mdInput placeholder="Address" value="1604 and Bulverde"></textarea>
-        </mat-input-container>
-      </div>
-      <div layout="row" layout-margin>
-        <mat-input-container flex>
-          <textarea mdInput placeholder="Address 2"></textarea>
+          <input matInput placeholder=" Will Be Truncated">
         </mat-input-container>
       </div>
 
       <div layout="row" layout-margin>
         <mat-input-container flex>
-          <input mdInput placeholder="City">
+          <textarea matInput placeholder="Address" value="1604 and Bulverde"></textarea>
+        </mat-input-container>
+      </div>
+      <div layout="row" layout-margin>
+        <mat-input-container flex>
+          <textarea matInput placeholder="Address 2"></textarea>
+        </mat-input-container>
+      </div>
+
+      <div layout="row" layout-margin>
+        <mat-input-container flex>
+          <input matInput placeholder="City">
         </mat-input-container>
         <mat-input-container flex>
-          <input mdInput placeholder="State">
+          <input matInput placeholder="State">
         </mat-input-container>
         <mat-input-container flex>
-          <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="78259">
+          <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="78259">
           <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
         </mat-input-container>
       </div>
 
       <div layout="row" layout-margin>
          <mat-input-container flex="50">
-              <input mdInput [mdDatepicker]="picker" placeholder="Choose a date ">
-              <mat-datepicker-toggle mdSuffix [for]="picker"></mat-datepicker-toggle>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date ">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
           </mat-input-container>
           
@@ -626,24 +626,24 @@
     <form>
       <div fxLayout="row" fxLayoutAlign="start center">
         <mat-input-container fxFlex>
-          <input mdInput placeholder="Company (disabled)" disabled value="Pearson">
+          <input matInput placeholder="Company (disabled)" disabled value="Pearson">
           <mat-icon class="input-icon" disabled>search</mat-icon>
         </mat-input-container>
       </div>
       <div fxLayout="row" fxLayoutGap="1rem">
         <mat-input-container fxFlex>
-          <input mdInput placeholder="First name">
+          <input matInput placeholder="First name">
           <mat-icon class="input-icon">search</mat-icon>
         </mat-input-container>
         <mat-input-container fxFlex>
-          <input mdInput placeholder="Will Be Truncated">
+          <input matInput placeholder="Will Be Truncated">
           <mat-icon class="input-icon">help</mat-icon>
         </mat-input-container>
       </div>     
 
       <div fxLayout="row">
         <mat-input-container fxFlex="40">
-          <input mdInput placeholder="With FontAwesome">
+          <input matInput placeholder="With FontAwesome">
           <i class="input-icon fa fa-superpowers" aria-hidden="true"></i>
         </mat-input-container>       
       </div>     

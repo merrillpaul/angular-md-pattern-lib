@@ -39,6 +39,7 @@
       padding-left: 5px;
       background: mat-color($background, card); 
       .mat-select-trigger {
+          height: 2em;
           .mat-select-underline {
               display: none;
           }

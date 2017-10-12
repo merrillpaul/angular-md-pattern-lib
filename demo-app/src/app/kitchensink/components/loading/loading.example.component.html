@@ -8,10 +8,10 @@
  <div *spin="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'success'">
           <div layout="column" flex>
             <mat-input-container flex>
-              <input mdInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
+              <input matInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
             </mat-input-container>
             <mat-input-container flex>
-              <textarea mdInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
+              <textarea matInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
             </mat-input-container>
           </div>
         </div>
@@ -26,14 +26,14 @@
  <ng-template spin="replaceTemplateSyntax" spinMode="determinate" spinType="linear" spinStrategy="replace" spinColor="warn">
           <div layout="column" flex>
             <mat-input-container flex>
-              <input mdInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
+              <input matInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
             </mat-input-container>
             <mat-select placeholder="Type" [(ngModel)]="replaceDemo.type">
               <mat-option [value]="1">Some type</mat-option>
               <mat-option [value]="2">Another type</mat-option>
             </mat-select>
             <mat-input-container flex>
-              <textarea mdInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
+              <textarea matInput [(ngModel)]="replaceDemo.description" placeholder="Description" rows="4"></textarea>
             </mat-input-container>
           </div>
         </ng-template>

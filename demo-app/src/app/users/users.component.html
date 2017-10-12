@@ -21,7 +21,7 @@
                   <button mat-icon-button [mat-menu-trigger-for]="menu">
                   <mat-icon>more_vert</mat-icon>
                   </button>
-                  <mat-menu x-position="before" #menu="mdMenu">
+                  <mat-menu x-position="before" #menu="matMenu">
                       <a [routerLink]="[user.id + '/edit']" mat-menu-item>Edit</a>
                       <button mat-menu-item>Delete</button>
                   </mat-menu>

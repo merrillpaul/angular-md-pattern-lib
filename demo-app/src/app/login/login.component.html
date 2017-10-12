@@ -13,7 +13,7 @@
           <form #loginForm="ngForm">
             <div fxLayout="row">
               <mat-input-container fxFlex>
-                <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
+                <input matInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
                   required>
                 <span mat-prefix><mat-icon>person</mat-icon></span>
                 <mat-hint align="start">
@@ -24,7 +24,7 @@
             </div>
             <div fxLayout="row">
               <mat-input-container fxFlex>
-                <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
+                <input matInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
                   required>
                 <span mat-prefix><mat-icon>lock</mat-icon></span>
                 <mat-hint align="start">
@@ -50,7 +50,7 @@
           <form #loginForm="ngForm">
             <div fxLayout="row">
               <mat-input-container fxFlex>
-                <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
+                <input matInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username"
                   required>
                 <span mat-prefix><mat-icon>person</mat-icon></span>
                 <mat-hint align="start">
@@ -61,7 +61,7 @@
             </div>
             <div fxLayout="row">
               <mat-input-container fxFlex>
-                <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
+                <input matInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password"
                   required>
                 <span mat-prefix><mat-icon>lock</mat-icon></span>
                 <mat-hint align="start">

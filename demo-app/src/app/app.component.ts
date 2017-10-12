@@ -1,10 +1,12 @@
-import { Component, HostBinding, ViewContainerRef, AfterViewInit, Renderer2, ElementRef } from '@angular/core';
+import { Component, HostBinding, ViewContainerRef, AfterViewInit, Renderer2, ElementRef, VERSION } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { SpinnerService, ToastService, MediaQueryService } from '@pearson/angular-material';
+import { VERSION as PSNVERSION } from '@pearson/angular-material';
+import { VERSION as MDVERSION } from '@angular/material';
 
 import { SecurityService, UserDetails } from './core/services';
 
@@ -21,6 +23,9 @@ export class AppComponent implements AfterViewInit {
 
 
   currentUser: UserDetails;
+  ngVersion: string;
+  ngMatVersion: string;
+  psnLibVersion: string;
   currentPage: string;
   currentThemeIdx: number = 1;
   themes: string[] = [
@@ -83,7 +88,9 @@ export class AppComponent implements AfterViewInit {
     this.security.currentUser.subscribe((user) => {
       this.currentUser = user;
     });
-
+    this.ngVersion = VERSION.full;
+    this.ngMatVersion = '2.0.0-beta12';
+    this.psnLibVersion = PSNVERSION.full;
   }
 
   ngAfterViewInit(): void {

@@ -13,7 +13,7 @@ $ npm install @pearson/angular-material --save
 Ideally your application package.json should have only
 ```
   "dependencies": {
-    "@pearson/angular-material": "^2.0.0-beta1",
+    "@pearson/angular-material": "^1.0.1",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.0",
     "zone.js": "^0.8.10"
@@ -137,4 +137,7 @@ TODO
 
 
 ## Issues:
-- angular/compiler-cli is still at 4.1.3 due to https://github.com/angular/angular/issues/17171
+-  FIXED ! angular/compiler-cli is still at 4.1.3 due to https://github.com/angular/angular/issues/17171 - FIXED with 5.0.0
+- http://codetunnel.io/you-can-finally-npm-link-packages-that-contain-peer-dependencies/
+- JIT needs `ng serve --preserve-symlinks -o` 
+- https://github.com/angular/angular-cli/issues/7409

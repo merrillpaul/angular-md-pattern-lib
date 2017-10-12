@@ -2,9 +2,7 @@
      [class.psn-expanded]="expand">
 
   <div class="psn-expanding-panel-header {{appliedColor}}"
-        [class.mat-disabled]="disabled"
-        mat-ripple
-        [matRippleDisabled]="true"
+        [class.mat-disabled]="disabled"        
         [tabIndex]="disabled? -1 : 0"
         (keydown.enter)="clickEvent()"
         (click)="clickEvent()">

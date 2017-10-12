@@ -16,7 +16,7 @@
                                     (keyup.delete)="fileInput1.clear()"
                                     (keyup.backspace)="fileInput1.clear()"
                                     fxFlex="50%">
-                  <input mdInput
+                  <input matInput
                         placeholder="select or drop files"
                         [value]="files?.length ? (files?.length + ' files') : files?.name"
                         [disabled]="disabled"

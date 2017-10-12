@@ -119,8 +119,8 @@
             <ng-template psnGridColumnTemplate="createdDate" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
           
                 <mat-input-container>
-                    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date {{rowIndex}}">
-                    <mat-datepicker-toggle mdSuffix [for]="picker"></mat-datepicker-toggle>                    
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date {{rowIndex}}">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>                    
                 </mat-input-container>
                 <mat-datepicker #picker></mat-datepicker>
             
@@ -129,11 +129,11 @@
         <ng-template psnGridColumnTemplate="actions" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                  <button (click)="alert(row, rowIndex)" mat-raised-button color="accent" >Save</button>
-                 <button mat-raised-button color="warn" [mdMenuTriggerFor]="menu">Delete</button>
-                    <button mat-icon-button [mdMenuTriggerFor]="menu">
+                 <button mat-raised-button color="warn" [matMenuTriggerFor]="menu">Delete</button>
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
                     <mat-icon>more_vert</mat-icon>
                     </button>
-                    <mat-menu #menu="mdMenu">
+                    <mat-menu #menu="matMenu">
                         <button mat-menu-item> Refresh </button>
                         <button mat-menu-item> Settings </button>
                         <button mat-menu-item> Help </button>
@@ -146,7 +146,7 @@
          <ng-template psnGridColumnTemplate="guid" let-value="value" let-row="row" let-column="column" let-rowIndex="rowIndex">
             <div fxLayout="row" fxLayoutAlign="start center" >
                 <mat-input-container fxFlex>
-                    <input mdInput placeholder="Guid" value="{{row[column]}}">
+                    <input matInput placeholder="Guid" value="{{row[column]}}">
                 </mat-input-container>
             </div>
         </ng-template>

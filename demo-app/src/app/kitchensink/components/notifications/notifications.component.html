@@ -26,10 +26,10 @@
           <mat-icon>menu</mat-icon>
         </button>
             <span fxFlex>Toolbar</span>
-            <button mat-icon-button [mdMenuTriggerFor]="notificationsMenu">
+            <button mat-icon-button [matMenuTriggerFor]="notificationsMenu">
           <mat-icon>notifications</mat-icon>
         </button>
-            <mat-menu #notificationsMenu="mdMenu" [overlapTrigger]="false">
+            <mat-menu #notificationsMenu="matMenu" [overlapTrigger]="false">
               <psn-menu>
                 <div psn-menu-header class="mat-subhead">Notifications</div>
                 <mat-nav-list dense psn-menu-content>
@@ -48,8 +48,8 @@
         </button>
               </psn-menu>
             </mat-menu>
-            <button mat-icon-button [mdMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
-            <mat-menu #toolbarMenu1="mdMenu">
+            <button mat-icon-button [matMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
+            <mat-menu #toolbarMenu1="matMenu">
               <button mat-menu-item>
           <mat-icon>settings</mat-icon>
           <span>Settings</span>
@@ -193,12 +193,12 @@
                 <psn-badge color="success" notifications="6">
                   <mat-icon>messages</mat-icon>
                 </psn-badge>
-                <button mat-icon-button [mdMenuTriggerFor]="notificationsMenu1">
+                <button mat-icon-button [matMenuTriggerFor]="notificationsMenu1">
               <psn-badge notifications="66+">
                 <mat-icon>notifications</mat-icon>
               </psn-badge>
             </button>
-                <mat-menu #notificationsMenu1="mdMenu" [overlapTrigger]="false">
+                <mat-menu #notificationsMenu1="matMenu" [overlapTrigger]="false">
                   <psn-menu>
                     <div psn-menu-header class="mat-subhead">Notifications</div>
                     <mat-nav-list dense psn-menu-content>

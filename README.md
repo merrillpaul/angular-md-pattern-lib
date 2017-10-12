@@ -21,3 +21,6 @@ Project One pattern library
 ### look for custom classes to quickly apply colors 
 - themes/utilities/_colors.scss
 - themes/utilities/_color_theme.scss
+
+# demo-app
+- https://pearca.github.io/pearson-angular-md-pattern-lib/
