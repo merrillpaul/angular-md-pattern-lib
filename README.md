@@ -23,4 +23,4 @@ NG pattern library
 - themes/utilities/_color_theme.scss
 
 # demo-app
-- https://pearca.github.io/pearson-angular-md-pattern-lib/
+- https://merrillpaul.github.io/angular-md-pattern-lib/
