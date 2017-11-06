@@ -1,5 +1,5 @@
-# pearson-angular-md-pattern-lib
-Project One pattern library
+# angular-md-pattern-lib
+NG pattern library
 
 ## Dependencies
 - Look inisde lib/package.json for versions of NG, Material, flex layout and others
